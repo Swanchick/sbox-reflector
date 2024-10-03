@@ -1,8 +1,8 @@
 {
-  "Title": "Ricochet",
+  "Title": "Reflector",
   "Type": "game",
   "Org": "swanchick",
-  "Ident": "ricochet",
+  "Ident": "reflector",
   "Schema": 1,
   "IncludeSourceFiles": false,
   "Resources": null,

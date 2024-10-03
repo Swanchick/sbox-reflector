@@ -66,7 +66,7 @@
           "__type": "Sandbox.ModelRenderer",
           "__guid": "0b6a18bf-fdb8-4661-970e-ef635bfa9baa",
           "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/default.vmat",
+          "MaterialOverride": "materials/grassfloor001a.vmat",
           "Model": "models/dev/plane.vmdl",
           "RenderOptions": {
             "GameLayer": true,
@@ -91,6 +91,7 @@
       "__guid": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
       "Flags": 0,
       "Name": "Player",
+      "Position": "0,0,220.4042",
       "Enabled": true,
       "Components": [
         {
@@ -99,11 +100,67 @@
           "Acceleration": 10,
           "Bounciness": 0.3,
           "GroundAngle": 45,
-          "Height": 74,
+          "Height": 64,
           "IgnoreLayers": "",
           "Radius": 7,
           "StepHeight": 18,
           "UseCollisionRules": false
+        },
+        {
+          "__type": "PlayerMovement",
+          "__guid": "7194714a-5392-4784-b6dc-1996effe09de",
+          "cameraSensitivity": 0.1,
+          "playerAirFriction": 0.3,
+          "playerCamera": {
+            "_type": "component",
+            "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
+            "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
+            "component_type": "CameraComponent"
+          },
+          "playerGroundFriction": 5,
+          "playerHead": {
+            "_type": "gameobject",
+            "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
+          },
+          "playerJumpForce": 300,
+          "playerSpeed": 200
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83",
+          "Flags": 0,
+          "Name": "Head",
+          "Position": "0,0,57",
+          "Enabled": true,
+          "Children": [
+            {
+              "__guid": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
+              "Flags": 0,
+              "Name": "Camera",
+              "Tags": "maincamera",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.CameraComponent",
+                  "__guid": "795acd37-aa38-49ac-9881-15fff1f1011e",
+                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                  "ClearFlags": "All",
+                  "FieldOfView": 90,
+                  "IsMainCamera": true,
+                  "Orthographic": false,
+                  "OrthographicHeight": 1204,
+                  "Priority": 1,
+                  "RenderExcludeTags": "",
+                  "RenderTags": "",
+                  "TargetEye": "None",
+                  "Viewport": "0,0,1,1",
+                  "ZFar": 10000,
+                  "ZNear": 10
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -133,7 +190,9 @@
   "Title": "minimal",
   "Description": "",
   "ResourceVersion": 1,
-  "__references": [],
+  "__references": [
+    "hyperscroll.grassfloor001a#64264"
+  ],
   "IsValid": true,
   "__version": 1
 }
