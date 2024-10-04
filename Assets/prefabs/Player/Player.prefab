@@ -75,7 +75,7 @@
                 "TargetEye": "None",
                 "Viewport": "0,0,1,1",
                 "ZFar": 10000,
-                "ZNear": 6
+                "ZNear": 1
               }
             ]
           }
