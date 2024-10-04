@@ -6,7 +6,7 @@
       "Flags": 0,
       "Name": "Sun",
       "Position": "0,0,1000",
-      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Rotation": "0.3510246,0.0000001010967,-0.9363663,0.000000002721269",
       "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
