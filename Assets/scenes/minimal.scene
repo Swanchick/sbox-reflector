@@ -59,467 +59,6 @@
       ]
     },
     {
-      "__guid": "f4210394-abe9-4da7-9d21-b6ee057b2688",
-      "Flags": 0,
-      "Name": "Platform1",
-      "Position": "0,-0.04390703,-30",
-      "Scale": "5,5,1",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "af7caa40-093e-436c-8f46-546c7112500f",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/grassfloor001a.vmat",
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "bc057134-0e31-46b3-a3c5-6c9ae893b44f",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "f43d18f5-ceee-4e09-95c4-0f6109763f95",
-      "Flags": 0,
-      "Name": "Platform2",
-      "Position": "500,0,-30",
-      "Scale": "5,5,1",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "de737011-e0cb-4d62-8482-d6e408b7a9ce",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/grassfloor001a.vmat",
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "d701232b-eecc-4885-8647-dfcaab03f0b1",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "936cd490-c804-43bb-bba2-8f223f4487e9",
-      "Flags": 0,
-      "Name": "Platform3",
-      "Position": "-500,0,-30",
-      "Scale": "5,5,1",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "c60be4b0-3771-449d-8844-cafeab517035",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/grassfloor001a.vmat",
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "c8fcd627-68a5-4c18-b1ce-22f6bd250486",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "d9e13bea-46fd-460c-90fa-e5c6fc2db5f2",
-      "Flags": 0,
-      "Name": "Platform4",
-      "Position": "0,500,-30",
-      "Scale": "5,5,1",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "3490aca7-b0da-4039-8da1-a9e0168c842d",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/grassfloor001a.vmat",
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "6c38f7b9-b685-46b2-9e1c-fa007cf77fa5",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "44d35cdd-1b8a-4077-bcd5-be5ef7d9bf42",
-      "Flags": 0,
-      "Name": "Platform5",
-      "Position": "0,-500,-30",
-      "Scale": "5,5,1",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "190d3db6-c137-4bd2-9567-d8a2979ad731",
-          "BodyGroups": 18446744073709551615,
-          "MaterialOverride": "materials/grassfloor001a.vmat",
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "8eefd35d-be2f-4d71-88bd-8fa7ad4d2ab8",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "cdc45185-d330-4e99-903b-3721951d957c",
-      "Flags": 0,
-      "Name": "JumpPad3",
-      "Position": "0,99.39258,-23.0142",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "b01fe1c1-aed4-4ff0-b8ef-0b7851117f0c",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "2f8e3ff1-2d8b-452b-946a-54c518f66410",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "JumpPad",
-          "__guid": "85aff7a4-ac15-4f47-94f5-0089e8d5d8f6",
-          "jumpDirection": "0,1,1.5",
-          "jumpForce": 400
-        }
-      ]
-    },
-    {
-      "__guid": "e4abac4b-bb63-4286-b68a-d467ac30eb6d",
-      "Flags": 0,
-      "Name": "JumpPad2",
-      "Position": "0,-404.1704,-23.0142",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "fca23a96-3fc0-4879-92dd-147af0e75730",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "3dd3a44c-4d5f-4f95-956a-ccc7a70cedfd",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "JumpPad",
-          "__guid": "be275bb8-fd5d-40f9-bcef-be31f2d10680",
-          "jumpDirection": "0,1,1.5",
-          "jumpForce": 400
-        }
-      ]
-    },
-    {
-      "__guid": "2cbc4418-1dce-4c40-a9c5-0649456fbcf5",
-      "Flags": 0,
-      "Name": "JumpPad",
-      "Position": "0,-99.07777,-23.0142",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "3726992a-43ad-43ba-bd3d-048df0bddd97",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "c0047f75-995c-438a-90c9-38b6e16a16b4",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "JumpPad",
-          "__guid": "d6e92b57-330a-498b-9898-0bfcb748ba20",
-          "jumpDirection": "0,-1,1.5",
-          "jumpForce": 400
-        }
-      ]
-    },
-    {
-      "__guid": "ba309bd7-fb3d-44b4-9acb-4eab4b651d0e",
-      "Flags": 0,
-      "Name": "JumpPad (1)",
-      "Position": "-99.22527,0,-23.01419",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "54f89e56-9801-443b-824e-e81835d78e8c",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "9a67b16c-4c21-4f68-98ec-396cbbda0d59",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "JumpPad",
-          "__guid": "e6d62bf7-ad27-4b02-a62b-21df28e599da",
-          "jumpDirection": "-1,0,1.5",
-          "jumpForce": 400
-        }
-      ]
-    },
-    {
-      "__guid": "c4d8148b-68eb-41c3-992e-f6ce1aa138ac",
-      "Flags": 0,
-      "Name": "JumpPad (2)",
-      "Position": "-403.2064,0,-23.01419",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "af5940cd-95f8-4fd7-b9b4-fe09ac49c7da",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "fa680895-5936-4a5a-8772-fb32bac7f308",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "JumpPad",
-          "__guid": "7acfc8fd-3f1d-452c-a2e0-7d5d70e8f8d7",
-          "jumpDirection": "1,0,1.5",
-          "jumpForce": 400
-        }
-      ]
-    },
-    {
-      "__guid": "3590f3d7-45d6-4ac9-b46c-b802b73acc61",
-      "Flags": 0,
-      "Name": "JumpPad (3)",
-      "Position": "97.78473,0,-23.01419",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "ab37f735-f229-4a43-b505-e174db129ab2",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "82fd9ab1-fe38-4d68-9457-cd00a65d9472",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "JumpPad",
-          "__guid": "c116d561-3a28-4c8e-a762-7ae02985f0cb",
-          "jumpDirection": "1,0,1.5",
-          "jumpForce": 400
-        }
-      ]
-    },
-    {
-      "__guid": "4779f2dd-9745-46df-a670-9739de960ac3",
-      "Flags": 0,
-      "Name": "JumpPad (4)",
-      "Position": "402.6138,0,-23.01419",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "eba6778b-f192-402b-9740-ad0723031928",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "3b2c9c43-a3f8-495a-bb9b-64f2f44ec2fd",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "JumpPad",
-          "__guid": "4e97fbf6-6390-49d3-a19d-4dd846221441",
-          "jumpDirection": "-1,0,1.5",
-          "jumpForce": 400
-        }
-      ]
-    },
-    {
-      "__guid": "5f6e91a5-04a0-4d94-b4a7-8c98c37eee4d",
-      "Flags": 0,
-      "Name": "JumpPad4",
-      "Position": "0,405.8326,-23.0142",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "3b45bdc4-e0a9-475d-91b1-55678d440be2",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "4a805180-0cec-4c83-a9d4-06c154b0a34a",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "JumpPad",
-          "__guid": "5aacba16-edc1-40f5-abbe-023c0fcd14e2",
-          "jumpDirection": "0,-1,1.5",
-          "jumpForce": 400
-        }
-      ]
-    },
-    {
       "__guid": "bb488895-1b29-4999-a1cd-3d0b983101f2",
       "Flags": 0,
       "Name": "Spawnpoint",
@@ -568,6 +107,533 @@
             }
           ],
           "StartServer": true
+        }
+      ]
+    },
+    {
+      "__guid": "c407e56d-3000-4db1-80a6-6e6bfdc8da39",
+      "Flags": 0,
+      "Name": "Platforms",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "f4210394-abe9-4da7-9d21-b6ee057b2688",
+          "Flags": 0,
+          "Name": "Platform1",
+          "Position": "0,-0.04390703,-30",
+          "Scale": "5,5,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "af7caa40-093e-436c-8f46-546c7112500f",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/grassfloor001a.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "bc057134-0e31-46b3-a3c5-6c9ae893b44f",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "f43d18f5-ceee-4e09-95c4-0f6109763f95",
+          "Flags": 0,
+          "Name": "Platform2",
+          "Position": "500,0,-30",
+          "Scale": "5,5,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "de737011-e0cb-4d62-8482-d6e408b7a9ce",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/grassfloor001a.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "d701232b-eecc-4885-8647-dfcaab03f0b1",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "936cd490-c804-43bb-bba2-8f223f4487e9",
+          "Flags": 0,
+          "Name": "Platform3",
+          "Position": "-500,0,-30",
+          "Scale": "5,5,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "c60be4b0-3771-449d-8844-cafeab517035",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/grassfloor001a.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "c8fcd627-68a5-4c18-b1ce-22f6bd250486",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "d9e13bea-46fd-460c-90fa-e5c6fc2db5f2",
+          "Flags": 0,
+          "Name": "Platform4",
+          "Position": "0,500,-30",
+          "Scale": "5,5,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3490aca7-b0da-4039-8da1-a9e0168c842d",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/grassfloor001a.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "6c38f7b9-b685-46b2-9e1c-fa007cf77fa5",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "44d35cdd-1b8a-4077-bcd5-be5ef7d9bf42",
+          "Flags": 0,
+          "Name": "Platform5",
+          "Position": "0,-500,-30",
+          "Scale": "5,5,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "190d3db6-c137-4bd2-9567-d8a2979ad731",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/grassfloor001a.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "8eefd35d-be2f-4d71-88bd-8fa7ad4d2ab8",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "9b66f13f-62ca-4265-9cd7-56a9a123dcfc",
+      "Flags": 0,
+      "Name": "JumpPads",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "5f6e91a5-04a0-4d94-b4a7-8c98c37eee4d",
+          "Flags": 0,
+          "Name": "JumpPad4",
+          "Position": "0,405.8326,-23.0142",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3b45bdc4-e0a9-475d-91b1-55678d440be2",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "4a805180-0cec-4c83-a9d4-06c154b0a34a",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "5aacba16-edc1-40f5-abbe-023c0fcd14e2",
+              "jumpDirection": "0,-1,1.5",
+              "jumpForce": 400
+            }
+          ]
+        },
+        {
+          "__guid": "4779f2dd-9745-46df-a670-9739de960ac3",
+          "Flags": 0,
+          "Name": "JumpPad (4)",
+          "Position": "402.6138,0,-23.01419",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "eba6778b-f192-402b-9740-ad0723031928",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "3b2c9c43-a3f8-495a-bb9b-64f2f44ec2fd",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "4e97fbf6-6390-49d3-a19d-4dd846221441",
+              "jumpDirection": "-1,0,1.5",
+              "jumpForce": 400
+            }
+          ]
+        },
+        {
+          "__guid": "3590f3d7-45d6-4ac9-b46c-b802b73acc61",
+          "Flags": 0,
+          "Name": "JumpPad (3)",
+          "Position": "97.78473,0,-23.01419",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ab37f735-f229-4a43-b505-e174db129ab2",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "82fd9ab1-fe38-4d68-9457-cd00a65d9472",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "c116d561-3a28-4c8e-a762-7ae02985f0cb",
+              "jumpDirection": "1,0,1.5",
+              "jumpForce": 400
+            }
+          ]
+        },
+        {
+          "__guid": "c4d8148b-68eb-41c3-992e-f6ce1aa138ac",
+          "Flags": 0,
+          "Name": "JumpPad (2)",
+          "Position": "-403.2064,0,-23.01419",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "af5940cd-95f8-4fd7-b9b4-fe09ac49c7da",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "fa680895-5936-4a5a-8772-fb32bac7f308",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "7acfc8fd-3f1d-452c-a2e0-7d5d70e8f8d7",
+              "jumpDirection": "1,0,1.5",
+              "jumpForce": 400
+            }
+          ]
+        },
+        {
+          "__guid": "ba309bd7-fb3d-44b4-9acb-4eab4b651d0e",
+          "Flags": 0,
+          "Name": "JumpPad (1)",
+          "Position": "-99.22527,0,-23.01419",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "54f89e56-9801-443b-824e-e81835d78e8c",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "9a67b16c-4c21-4f68-98ec-396cbbda0d59",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "e6d62bf7-ad27-4b02-a62b-21df28e599da",
+              "jumpDirection": "-1,0,1.5",
+              "jumpForce": 400
+            }
+          ]
+        },
+        {
+          "__guid": "2cbc4418-1dce-4c40-a9c5-0649456fbcf5",
+          "Flags": 0,
+          "Name": "JumpPad",
+          "Position": "0,-99.07777,-23.0142",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3726992a-43ad-43ba-bd3d-048df0bddd97",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "c0047f75-995c-438a-90c9-38b6e16a16b4",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "d6e92b57-330a-498b-9898-0bfcb748ba20",
+              "jumpDirection": "0,-1,1.5",
+              "jumpForce": 400
+            }
+          ]
+        },
+        {
+          "__guid": "e4abac4b-bb63-4286-b68a-d467ac30eb6d",
+          "Flags": 0,
+          "Name": "JumpPad2",
+          "Position": "0,-404.1704,-23.0142",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "fca23a96-3fc0-4879-92dd-147af0e75730",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "3dd3a44c-4d5f-4f95-956a-ccc7a70cedfd",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "be275bb8-fd5d-40f9-bcef-be31f2d10680",
+              "jumpDirection": "0,1,1.5",
+              "jumpForce": 400
+            }
+          ]
+        },
+        {
+          "__guid": "cdc45185-d330-4e99-903b-3721951d957c",
+          "Flags": 0,
+          "Name": "JumpPad3",
+          "Position": "0,99.39258,-23.0142",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "b01fe1c1-aed4-4ff0-b8ef-0b7851117f0c",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "2f8e3ff1-2d8b-452b-946a-54c518f66410",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "85aff7a4-ac15-4f47-94f5-0089e8d5d8f6",
+              "jumpDirection": "0,1,1.5",
+              "jumpForce": 400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "9702a2aa-d962-4eaa-a0e7-e4ac37cbc281",
+      "Flags": 0,
+      "Name": "Disk",
+      "Position": "-629.0114,99.382,42.63256",
+      "Scale": "0.2,0.2,0.01",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "720624d2-146c-468d-a53f-de6bae495f61",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "08647cc1-fe88-4f6b-b5ae-f831f689d91a",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.CharacterController",
+          "__guid": "707071a8-8b22-4220-9061-f40d28dbc171",
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18,
+          "UseCollisionRules": false
+        },
+        {
+          "__type": "Disk",
+          "__guid": "91ed6525-0769-4bac-91ab-0a993b4e6217",
+          "collideForce": 200,
+          "diskSpeed": 100
         }
       ]
     }

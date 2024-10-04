@@ -34,6 +34,7 @@
           "_type": "gameobject",
           "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
         },
+        "playerNoclipSpeed": 1500,
         "playerSpeed": 200
       },
       {
@@ -52,6 +53,12 @@
         "Name": "Head",
         "Position": "0,0,57",
         "Enabled": true,
+        "Components": [
+          {
+            "__type": "DiskWeapon",
+            "__guid": "cc7b175c-5300-4190-8f7f-0cc9b92b62b7"
+          }
+        ],
         "Children": [
           {
             "__guid": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
