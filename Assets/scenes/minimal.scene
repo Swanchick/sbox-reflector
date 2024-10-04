@@ -1,5 +1,5 @@
 {
-  "__guid": "325a4042-0696-43dd-a79d-dcc314299ba3",
+  "__guid": "9f43f1e1-dda7-4ba3-a2b0-0d68a83004b7",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -57,16 +57,6 @@
           "ZNear": 16
         }
       ]
-    },
-    {
-      "__guid": "dbb25653-1647-49a9-9615-9fddd742c32c",
-      "Flags": 0,
-      "Name": "Player",
-      "Position": "4.252472,-1.823559,4.220488",
-      "Tags": "player",
-      "Enabled": true,
-      "__Prefab": "prefabs/player/player.prefab",
-      "__PrefabVariables": {}
     },
     {
       "__guid": "f4210394-abe9-4da7-9d21-b6ee057b2688",
@@ -526,6 +516,58 @@
           "__guid": "5aacba16-edc1-40f5-abbe-023c0fcd14e2",
           "jumpDirection": "0,-1,1.5",
           "jumpForce": 400
+        }
+      ]
+    },
+    {
+      "__guid": "bb488895-1b29-4999-a1cd-3d0b983101f2",
+      "Flags": 0,
+      "Name": "Spawnpoint",
+      "Enabled": true
+    },
+    {
+      "__guid": "b89d539c-35fe-456d-a296-276f3354cc54",
+      "Flags": 0,
+      "Name": "Spawnpoint (1)",
+      "Position": "0,500,0",
+      "Enabled": true
+    },
+    {
+      "__guid": "aa0cc868-e776-474d-882e-e4f9919930a5",
+      "Flags": 0,
+      "Name": "Spawnpoint (2)",
+      "Position": "0,-500,0",
+      "Enabled": true
+    },
+    {
+      "__guid": "6f8d51c2-7b78-48dd-991d-794e23f53eca",
+      "Flags": 0,
+      "Name": "NetworkManager",
+      "Position": "0,0,1000",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.NetworkHelper",
+          "__guid": "72dee7bb-0fad-4ea6-9f1f-f72699cd3647",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player/player.prefab"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "bb488895-1b29-4999-a1cd-3d0b983101f2"
+            },
+            {
+              "_type": "gameobject",
+              "go": "b89d539c-35fe-456d-a296-276f3354cc54"
+            },
+            {
+              "_type": "gameobject",
+              "go": "aa0cc868-e776-474d-882e-e4f9919930a5"
+            }
+          ],
+          "StartServer": true
         }
       ]
     }

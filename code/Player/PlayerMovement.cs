@@ -17,6 +17,8 @@ public class PlayerMovement : Component
 	[Property]
 	private float playerSpeed = 100f;
 	[Property]
+	private float playerNoclipSpeed = 1500f;
+	[Property]
 	private float playerGroundFriction = 5f;
 	[Property]
 	private float playerAirFriction = 0.3f;
@@ -104,7 +106,7 @@ public class PlayerMovement : Component
 
 		if ( IsNoclip() )
 		{
-			velocity *= 1000;
+			velocity *= playerNoclipSpeed;
 		}
 		else
 		{
