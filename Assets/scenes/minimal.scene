@@ -56,10 +56,214 @@
       ]
     },
     {
+      "__guid": "634bb3cf-8eb8-4c13-97e9-96858fefd735",
+      "Flags": 0,
+      "Name": "Plane (2)",
+      "Position": "521.7886,0,1412.383",
+      "Rotation": "0,-0.7071068,0,0.7071068",
+      "Scale": "10,10,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "adb83d92-fd61-4ba2-8e4a-f0ebb80a7004",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/grassfloor001a.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "74442521-f31f-4a8b-a383-79bff8ce488c",
+          "Center": "0,0,-5",
+          "IsTrigger": false,
+          "Scale": "100,100,10",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "fe4a6989-5f20-41fe-b64c-e03671634fdf",
+      "Flags": 0,
+      "Name": "Plane (5)",
+      "Position": "521.7887,-949.0817,433.9753",
+      "Rotation": "0,-0.7071068,0,0.7071068",
+      "Scale": "10,10,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "81c66edf-2164-4f4d-b42c-e5b27aef910a",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/grassfloor001a.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "ab33f8f1-4517-4ed0-8d9f-d918a31f90c9",
+          "Center": "0,0,-5",
+          "IsTrigger": false,
+          "Scale": "100,100,10",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "0025ba04-4de4-4443-958f-5497f76228fb",
+      "Flags": 0,
+      "Name": "Plane (6)",
+      "Position": "521.7882,-949.0817,1412.383",
+      "Rotation": "0,-0.7071068,0,0.7071068",
+      "Scale": "10,10,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "dafc27b0-6395-42ee-89eb-c4e45c608398",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/grassfloor001a.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "570d667c-126b-43ad-ab8e-2892cfcff133",
+          "Center": "0,0,-5",
+          "IsTrigger": false,
+          "Scale": "100,100,10",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "2a56e1ba-6398-44a8-9876-55f17bed11d4",
+      "Flags": 0,
+      "Name": "Plane (3)",
+      "Position": "521.7889,824.8071,433.9751",
+      "Rotation": "0,-0.7071068,0,0.7071068",
+      "Scale": "10,10,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "0dcf0da4-8126-4fb5-a2bc-d3b7a2832e71",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/grassfloor001a.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "e7197aeb-362e-4d57-a703-5ab1dd79a4c5",
+          "Center": "0,0,-5",
+          "IsTrigger": false,
+          "Scale": "100,100,10",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "a466e6e6-634d-40ff-bf7c-a807c78a0ba8",
+      "Flags": 0,
+      "Name": "Plane (4)",
+      "Position": "521.7884,824.8071,1412.383",
+      "Rotation": "0,-0.7071068,0,0.7071068",
+      "Scale": "10,10,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "a1298889-c837-45e0-a1ac-97d740d1e06f",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/grassfloor001a.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "41c76616-6534-4932-b37f-01c205d5bb1a",
+          "Center": "0,0,-5",
+          "IsTrigger": false,
+          "Scale": "100,100,10",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "fdaa50a2-c73f-404a-99ed-53548a584d1c",
+      "Flags": 0,
+      "Name": "Plane (1)",
+      "Position": "521.7891,0,433.9749",
+      "Rotation": "0,-0.7071068,0,0.7071068",
+      "Scale": "10,10,5",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "ab52784a-3774-4311-8dcd-64415aba0d49",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/grassfloor001a.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.39546,0.51163,0.27128,1"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "0e6d0ae2-f0ca-4b1a-a79a-300ed6b6d50f",
+          "Center": "0,0,-5",
+          "IsTrigger": false,
+          "Scale": "100,100,10",
+          "Static": false
+        }
+      ]
+    },
+    {
       "__guid": "6ad70641-3c6c-4402-9c85-9a4969af4764",
       "Flags": 0,
       "Name": "Plane",
-      "Scale": "5,5,5",
+      "Scale": "10,10,5",
       "Enabled": true,
       "Components": [
         {
@@ -156,9 +360,32 @@
                   "TargetEye": "None",
                   "Viewport": "0,0,1,1",
                   "ZFar": 10000,
-                  "ZNear": 10
+                  "ZNear": 6
                 }
               ]
+            }
+          ]
+        },
+        {
+          "__guid": "df476ff0-0ed7-43b6-8b4d-0c439468d04c",
+          "Flags": 0,
+          "Name": "Mesh",
+          "Position": "0,0,31.94847",
+          "Scale": "0.28,0.28,1.3",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "dc954926-d1ff-4786-aea7-ee38358339e7",
+              "BodyGroups": 18446744073709551615,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
             }
           ]
         }

@@ -1,9 +1,12 @@
 ﻿using Sandbox;
 using System;
+using System.Runtime.ExceptionServices;
 
 
 public class PlayerMovement : Component
 {
+	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.Noclip;
+
 	[Property]
 	private GameObject playerHead;
 	[Property]
@@ -22,7 +25,6 @@ public class PlayerMovement : Component
 
 	[Property]
 	private float cameraSensitivity = 0.1f;
-
 
 	private float sceneGravity;
 
@@ -45,15 +47,44 @@ public class PlayerMovement : Component
 		Movement();
 	}
 
+	private bool IsNoclip()
+	{
+		return playerMovementState == PlayerMovementState.Noclip;
+	}
+
 	private Vector3 BuildDirection()
 	{
 		float horizontal = (Input.Down( "Right" ) ? 1 : 0) - (Input.Down( "Left" ) ? 1 : 0);
 		float vertical = (Input.Down( "Forward" ) ? 1 : 0) - (Input.Down( "Backward" ) ? 1 : 0);
 
 		Rotation playerRotation = playerHead.WorldRotation;
-		Vector3 dir = playerRotation.Forward * vertical + playerRotation.Right * horizontal;
+		Angles playerCameraAngles = playerCamera.LocalRotation.Angles();
+
+		Vector3 dir = Vector3.Zero;
+
+		dir += playerRotation.Forward * vertical;
+		dir += playerRotation.Right * horizontal;
+
+		if ( IsNoclip() )
+		{
+			dir -= Vector3.Up* vertical * (playerCameraAngles.pitch / 90f);
+			dir -= playerRotation.Forward * vertical * Math.Abs( playerCameraAngles.pitch / 90f );
+		}
 
 		return dir.Normal;
+	}
+
+	private void Noclip()
+	{
+		switch (playerMovementState)
+		{
+			case PlayerMovementState.None:
+				playerMovementState = PlayerMovementState.Noclip;
+				break;
+			case PlayerMovementState.Noclip:
+				playerMovementState = PlayerMovementState.None;
+				break;
+		}
 	}
 
 	private void Movement()
@@ -62,23 +93,39 @@ public class PlayerMovement : Component
 			return;
 
 		Vector3 velocity = BuildDirection();
-		velocity = velocity.WithZ( 0 );
-		velocity *= playerSpeed;
 
-		if ( playerController.IsOnGround )
+		if ( IsNoclip() )
 		{
-			playerController.ApplyFriction( playerGroundFriction );
-			playerController.Velocity = playerController.Velocity.WithZ( 0 );
-
-			if ( Input.Down( "Jump" ) )
-			{
-				playerController.Punch( Vector3.Up * playerJumpForce );
-			}
+			velocity *= 1000;
 		}
 		else
 		{
-			playerController.ApplyFriction( playerAirFriction );
-			playerController.Velocity += Vector3.Up * sceneGravity * Time.Delta;
+			velocity *= playerSpeed;
+			velocity = velocity.WithZ( 0 );
+		}
+			
+		
+		if (Input.Pressed("Noclip"))
+		{
+			Noclip();
+		}
+
+		if ( playerController.IsOnGround && !IsNoclip() )
+		{
+			playerController.ApplyFriction( playerGroundFriction );
+			playerController.Velocity = playerController.Velocity.WithZ( 0 );
+		}
+		else
+		{
+			if ( !IsNoclip() )
+			{
+				playerController.ApplyFriction( playerAirFriction );
+				playerController.Velocity += Vector3.Up * sceneGravity * Time.Delta;
+			}
+			else
+			{
+				playerController.ApplyFriction( playerGroundFriction );
+			}
 
 			velocity *= playerAirFriction;
 		}
