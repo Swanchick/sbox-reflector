@@ -1,0 +1,118 @@
+{
+  "RootObject": {
+    "__guid": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
+    "Flags": 0,
+    "Name": "player",
+    "Tags": "player",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.CharacterController",
+        "__guid": "bb8f93ef-641b-4976-9547-8389206d42a8",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 7,
+        "StepHeight": 18,
+        "UseCollisionRules": false
+      },
+      {
+        "__type": "PlayerMovement",
+        "__guid": "7194714a-5392-4784-b6dc-1996effe09de",
+        "cameraSensitivity": 0.1,
+        "playerAirFriction": 0.3,
+        "playerCamera": {
+          "_type": "component",
+          "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
+          "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
+          "component_type": "CameraComponent"
+        },
+        "playerGroundFriction": 5,
+        "playerHead": {
+          "_type": "gameobject",
+          "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
+        },
+        "playerSpeed": 200
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "0c965923-bd9e-4cc8-9a45-9133e87bb732",
+        "Center": "0,0,32",
+        "IsTrigger": false,
+        "Scale": "14,14,64",
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83",
+        "Flags": 0,
+        "Name": "Head",
+        "Position": "0,0,57",
+        "Enabled": true,
+        "Children": [
+          {
+            "__guid": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
+            "Flags": 0,
+            "Name": "Camera",
+            "Tags": "maincamera",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "Sandbox.CameraComponent",
+                "__guid": "795acd37-aa38-49ac-9881-15fff1f1011e",
+                "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                "ClearFlags": "All",
+                "FieldOfView": 90,
+                "IsMainCamera": true,
+                "Orthographic": false,
+                "OrthographicHeight": 1204,
+                "Priority": 1,
+                "RenderExcludeTags": "",
+                "RenderTags": "",
+                "TargetEye": "None",
+                "Viewport": "0,0,1,1",
+                "ZFar": 10000,
+                "ZNear": 6
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "df476ff0-0ed7-43b6-8b4d-0c439468d04c",
+        "Flags": 0,
+        "Name": "Mesh",
+        "Position": "0,0,31.94847",
+        "Scale": "0.28,0.28,1.3",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "dc954926-d1ff-4786-aea7-ee38358339e7",
+            "BodyGroups": 18446744073709551615,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "IsValid": true,
+  "__version": 1
+}

@@ -5,7 +5,7 @@ using System.Runtime.ExceptionServices;
 
 public class PlayerMovement : Component
 {
-	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.Noclip;
+	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.None;
 
 	[Property]
 	private GameObject playerHead;
@@ -20,8 +20,6 @@ public class PlayerMovement : Component
 	private float playerGroundFriction = 5f;
 	[Property]
 	private float playerAirFriction = 0.3f;
-	[Property]
-	private float playerJumpForce = 100f;
 
 	[Property]
 	private float cameraSensitivity = 0.1f;
@@ -29,6 +27,13 @@ public class PlayerMovement : Component
 	private float sceneGravity;
 
 	private CharacterController playerController;
+
+
+	public void Jump(Vector3 dir, float jumpForce)
+	{
+		playerController.Punch( dir * jumpForce );
+	}
+
 
 	protected override void OnStart()
 	{
