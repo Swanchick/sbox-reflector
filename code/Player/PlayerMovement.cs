@@ -31,6 +31,7 @@ public class PlayerMovement : Component
 
 	public void Jump(Vector3 dir, float jumpForce)
 	{
+		playerController.Velocity = Vector3.Zero;
 		playerController.Punch( dir * jumpForce );
 	}
 
