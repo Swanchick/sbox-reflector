@@ -62,6 +62,7 @@ public class PlayerMovement : Component
 	{
 		float horizontal = (Input.Down( "Right" ) ? 1 : 0) - (Input.Down( "Left" ) ? 1 : 0);
 		float vertical = (Input.Down( "Forward" ) ? 1 : 0) - (Input.Down( "Backward" ) ? 1 : 0);
+		float upDown = (Input.Down( "Jump" ) ? 1 : 0) - (Input.Down( "Duck" ) ? 1 : 0);
 
 		Rotation playerRotation = playerHead.WorldRotation;
 		Angles playerCameraAngles = playerCamera.LocalRotation.Angles();
@@ -73,7 +74,8 @@ public class PlayerMovement : Component
 
 		if ( IsNoclip() )
 		{
-			dir -= Vector3.Up* vertical * (playerCameraAngles.pitch / 90f);
+			dir += Vector3.Up * upDown;
+			dir -= Vector3.Up * vertical * (playerCameraAngles.pitch / 90f);
 			dir -= playerRotation.Forward * vertical * Math.Abs( playerCameraAngles.pitch / 90f );
 		}
 

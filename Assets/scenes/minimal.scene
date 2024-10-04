@@ -6,7 +6,7 @@
       "Flags": 0,
       "Name": "Sun",
       "Position": "0,0,1000",
-      "Rotation": "0.3510246,0.0000001010967,-0.9363663,0.000000002721269",
+      "Rotation": "-0.3420201,-0.0000001318042,0.9396926,-0.00000008360666",
       "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
@@ -26,6 +26,7 @@
       "Flags": 0,
       "Name": "2D Skybox",
       "Position": "0,0,1000",
+      "Rotation": "0,-0.3420201,0,0.9396926",
       "Tags": "skybox",
       "Enabled": true,
       "Components": [
