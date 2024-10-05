@@ -90,35 +90,35 @@
               "3.375,0.0625"
             ],
             "TextureUAxis": [
-              "1,0.0000003390814,0",
-              "1,0.0000003390814,0",
-              "0.2970666,-0.9548568,0",
-              "-0.2970664,0.9548569,0",
+              "1,-0.000003306071,0",
+              "1,-0.000003306071,-0",
+              "0.422886,-0.9061829,0",
+              "-0.4228856,0.9061831,0",
               "-1,0,0",
               "1,-0,0"
             ],
             "TextureVAxis": [
-              "0,-1,-0",
-              "0,-1,0",
+              "-0,-1,0",
+              "-0,-1,0",
               "0,0,-1",
               "0,0,-1",
               "0,0,-1",
               "-0,0,-1"
             ],
             "TextureScale": [
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.258954,0.25",
-              "0.258954,0.25",
-              "0.25,0.25",
+              "0.2500019,0.25",
+              "0.2500019,0.25",
+              "0.2613322,0.25",
+              "0.2613321,0.25",
+              "0.2500019,0.25",
               "0.25,0.25"
             ],
             "TextureOffset": [
-              "416,416",
-              "416,416",
-              "324.9514,208",
-              "204.1934,208",
-              "95.99976,208",
+              "415.9893,416.0001",
+              "415.9893,416.0001",
+              "494.5165,208",
+              "38.39636,208",
+              "96.01233,208",
               "416,208"
             ],
             "MaterialIndex": [
@@ -242,12 +242,12 @@
               "0.25,0.25"
             ],
             "TextureOffset": [
-              "415.9893,416.0001",
-              "415.9893,416.0001",
-              "494.5168,208",
-              "38.396,208",
-              "96.01221,208",
-              "416,208"
+              "415.9891,416.0001",
+              "415.9891,416.0001",
+              "494.5167,208",
+              "38.39612,208",
+              "96.01233,208",
+              "415.9999,208"
             ],
             "MaterialIndex": [
               0,
@@ -370,8 +370,8 @@
               "0.25,0.2499999"
             ],
             "TextureOffset": [
-              "415.9893,416",
               "415.9893,416.0001",
+              "415.9893,416.0002",
               "494.5164,303.9999",
               "38.39636,303.9999",
               "96.01233,304.0001",
@@ -498,12 +498,12 @@
               "0.25,0.2499999"
             ],
             "TextureOffset": [
-              "415.9893,416.0001",
-              "415.9893,415.9988",
-              "494.5161,303.9999",
-              "38.39673,303.9997",
-              "96.01196,304.0003",
-              "416,303.9999"
+              "415.9894,416.0001",
+              "415.9894,415.9988",
+              "494.5162,303.9999",
+              "38.39661,303.9997",
+              "96.01184,304.0003",
+              "416.0001,303.9999"
             ],
             "MaterialIndex": [
               0,
@@ -3287,6 +3287,235 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "be13485f-73b7-48ff-ad87-72f89d9027cf",
+      "Flags": 0,
+      "Name": "Spawn",
+      "Position": "383.9998,592.0001,8.00001",
+      "Rotation": "0,0,-0.7933533,0.6087615",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "22275765-1f33-4123-8bdf-4b7a04b5d967",
+          "Color": "0.18333,1,0,1"
+        }
+      ]
+    },
+    {
+      "__guid": "5736f077-2533-4a52-abb0-918a66b9fe1f",
+      "Flags": 0,
+      "Name": "Spawn (5)",
+      "Position": "384.0001,-527.9999,8.00001",
+      "Rotation": "0,0,-0.8660256,-0.4999997",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "1ecdd6e2-c3f4-445c-97f1-26e195120159",
+          "Color": "0.18333,1,0,1"
+        }
+      ]
+    },
+    {
+      "__guid": "a45d05f2-5289-43d0-b5be-df0f04c246b9",
+      "Flags": 0,
+      "Name": "Spawn (2)",
+      "Position": "-384.0002,591.9998,8.00001",
+      "Rotation": "0,0,-0.6087613,0.7933536",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "ad1d3e82-690c-41e2-ab8a-01cd4b497511",
+          "Color": "0.18333,1,0,1"
+        }
+      ]
+    },
+    {
+      "__guid": "bedf599d-bfef-444b-800c-a911144ebad3",
+      "Flags": 0,
+      "Name": "Spawn (3)",
+      "Position": "-560,-0.0002441406,8.00002",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "07c4234e-a806-4b73-8868-b21fe7719356",
+          "Color": "0.18333,1,0,1"
+        }
+      ]
+    },
+    {
+      "__guid": "681eafa4-11df-41b9-8756-d9945062a1ea",
+      "Flags": 0,
+      "Name": "Spawn (4)",
+      "Position": "-383.9998,-528.0001,8.00001",
+      "Rotation": "0,0,-0.6087617,-0.7933532",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "b4d1266a-315b-4a3e-ac3b-43a76fbad1eb",
+          "Color": "0.18333,1,0,1"
+        }
+      ]
+    },
+    {
+      "__guid": "d361d9f2-018b-44ee-8a76-db7b28799545",
+      "Flags": 0,
+      "Name": "Spawn (1)",
+      "Position": "560,0,8",
+      "Rotation": "0,0,-1,0.0000001947072",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "5e9a46cc-e420-415c-a292-f9c8cd9e58dd",
+          "Color": "0.18333,1,0,1"
+        }
+      ]
+    },
+    {
+      "__guid": "ba4d3fee-7367-409a-abfa-63578a9352f3",
+      "Flags": 0,
+      "Name": "Jump Pad",
+      "Position": "528.4208,-117.2171,8.000047",
+      "Rotation": "0,0,0.5826556,0.8127195",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "8e923074-0f6c-4b5c-ba71-f1575f0df1aa",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/jump_pad.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "84512883-08e6-48c8-8a7d-676679793e13",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "-2.900002,-0.00001764297,12",
+          "Rotation": "0.00000000009195016,0.00000000009195016,-0.7071068,0.7071068",
+          "Scale": "1,0.66,0.5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "1984bd77-47e3-4de6-9ae7-742dc2be5174",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,0.48"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "a9ba81f1-1caa-4333-a7d0-7219bc8d52db",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "8ff1d233-1ca0-4074-a8b8-061f6948f026",
+              "jumpDirection": "-0.32,-1,1",
+              "jumpForce": 470
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "85df4802-3074-4150-bff6-dc332d5158e6",
+      "Flags": 0,
+      "Name": "Jump Pad (1)",
+      "Position": "529.0351,118.3186,8.000032",
+      "Rotation": "0,0,-0.6076481,0.7942068",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "625fa77f-c9a5-4bab-9fef-6ff6fcc96093",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/jump_pad.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "35ce3925-342d-4f66-87c7-324c08f1a160",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "-2.900002,-0.00001764297,12",
+          "Rotation": "0.00000000009195016,0.00000000009195016,-0.7071068,0.7071068",
+          "Scale": "1,0.66,0.5",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ef6a3c1e-e915-425e-86cc-db131ca35404",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,0.48"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "42b019fa-804c-465c-9243-0fd3c32f2c3b",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "JumpPad",
+              "__guid": "1e55dcda-dbd4-48f0-8aa3-0ee6cd7171d4",
+              "jumpDirection": "-0.32,1,1",
+              "jumpForce": 470
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "2d54748a-2f6b-4520-84a5-e4aeb00b48a0",
+      "Flags": 0,
+      "Name": "player",
+      "Position": "528,-40,16",
+      "Tags": "player",
+      "Enabled": true,
+      "__Prefab": "prefabs/player/player.prefab",
+      "__PrefabVariables": {}
     }
   ],
   "SceneProperties": {
