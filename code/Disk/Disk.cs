@@ -35,7 +35,7 @@ public class Disk : Component
 
 	private void MoveDisk()
 	{
-		diskController.Velocity = Direction * diskSpeed;
+		diskController.Accelerate( Direction * diskSpeed );
 		diskController.Move();
 	}
 
@@ -48,6 +48,7 @@ public class Disk : Component
 	{
 		SceneTraceResult trace = Scene.Trace
 			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance )
+			.Size(new BBox( -5, 5 ))
 			.Run();
 
 		Gizmo.Draw.Arrow( WorldPosition, WorldPosition + Direction * collisionDistance );

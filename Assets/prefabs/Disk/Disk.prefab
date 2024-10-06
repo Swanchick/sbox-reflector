@@ -37,7 +37,7 @@
         "__guid": "91ed6525-0769-4bac-91ab-0a993b4e6217",
         "collisionDistance": 25,
         "collisionForce": 1000,
-        "diskSpeed": 500
+        "diskSpeed": 1000
       }
     ],
     "Children": [],
