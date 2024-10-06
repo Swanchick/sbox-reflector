@@ -19,5 +19,6 @@ public class JumpPad : Component, Component.ITriggerListener
 			return;
 
 		playerMovement.Jump( jumpDirection, jumpForce );
+		playerMovement.Shake( 10f, 100, new Vector3( 3, 3, 3 ), new Vector3( 4, 4, 4 ) );
 	}
 }

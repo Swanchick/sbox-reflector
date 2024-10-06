@@ -16,7 +16,7 @@
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "0.94419,0.97767,1,1",
-          "Shadows": true,
+          "Shadows": false,
           "SkyColor": "0.2532,0.32006,0.35349,1"
         }
       ]
@@ -33,7 +33,7 @@
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "de79e9e0-5c37-4c54-ac67-bfcdb1d5483b",
-          "SkyMaterial": "materials/skybox.vmat",
+          "SkyMaterial": "materials/skybox3.vmat",
           "Tint": "1,1,1,1"
         },
         {
@@ -1214,7 +1214,8 @@
               0
             ],
             "Materials": [
-              "materials/dev/reflectivity_30.vmat"
+              "materials/dev/reflectivity_30.vmat",
+              "materials/skybox3.vmat"
             ]
           },
           "SmoothingAngle": 40,

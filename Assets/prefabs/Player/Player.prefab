@@ -36,7 +36,12 @@
           "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
         },
         "playerNoclipSpeed": 1500,
-        "playerSpeed": 300
+        "playerShake": {
+          "_type": "gameobject",
+          "go": "609eb73c-0e02-4e16-9ad4-ca66be967c50"
+        },
+        "playerSpeed": 300,
+        "shakeRecoverySpeed": 1
       },
       {
         "__type": "Sandbox.BoxCollider",
@@ -67,28 +72,36 @@
         ],
         "Children": [
           {
-            "__guid": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
+            "__guid": "609eb73c-0e02-4e16-9ad4-ca66be967c50",
             "Flags": 0,
-            "Name": "Camera",
-            "Tags": "maincamera",
+            "Name": "Shake",
             "Enabled": true,
-            "Components": [
+            "Children": [
               {
-                "__type": "Sandbox.CameraComponent",
-                "__guid": "795acd37-aa38-49ac-9881-15fff1f1011e",
-                "BackgroundColor": "0.33333,0.46275,0.52157,1",
-                "ClearFlags": "All",
-                "FieldOfView": 100,
-                "IsMainCamera": true,
-                "Orthographic": false,
-                "OrthographicHeight": 1204,
-                "Priority": 1,
-                "RenderExcludeTags": "",
-                "RenderTags": "",
-                "TargetEye": "None",
-                "Viewport": "0,0,1,1",
-                "ZFar": 10000,
-                "ZNear": 1
+                "__guid": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
+                "Flags": 0,
+                "Name": "Camera",
+                "Tags": "maincamera",
+                "Enabled": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.CameraComponent",
+                    "__guid": "795acd37-aa38-49ac-9881-15fff1f1011e",
+                    "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                    "ClearFlags": "All",
+                    "FieldOfView": 100,
+                    "IsMainCamera": true,
+                    "Orthographic": false,
+                    "OrthographicHeight": 1204,
+                    "Priority": 1,
+                    "RenderExcludeTags": "",
+                    "RenderTags": "",
+                    "TargetEye": "None",
+                    "Viewport": "0,0,1,1",
+                    "ZFar": 10000,
+                    "ZNear": 1
+                  }
+                ]
               }
             ]
           }
