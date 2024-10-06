@@ -91,6 +91,9 @@ public class PlayerMovement : Component
 
 	private void CameraMovement()
 	{
+		if ( IsProxy )
+			return;
+
 		float dir = (Input.Down("Right") ? 1 : 0) - (Input.Down("Left") ? 1 : 0);
 
 		Angles playerAngles = playerCamera.LocalRotation.Angles();
