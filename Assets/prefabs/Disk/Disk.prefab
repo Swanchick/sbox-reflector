@@ -4,6 +4,7 @@
     "Flags": 0,
     "Name": "disk",
     "Scale": "0.2,0.2,0.01",
+    "Tags": "disk",
     "Enabled": true,
     "Components": [
       {
@@ -37,7 +38,9 @@
         "__guid": "91ed6525-0769-4bac-91ab-0a993b4e6217",
         "collisionDistance": 25,
         "collisionForce": 1000,
-        "diskSpeed": 1000
+        "diskSpeed": 1500,
+        "maxCollisions": 6,
+        "maxTimeAlive": 10
       }
     ],
     "Children": [],

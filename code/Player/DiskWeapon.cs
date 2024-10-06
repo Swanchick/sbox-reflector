@@ -6,7 +6,6 @@ public class DiskWeapon : Component
 	[Property]
 	private GameObject diskPrefab;
 
-
 	protected override void OnUpdate()
 	{
 		GetShoot();
@@ -27,7 +26,6 @@ public class DiskWeapon : Component
 	{
 		GameObject diskObject = diskPrefab.Clone( WorldPosition + WorldRotation.Forward * 10f + Vector3.Down * 10f, Rotation.Identity );
 		diskObject.NetworkSpawn();
-
 		
 		Disk disk = diskObject.GetComponent<Disk>();
 		disk.Owner = GameObject.Parent.Id;

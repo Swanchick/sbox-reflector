@@ -5,13 +5,12 @@ using System;
 public class PlayerMovement : Component
 {
 	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.None;
+	public CharacterController playerController { get; private set; }
 
 	[Property]
 	private GameObject playerHead;
 	[Property]
 	private CameraComponent playerCamera;
-	//[Property]
-	//private GameObject playerBody;
 
 	[Property]
 	private float playerSpeed = 100f;
@@ -26,8 +25,6 @@ public class PlayerMovement : Component
 	private float cameraSensitivity = 0.1f;
 
 	private float sceneGravity;
-
-	private CharacterController playerController;
 
 
 	public void Jump(Vector3 dir, float jumpForce)

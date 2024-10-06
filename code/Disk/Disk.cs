@@ -18,7 +18,15 @@ public class Disk : Component
 	[Property]
 	private float collisionDistance = 50f;
 
+	[Property]
+	private float maxTimeAlive = 0f;
+
+	[Property]
+	private int maxCollisions = 5;
+
 	private CharacterController diskController;
+	private float currentTimeAlive = 0;
+	private int currentCollisions = 0;
 
 
 	protected override void OnStart()
@@ -29,8 +37,19 @@ public class Disk : Component
 	protected override void OnUpdate()
 	{
 		MoveDisk();
-
 		GetCollision();
+		GetCollisionWithPlayers();
+		Alive();
+	}
+
+	private void Alive()
+	{
+		currentTimeAlive += Time.Delta;
+
+		if ( currentTimeAlive >= maxTimeAlive )
+		{
+			GameObject.Destroy();
+		}
 	}
 
 	private void MoveDisk()
@@ -39,36 +58,52 @@ public class Disk : Component
 		diskController.Move();
 	}
 
-	private Vector3 GetReflection(Vector3 direction, Vector3 normal)
+	private Vector3 GetReflection( Vector3 direction, Vector3 normal )
 	{
 		return direction - (2 * Vector3.Dot( direction, normal ) * normal);
 	}
 
-	private void GetCollision()
+	private void GetCollisionWithPlayers()
 	{
 		SceneTraceResult trace = Scene.Trace
 			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance )
-			.Size(new BBox( -5, 5 ))
+			.Size( BBox.FromPositionAndSize(Vector3.Zero, collisionDistance) )
+			.WithoutTags( "disk" )
 			.Run();
-
-		Gizmo.Draw.Arrow( WorldPosition, WorldPosition + Direction * collisionDistance );
 
 		if ( !trace.Hit )
 			return;
 
 		GameObject gameObject = trace.GameObject;
 
-		if ( gameObject.Tags.Has( "player" ) )
-		{
-			if ( gameObject.Id == Owner )
-				return;
-
-			PlayerMovement playerMovement = gameObject.Components.Get<PlayerMovement>();
-			playerMovement.Jump( (Direction + Vector3.Up).Normal, collisionForce );
-
+		if ( !gameObject.Tags.Has( "player" ) )
 			return;
-		}
+		
+		if ( gameObject.Id == Owner )
+			return;
 
+		PlayerMovement playerMovement = gameObject.Components.Get<PlayerMovement>();
+		playerMovement.Jump( (Direction + Vector3.Up).Normal, collisionForce );
+	}
+
+	private void GetCollision()
+	{
+		SceneTraceResult trace = Scene.Trace
+			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance )
+			.Size(new BBox( -1f, 1f ))
+			.WithoutTags("disk", "player")
+			.Run();
+
+		if ( !trace.Hit )
+			return;
+
+		GameObject gameObject = trace.GameObject;
 		Direction = GetReflection( Direction, trace.Normal );
+		currentCollisions++;
+
+		if (currentCollisions >= maxCollisions)
+		{
+			GameObject.Destroy();
+		}
 	}
 }
