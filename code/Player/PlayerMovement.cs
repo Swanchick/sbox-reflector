@@ -20,6 +20,8 @@ public class PlayerMovement : Component
 	private float playerGroundFriction = 5f;
 	[Property]
 	private float playerAirFriction = 0.3f;
+	[Property]
+	private float playerCameraRotation = 5f;
 
 	[Property]
 	private float cameraSensitivity = 0.1f;
@@ -32,7 +34,6 @@ public class PlayerMovement : Component
 		playerController.Velocity = Vector3.Zero;
 		playerController.Punch( dir * jumpForce );
 	}
-
 
 	protected override void OnStart()
 	{
@@ -51,6 +52,7 @@ public class PlayerMovement : Component
 	protected override void OnUpdate()
 	{
 		CameraRotation();
+		CameraMovement();
 	}
 
 	protected override void OnFixedUpdate()
@@ -85,6 +87,20 @@ public class PlayerMovement : Component
 		}
 
 		return dir.Normal;
+	}
+
+	private void CameraMovement()
+	{
+		float dir = (Input.Down("Right") ? 1 : 0) - (Input.Down("Left") ? 1 : 0);
+
+		Angles playerAngles = playerCamera.LocalRotation.Angles();
+
+		playerAngles.roll = dir * playerCameraRotation;
+		Rotation playerRotation = playerAngles.ToRotation();
+
+		Rotation defaultRotation = new Angles( playerAngles.pitch, 0, 0 );
+
+		playerCamera.LocalRotation = Rotation.Lerp( playerCamera.LocalRotation, (playerController.IsOnGround) ? playerRotation : defaultRotation, 10f * Time.Delta );
 	}
 
 	private void Noclip()
