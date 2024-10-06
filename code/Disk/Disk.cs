@@ -11,16 +11,12 @@ public class Disk : Component
 
 	[Property]
 	private float diskSpeed = 100f;
-
 	[Property]
 	private float collisionForce = 600f;
-
 	[Property]
 	private float collisionDistance = 50f;
-
 	[Property]
 	private float maxTimeAlive = 0f;
-
 	[Property]
 	private int maxCollisions = 5;
 
@@ -86,11 +82,22 @@ public class Disk : Component
 		playerMovement.Jump( (Direction + Vector3.Up).Normal, collisionForce );
 	}
 
+	protected override void OnDestroy()
+	{
+		GameObject owner = Scene.Directory.FindByGuid( Owner );
+		DiskWeapon diskWeapon = owner.Components.GetInChildren<DiskWeapon>();
+
+		if ( diskWeapon == null )
+			return;
+
+		diskWeapon.ReturnDisk();
+	}
+
 	private void GetCollision()
 	{
 		SceneTraceResult trace = Scene.Trace
 			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance )
-			.Size(new BBox( -1f, 1f ))
+			.Size( BBox.FromPositionAndSize( Vector3.Zero, 1 ) )
 			.WithoutTags("disk", "player")
 			.Run();
 
