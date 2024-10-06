@@ -1,11 +1,22 @@
 ﻿using Sandbox;
+using System;
 
-public class Disk : Component, Component.ICollisionListener
+public class Disk : Component
 {
+	[Sync]
+	public Vector3 Direction { get; set; } = Vector3.Forward;
+
+	[Sync]
+	public Guid Owner { get; set; }
+
 	[Property]
 	private float diskSpeed = 100f;
+
 	[Property]
-	private float collideForce = 200f;
+	private float collisionForce = 600f;
+
+	[Property]
+	private float collisionDistance = 50f;
 
 	private CharacterController diskController;
 
@@ -17,29 +28,46 @@ public class Disk : Component, Component.ICollisionListener
 
 	protected override void OnUpdate()
 	{
-		diskController.Velocity = WorldRotation.Forward * diskSpeed;
+		MoveDisk();
 
+		GetCollision();
+	}
+
+	private void MoveDisk()
+	{
+		diskController.Velocity = Direction * diskSpeed;
 		diskController.Move();
 	}
 
-	void ICollisionListener.OnCollisionStart(Collision collision)
+	private Vector3 GetReflection(Vector3 direction, Vector3 normal)
 	{
-		Log.Info( "Collided!!!" );
-		
-		var other = collision.Self;
-		GameObject gameObject = other.GameObject;
-		if ( gameObject == null )
+		return direction - (2 * Vector3.Dot( direction, normal ) * normal);
+	}
+
+	private void GetCollision()
+	{
+		SceneTraceResult trace = Scene.Trace
+			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance )
+			.Run();
+
+		Gizmo.Draw.Arrow( WorldPosition, WorldPosition + Direction * collisionDistance );
+
+		if ( !trace.Hit )
 			return;
 
-		if ( !gameObject.Tags.Has( "player" ) )
+		GameObject gameObject = trace.GameObject;
+
+		if ( gameObject.Tags.Has( "player" ) )
+		{
+			if ( gameObject.Id == Owner )
+				return;
+
+			PlayerMovement playerMovement = gameObject.Components.Get<PlayerMovement>();
+			playerMovement.Jump( (Direction + Vector3.Up).Normal, collisionForce );
+
 			return;
+		}
 
-		PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
-		if ( playerMovement == null )
-			return;
-
-		playerMovement.Jump( WorldRotation.Forward + Vector3.Up, collideForce );
-
-		
+		Direction = GetReflection( Direction, trace.Normal );
 	}
 }

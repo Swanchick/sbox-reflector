@@ -56,7 +56,11 @@
         "Components": [
           {
             "__type": "DiskWeapon",
-            "__guid": "cc7b175c-5300-4190-8f7f-0cc9b92b62b7"
+            "__guid": "cc7b175c-5300-4190-8f7f-0cc9b92b62b7",
+            "diskPrefab": {
+              "_type": "gameobject",
+              "prefab": "prefabs/disk/disk.prefab"
+            }
           }
         ],
         "Children": [

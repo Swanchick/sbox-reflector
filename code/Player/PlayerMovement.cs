@@ -42,6 +42,13 @@ public class PlayerMovement : Component
 		playerController = Components.Get<CharacterController>();
 
 		sceneGravity = Scene.PhysicsWorld.Gravity.z;
+
+		if ( IsProxy )
+		{
+			playerCamera.Destroy();
+
+			return;
+		}
 	}
 
 	protected override void OnUpdate()

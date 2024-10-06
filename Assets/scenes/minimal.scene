@@ -150,6 +150,40 @@
           ]
         },
         {
+          "__guid": "1f1604a3-7022-4a73-a206-2e0da3a94109",
+          "Flags": 0,
+          "Name": "Platform2 (1)",
+          "Position": "789.4562,169.1648,43.09256",
+          "Rotation": "0,0,0.3826834,0.9238796",
+          "Scale": "5,5,10.02572",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "7a2e1414-e63f-4a15-aaef-ab1d610398a6",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/grassfloor001a.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "6d284f6a-dad5-4d08-9685-427716e61c90",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
           "__guid": "f43d18f5-ceee-4e09-95c4-0f6109763f95",
           "Flags": 0,
           "Name": "Platform2",
@@ -584,56 +618,6 @@
               "jumpForce": 400
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "9702a2aa-d962-4eaa-a0e7-e4ac37cbc281",
-      "Flags": 0,
-      "Name": "Disk",
-      "Position": "-629.0114,99.382,42.63256",
-      "Scale": "0.2,0.2,0.01",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "720624d2-146c-468d-a53f-de6bae495f61",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/sphere.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "08647cc1-fe88-4f6b-b5ae-f831f689d91a",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "Sandbox.CharacterController",
-          "__guid": "707071a8-8b22-4220-9061-f40d28dbc171",
-          "Acceleration": 10,
-          "Bounciness": 0.3,
-          "GroundAngle": 45,
-          "Height": 64,
-          "IgnoreLayers": "",
-          "Radius": 16,
-          "StepHeight": 18,
-          "UseCollisionRules": false
-        },
-        {
-          "__type": "Disk",
-          "__guid": "91ed6525-0769-4bac-91ab-0a993b4e6217",
-          "collideForce": 200,
-          "diskSpeed": 100
         }
       ]
     }
