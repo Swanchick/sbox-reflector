@@ -3,34 +3,19 @@
     "__guid": "9702a2aa-d962-4eaa-a0e7-e4ac37cbc281",
     "Flags": 0,
     "Name": "disk",
-    "Scale": "0.2,0.2,0.01",
     "Tags": "disk",
     "Enabled": true,
     "Components": [
-      {
-        "__type": "Sandbox.ModelRenderer",
-        "__guid": "720624d2-146c-468d-a53f-de6bae495f61",
-        "BodyGroups": 18446744073709551615,
-        "Model": "models/dev/sphere.vmdl",
-        "RenderOptions": {
-          "GameLayer": true,
-          "OverlayLayer": false,
-          "BloomLayer": false,
-          "AfterUILayer": false
-        },
-        "RenderType": "On",
-        "Tint": "1,1,1,1"
-      },
       {
         "__type": "Sandbox.CharacterController",
         "__guid": "707071a8-8b22-4220-9061-f40d28dbc171",
         "Acceleration": 10,
         "Bounciness": 0.3,
         "GroundAngle": 45,
-        "Height": 64,
+        "Height": 1,
         "IgnoreLayers": "player",
-        "Radius": 2,
-        "StepHeight": 18,
+        "Radius": 1,
+        "StepHeight": 0,
         "UseCollisionRules": false
       },
       {
@@ -38,12 +23,41 @@
         "__guid": "91ed6525-0769-4bac-91ab-0a993b4e6217",
         "collisionDistance": 25,
         "collisionForce": 1000,
+        "diskModel": {
+          "_type": "gameobject",
+          "go": "04e5b22d-1aac-405e-b232-7a0a22ee608d"
+        },
         "diskSpeed": 1500,
         "maxCollisions": 6,
-        "maxTimeAlive": 10
+        "maxTimeAlive": 10,
+        "rotationSpeed": 1500
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "04e5b22d-1aac-405e-b232-7a0a22ee608d",
+        "Flags": 0,
+        "Name": "diskModel",
+        "Scale": "0.3,0.3,0.3",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "b163ab03-1899-4322-89ac-f907273d1597",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/disk.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
     "__variables": []
   },
   "ShowInMenu": false,

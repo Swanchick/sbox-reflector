@@ -16,12 +16,16 @@ public class Disk : Component
 	[Property]
 	private float collisionDistance = 50f;
 	[Property]
-	private float maxTimeAlive = 0f;
-	[Property]
 	private int maxCollisions = 5;
+	[Property]
+	private float maxDistance = 1500f;
+
+	[Property]
+	private GameObject diskModel;
+	[Property]
+	private float rotationSpeed = 50f;
 
 	private CharacterController diskController;
-	private float currentTimeAlive = 0;
 	private int currentCollisions = 0;
 
 
@@ -36,16 +40,22 @@ public class Disk : Component
 		GetCollision();
 		GetCollisionWithPlayers();
 		Alive();
+		RotateDisk();
+	}
+
+	private void RotateDisk()
+	{
+		Angles diskAngles = diskModel.LocalRotation.Angles();
+		diskAngles.yaw = -Time.Now * rotationSpeed;
+		diskModel.LocalRotation = diskAngles.ToRotation();
 	}
 
 	private void Alive()
 	{
-		currentTimeAlive += Time.Delta;
+		float distance = Vector3.DistanceBetween( WorldPosition, Vector3.Zero );
 
-		if ( currentTimeAlive >= maxTimeAlive )
-		{
+		if ( distance >= maxDistance )
 			GameObject.Destroy();
-		}
 	}
 
 	private void MoveDisk()
@@ -80,6 +90,7 @@ public class Disk : Component
 
 		PlayerMovement playerMovement = gameObject.Components.Get<PlayerMovement>();
 		playerMovement.Jump( (Direction + Vector3.Up).Normal, collisionForce );
+		playerMovement.Shake( 50f, 100f, new Vector3( 5, 5, 5 ), new Vector3( 10, 10, 10 ) );
 	}
 
 	protected override void OnDestroy()
