@@ -5,6 +5,16 @@
 	[Property]
 	protected GameObject diskPrefab;
 
+	public void Shoot( Player player )
+	{
+		OnShoot( player );
+	}
+
+	public void DestroyDisk()
+	{
+		OnDiskDestroy();
+	}
+
 	protected virtual void OnShoot( Player player )
 	{
 		Vector3 dir = Weapon.WorldRotation.Forward;
@@ -13,11 +23,11 @@
 		diskObject.NetworkSpawn();
 
 		BaseDisk disk = diskObject.GetComponent<BaseDisk>();
-		disk.Setup( dir, GameObject.Parent.Id );
+		disk.Setup( dir, Weapon.GameObject.Parent.Id, this );
 	}
 
-	public void Shoot( Player player )
+	protected virtual void OnDiskDestroy()
 	{
-		OnShoot( player );
+
 	}
 }

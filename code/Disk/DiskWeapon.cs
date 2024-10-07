@@ -7,8 +7,6 @@ public class DiskWeapon : Component
 	public int diskCount { get; set; } = 0;
 
 	[Property]
-	private GameObject diskPrefab;
-	[Property]
 	private int maxDisks = 3;
 
 	[Property]
@@ -18,8 +16,6 @@ public class DiskWeapon : Component
 
 	[Property]
 	private BaseDiskThrower diskThrower;
-
-	private List<Disk> playersDisks;
 
 	public void ReturnDisk()
 	{

@@ -64,14 +64,10 @@
           {
             "__type": "DiskWeapon",
             "__guid": "cc7b175c-5300-4190-8f7f-0cc9b92b62b7",
-            "diskPrefab": {
-              "_type": "gameobject",
-              "prefab": "prefabs/disk/disk.prefab"
-            },
             "diskThrower": {
               "_type": "component",
-              "component_id": "767d57aa-2a05-42ac-b13e-8632128a9269",
-              "go": "2de45ab1-5b60-4787-9528-592b405c9f5e",
+              "component_id": "c6fe66af-e8ed-4ed2-ac2e-a5969f172e42",
+              "go": "9c5ab02f-0716-4e6c-a148-39b6d6bcb072",
               "component_type": "DiskThrower"
             },
             "maxDisks": 3,
@@ -123,17 +119,17 @@
                 ]
               }
             ]
+          },
+          {
+            "__guid": "9c5ab02f-0716-4e6c-a148-39b6d6bcb072",
+            "Flags": 0,
+            "Name": "TripleDiskThrower",
+            "Scale": "5,5,1",
+            "Enabled": true,
+            "__Prefab": "prefabs/disk/triplediskthrower.prefab",
+            "__PrefabVariables": {}
           }
         ]
-      },
-      {
-        "__guid": "2de45ab1-5b60-4787-9528-592b405c9f5e",
-        "Flags": 0,
-        "Name": "DiskThrower",
-        "Scale": "5,5,1",
-        "Enabled": true,
-        "__Prefab": "prefabs/disk/diskthrower.prefab",
-        "__PrefabVariables": {}
       },
       {
         "__guid": "df476ff0-0ed7-43b6-8b4d-0c439468d04c",

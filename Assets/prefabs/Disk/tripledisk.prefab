@@ -2,7 +2,7 @@
   "RootObject": {
     "__guid": "9702a2aa-d962-4eaa-a0e7-e4ac37cbc281",
     "Flags": 0,
-    "Name": "disk",
+    "Name": "tripledisk",
     "Tags": "disk",
     "Enabled": true,
     "Components": [
@@ -19,22 +19,23 @@
         "UseCollisionRules": false
       },
       {
-        "__type": "Disk",
-        "__guid": "91ed6525-0769-4bac-91ab-0a993b4e6217",
-        "collisionDistance": 25,
-        "collisionForce": 1000,
+        "__type": "TripleDisk",
+        "__guid": "07f0e31d-5c76-40ff-80b9-b69f8dadefa3",
+        "collisionDistance": 50,
+        "collisionForce": 600,
         "diskModel": {
           "_type": "gameobject",
           "go": "04e5b22d-1aac-405e-b232-7a0a22ee608d"
         },
         "diskSpeed": 1500,
-        "maxCollisions": 6,
+        "maxCollisions": 5,
         "maxDistance": 1500,
         "particleTrail": {
           "_type": "gameobject",
           "go": "1cf3f2b5-67e9-43c1-a3a4-cf374645bcc7"
         },
-        "rotationSpeed": 1500
+        "rotationSpeed": 1500,
+        "shakeMagnitude": 5
       }
     ],
     "Children": [

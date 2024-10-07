@@ -1249,19 +1249,16 @@
       "__guid": "ced69f80-b9ca-4de8-bcc2-0e1ac4ae08e2",
       "Flags": 0,
       "Name": "DiskThrower",
-      "Position": "0,-500,-30",
       "Scale": "5,5,1",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "DiskThrower",
-          "__guid": "f2b980b1-b800-4f81-9e70-a3bf04962710",
-          "diskPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/disk/disk.prefab"
-          }
-        }
-      ]
+      "__Prefab": "prefabs/disk/diskthrower.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "93bbf39b-b815-42d0-89dc-dbcbf90870f1",
+      "Flags": 0,
+      "Name": "GameObject",
+      "Enabled": true
     }
   ],
   "SceneProperties": {

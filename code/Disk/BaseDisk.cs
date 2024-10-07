@@ -33,13 +33,14 @@ public abstract class BaseDisk : Component
 	protected CharacterController diskController;
 	protected int currentCollisions = 0;
 
+	private BaseDiskThrower baseDiskThrower;
 
-	public void Setup(Vector3 direction, Guid OwnerId)
+	public void Setup( Vector3 direction, Guid OwnerId, BaseDiskThrower diskThrower )
 	{
 		Direction = direction;
 		PlayerOwnerId = OwnerId;
+		baseDiskThrower = diskThrower;
 	}
-
 
 	protected override void OnStart()
 	{
@@ -151,17 +152,6 @@ public abstract class BaseDisk : Component
 			return;
 
 		OnPlayerHit( trace, gameObject, player );
-	}
-
-	protected override void OnDestroy()
-	{
-		GameObject owner = Scene.Directory.FindByGuid( PlayerOwnerId );
-		DiskWeapon diskWeapon = owner.Components.GetInChildren<DiskWeapon>();
-
-		if ( diskWeapon == null )
-			return;
-
-		diskWeapon.ReturnDisk();
 	}
 
 	private void GetCollision()
