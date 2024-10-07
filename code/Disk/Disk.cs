@@ -21,6 +21,9 @@ public class Disk : Component
 	private float maxDistance = 1500f;
 
 	[Property]
+	private GameObject particleTrail;
+
+	[Property]
 	private GameObject diskModel;
 	[Property]
 	private float rotationSpeed = 50f;
@@ -55,7 +58,10 @@ public class Disk : Component
 		float distance = Vector3.DistanceBetween( WorldPosition, Vector3.Zero );
 
 		if ( distance >= maxDistance )
+		{
+			PreDestroy();
 			GameObject.Destroy();
+		}	
 	}
 
 	private void MoveDisk()
@@ -93,6 +99,21 @@ public class Disk : Component
 		playerMovement.Shake( 50f, 100f, new Vector3( 5, 5, 5 ), new Vector3( 10, 10, 10 ) );
 	}
 
+	private void PreDestroy()
+	{
+		if ( particleTrail == null )
+			return;
+
+		ParticleRingEmitter emitter = particleTrail.Components.Get<ParticleRingEmitter>();
+		if ( emitter == null )
+			return;
+
+		emitter.Loop = false;
+		emitter.DestroyOnEnd = true;
+
+		particleTrail.SetParent( null );
+	}
+
 	protected override void OnDestroy()
 	{
 		GameObject owner = Scene.Directory.FindByGuid( Owner );
@@ -121,6 +142,8 @@ public class Disk : Component
 
 		if (currentCollisions >= maxCollisions)
 		{
+			PreDestroy();
+			
 			GameObject.Destroy();
 		}
 	}
