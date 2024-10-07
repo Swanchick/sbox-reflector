@@ -5,5 +5,5 @@ Layer0
 	shader "shaders/sky.shader"
 
 	//---- Texture ----
-	SkyTexture "materials/skybox3.png"
+	SkyTexture "materials/skyboxes/skybox_nostalgic.png"
 }
