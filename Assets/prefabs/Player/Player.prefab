@@ -29,7 +29,8 @@
           "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
           "component_type": "CameraComponent"
         },
-        "playerCameraRotation": 2,
+        "playerCameraRotation": 1,
+        "playerCameraSpeed": 10,
         "playerGroundFriction": 5,
         "playerHead": {
           "_type": "gameobject",
