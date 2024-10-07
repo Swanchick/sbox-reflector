@@ -13,12 +13,12 @@ public class JumpPad : Component, Component.ITriggerListener
 		if ( !other.Tags.Has( "player" ) )
 			return;
 
-		PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
+		Player player = other.GetComponent<Player>();
 
-		if ( playerMovement == null )
+		if ( player == null )
 			return;
 
-		playerMovement.Jump( jumpDirection, jumpForce );
-		playerMovement.Shake( 10f, 100, new Vector3( 3, 3, 3 ), new Vector3( 4, 4, 4 ) );
+		player.Jump( jumpDirection, jumpForce );
+		player.Shake( 10f, 100, new Vector3( 3, 3, 3 ), new Vector3( 4, 4, 4 ) );
 	}
 }

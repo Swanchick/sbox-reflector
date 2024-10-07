@@ -19,8 +19,16 @@
         "UseCollisionRules": false
       },
       {
-        "__type": "PlayerMovement",
-        "__guid": "7194714a-5392-4784-b6dc-1996effe09de",
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "0c965923-bd9e-4cc8-9a45-9133e87bb732",
+        "Center": "0,0,32",
+        "IsTrigger": false,
+        "Scale": "14,14,64",
+        "Static": false
+      },
+      {
+        "__type": "Player",
+        "__guid": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
         "cameraSensitivity": 0.1,
         "playerAirFriction": 0.3,
         "playerCamera": {
@@ -29,7 +37,7 @@
           "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
           "component_type": "CameraComponent"
         },
-        "playerCameraRotation": 1,
+        "playerCameraRotation": 2,
         "playerCameraSpeed": 10,
         "playerGroundFriction": 5,
         "playerHead": {
@@ -43,14 +51,6 @@
         },
         "playerSpeed": 300,
         "shakeRecoverySpeed": 1
-      },
-      {
-        "__type": "Sandbox.BoxCollider",
-        "__guid": "0c965923-bd9e-4cc8-9a45-9133e87bb732",
-        "Center": "0,0,32",
-        "IsTrigger": false,
-        "Scale": "14,14,64",
-        "Static": false
       }
     ],
     "Children": [

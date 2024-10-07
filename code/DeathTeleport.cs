@@ -10,7 +10,7 @@ public class DeathTeleport : Component, Component.ITriggerListener
 
 		other.WorldPosition = teleport.WorldPosition;
 
-		PlayerMovement playerMovement = other.Components.Get<PlayerMovement>();
+		Player playerMovement = other.Components.Get<Player>();
 		if ( playerMovement == null )
 			return;
 

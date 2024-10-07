@@ -43,8 +43,7 @@ public class DiskWeapon : Component
 		diskObject.NetworkSpawn();
 		
 		Disk disk = diskObject.GetComponent<Disk>();
-		disk.Owner = GameObject.Parent.Id;
-		disk.Direction = WorldRotation.Forward;
+		disk.Setup( WorldRotation.Forward, GameObject.Parent.Id );
 
 		diskCount++;
 	}

@@ -3,7 +3,7 @@ using Sandbox.Utility;
 using System;
 
 
-public class PlayerMovement : Component
+public class Player : Component
 {
 	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.None;
 	public CharacterController playerController { get; private set; }
@@ -52,7 +52,7 @@ public class PlayerMovement : Component
 
 	public void Shake(float trauma, float frequency, Vector3 maxPos, Vector3 maxAngle)
 	{
-		shakeTrauma = 10f;
+		shakeTrauma = trauma;
 		shakeFrequecy = frequency;
 		shakeMax = maxPos;
 		shakeAnglesMax = maxAngle;

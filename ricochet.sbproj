@@ -10,7 +10,7 @@
   "EditorReferences": null,
   "IsWhitelistDisabled": false,
   "Metadata": {
-    "MaxPlayers": 64,
+    "MaxPlayers": 10,
     "MinPlayers": 1,
     "TickRate": 50,
     "GameNetworkType": "Multiplayer",
@@ -22,9 +22,10 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene",
+    "StartupScene": "scenes/rc_arena.scene",
     "ControlModes": {
       "Keyboard": true
-    }
+    },
+    "LaunchMode": "Normal"
   }
 }
