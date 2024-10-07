@@ -68,7 +68,25 @@
               "_type": "gameobject",
               "prefab": "prefabs/disk/disk.prefab"
             },
-            "maxDisks": 3
+            "diskThrower": {
+              "_type": "component",
+              "component_id": "767d57aa-2a05-42ac-b13e-8632128a9269",
+              "go": "2de45ab1-5b60-4787-9528-592b405c9f5e",
+              "component_type": "DiskThrower"
+            },
+            "maxDisks": 3,
+            "player": {
+              "_type": "component",
+              "component_id": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
+              "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
+              "component_type": "Player"
+            },
+            "playerCamera": {
+              "_type": "component",
+              "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
+              "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
+              "component_type": "CameraComponent"
+            }
           }
         ],
         "Children": [
@@ -107,6 +125,15 @@
             ]
           }
         ]
+      },
+      {
+        "__guid": "2de45ab1-5b60-4787-9528-592b405c9f5e",
+        "Flags": 0,
+        "Name": "DiskThrower",
+        "Scale": "5,5,1",
+        "Enabled": true,
+        "__Prefab": "prefabs/disk/diskthrower.prefab",
+        "__PrefabVariables": {}
       },
       {
         "__guid": "df476ff0-0ed7-43b6-8b4d-0c439468d04c",

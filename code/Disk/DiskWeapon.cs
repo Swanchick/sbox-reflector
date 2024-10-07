@@ -11,6 +11,14 @@ public class DiskWeapon : Component
 	[Property]
 	private int maxDisks = 3;
 
+	[Property]
+	private Player player;
+	[Property]
+	private CameraComponent playerCamera;
+
+	[Property]
+	private BaseDiskThrower diskThrower;
+
 	private List<Disk> playersDisks;
 
 	public void ReturnDisk()
@@ -38,12 +46,9 @@ public class DiskWeapon : Component
 	{
 		if ( diskCount >= maxDisks )
 			return;
-		
-		GameObject diskObject = diskPrefab.Clone( WorldPosition + WorldRotation.Forward * 10f + Vector3.Down * 10f, Rotation.Identity );
-		diskObject.NetworkSpawn();
-		
-		Disk disk = diskObject.GetComponent<Disk>();
-		disk.Setup( WorldRotation.Forward, GameObject.Parent.Id );
+
+		diskThrower.Weapon = this;
+		diskThrower.Shoot( player );
 
 		diskCount++;
 	}

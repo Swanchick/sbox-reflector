@@ -1,4 +1,4 @@
 ﻿public interface IWeapon
 {
-	void Shoot( CameraComponent camera, Player player );
+	void Shoot( Player player );
 }
