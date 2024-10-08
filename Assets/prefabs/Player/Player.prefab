@@ -73,7 +73,7 @@
             "defaultDiskCount": 3,
             "defaultDiskThrower": {
               "_type": "component",
-              "component_id": "940e55a8-36ca-4df1-b5a5-87a606d24576",
+              "component_id": "7a4bce3d-80c5-40bb-9b42-f71a677ae292",
               "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
               "component_type": "DefaultDiskThrower"
             },
@@ -89,6 +89,10 @@
               "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
               "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
               "component_type": "CameraComponent"
+            },
+            "throwerSpace": {
+              "_type": "gameobject",
+              "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
             }
           }
         ],

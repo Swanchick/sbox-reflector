@@ -26,6 +26,10 @@
 	public void ReturnDisk( GameObject diskThrower )
 	{
 		diskCount--;
+		DefaultDiskThrower defaultDiskThrower = diskThrower.Components.Get<DefaultDiskThrower>();
+		if ( defaultDiskThrower != null )
+			return;
+		
 		diskThrower.Destroy();
 	}
 

@@ -28,6 +28,6 @@
 
 	protected virtual void OnDiskReturn()
 	{
-		Weapon.ReturnDisk();
+		Weapon.ReturnDisk( GameObject );
 	}
 }

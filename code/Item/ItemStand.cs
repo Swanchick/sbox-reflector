@@ -6,14 +6,18 @@ public class ItemStand : Component
 	private List<GameObject> Items;
 
 	[Property]
-	private int respawnTime = 5000;
+	private float respawnTime = 5;
 
 	[Property]
 	private GameObject itemSpace;
 
+	private bool isItemTaken = false;
+
+	private float currentTime = 0;
+
 	public void OnItemPickup()
 	{
-		_ = WaitAndSpawn();
+		isItemTaken = true;
 	}
 
 	protected override void OnStart()
@@ -21,11 +25,20 @@ public class ItemStand : Component
 		SpawnRandomItem();
 	}
 
-	private async Task WaitAndSpawn()
+	protected override void OnUpdate()
 	{
-		await Task.Delay(respawnTime);
+		if ( !isItemTaken )
+			return;
 
-		SpawnRandomItem();
+		currentTime += Time.Delta;
+
+		if (currentTime >= respawnTime)
+		{
+			isItemTaken = false;
+			currentTime = 0;
+
+			SpawnRandomItem();
+		}
 	}
 
 	private void SpawnRandomItem()
