@@ -88,6 +88,11 @@ public abstract class BaseDisk : Component
 			);
 	}
 
+	protected virtual void OnDiskReturn()
+	{
+		baseDiskThrower.ReturnDisk();
+	}
+
 	protected virtual void OnPreDestroy()
 	{
 		if ( particleTrail == null )
@@ -101,6 +106,8 @@ public abstract class BaseDisk : Component
 		emitter.DestroyOnEnd = true;
 
 		particleTrail.SetParent( null );
+
+		OnDiskReturn();
 	}
 
 	protected virtual void DoProceduralAnimation()

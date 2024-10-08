@@ -2,10 +2,8 @@
 {
 	public TripleDiskContainer Container { get; set; }
 
-	protected override void OnPreDestroy()
+	protected override void OnDiskReturn()
 	{
-		base.OnPreDestroy();
-
 		Container.ReturnDisk();
 	}
 }

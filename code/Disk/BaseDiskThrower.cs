@@ -10,9 +10,9 @@
 		OnShoot( player );
 	}
 
-	public void DestroyDisk()
+	public void ReturnDisk()
 	{
-		OnDiskDestroy();
+		OnDiskReturn();
 	}
 
 	protected virtual void OnShoot( Player player )
@@ -26,8 +26,8 @@
 		disk.Setup( dir, Weapon.GameObject.Parent.Id, this );
 	}
 
-	protected virtual void OnDiskDestroy()
+	protected virtual void OnDiskReturn()
 	{
-
+		Weapon.ReturnDisk();
 	}
 }

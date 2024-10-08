@@ -1,10 +1,10 @@
 ﻿public class TripleDiskContainer
 {
-	private DiskThrower diskThrower;
+	private TripleDiskThrower diskThrower;
 	private int disks = 3;
 
 
-	public TripleDiskContainer( DiskThrower diskThrower )
+	public TripleDiskContainer( TripleDiskThrower diskThrower )
 	{
 		this.diskThrower = diskThrower;
 	}

@@ -7,8 +7,8 @@
     "Enabled": true,
     "Components": [
       {
-        "__type": "DiskThrower",
-        "__guid": "f2b980b1-b800-4f81-9e70-a3bf04962710",
+        "__type": "TripleDiskThrower",
+        "__guid": "592145e6-7b58-48c3-aca0-fd2e5d285187",
         "diskPrefab": {
           "_type": "gameobject",
           "prefab": "prefabs/disk/tripledisk.prefab"

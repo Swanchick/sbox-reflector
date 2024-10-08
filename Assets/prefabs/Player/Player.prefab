@@ -66,9 +66,9 @@
             "__guid": "cc7b175c-5300-4190-8f7f-0cc9b92b62b7",
             "diskThrower": {
               "_type": "component",
-              "component_id": "c6fe66af-e8ed-4ed2-ac2e-a5969f172e42",
+              "component_id": "08009fbb-6262-4fa0-88fd-8bfb23b4566d",
               "go": "9c5ab02f-0716-4e6c-a148-39b6d6bcb072",
-              "component_type": "DiskThrower"
+              "component_type": "TripleDiskThrower"
             },
             "maxDisks": 3,
             "player": {
@@ -127,6 +127,14 @@
             "Scale": "5,5,1",
             "Enabled": true,
             "__Prefab": "prefabs/disk/triplediskthrower.prefab",
+            "__PrefabVariables": {}
+          },
+          {
+            "__guid": "28afdd4c-41be-440c-bcc8-528a88b150b8",
+            "Flags": 0,
+            "Name": "DefaultDiskThrower",
+            "Enabled": true,
+            "__Prefab": "prefabs/disk/defaultdiskthrower.prefab",
             "__PrefabVariables": {}
           }
         ]

@@ -1,12 +1,7 @@
-﻿public class DiskThrower : BaseDiskThrower
+﻿public class TripleDiskThrower : BaseDiskThrower
 {
 	[Property]
 	private float diskRotation = 10f;
-
-	public void ReturnDisk()
-	{
-		Weapon.ReturnDisk();
-	}
 
 	protected override void OnShoot( Player player )
 	{
