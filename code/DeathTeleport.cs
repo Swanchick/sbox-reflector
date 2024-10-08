@@ -14,6 +14,6 @@ public class DeathTeleport : Component, Component.ITriggerListener
 		if ( playerMovement == null )
 			return;
 
-		playerMovement.playerController.Velocity = Vector3.Zero;
+		playerMovement.playerController.Velocity *= Vector3.Up;
 	}
 }
