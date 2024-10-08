@@ -1,19 +1,11 @@
-public class DeathTeleport : Component, Component.ITriggerListener
+public class DeathTeleport : BaseTrigger
 {
 	[Property]
 	private GameObject teleport;
 
-	void ITriggerListener.OnTriggerEnter(Collider other)
+	protected override void OnPlayerEnter( Player player )
 	{
-		if ( !other.Tags.Has( "player" ) )
-			return;
-
-		other.WorldPosition = teleport.WorldPosition;
-
-		Player playerMovement = other.Components.Get<Player>();
-		if ( playerMovement == null )
-			return;
-
-		playerMovement.playerController.Velocity *= Vector3.Up;
+		player.WorldPosition = teleport.WorldPosition;
+		player.playerController.Velocity *= Vector3.Up;
 	}
 }

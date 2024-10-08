@@ -30,6 +30,12 @@
         "__type": "Player",
         "__guid": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
         "cameraSensitivity": 0.1,
+        "diskWeapon": {
+          "_type": "component",
+          "component_id": "cc7b175c-5300-4190-8f7f-0cc9b92b62b7",
+          "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83",
+          "component_type": "DiskWeapon"
+        },
         "playerAirFriction": 0.3,
         "playerCamera": {
           "_type": "component",
@@ -64,11 +70,12 @@
           {
             "__type": "DiskWeapon",
             "__guid": "cc7b175c-5300-4190-8f7f-0cc9b92b62b7",
-            "diskThrower": {
+            "defaultDiskCount": 3,
+            "defaultDiskThrower": {
               "_type": "component",
-              "component_id": "08009fbb-6262-4fa0-88fd-8bfb23b4566d",
-              "go": "9c5ab02f-0716-4e6c-a148-39b6d6bcb072",
-              "component_type": "TripleDiskThrower"
+              "component_id": "940e55a8-36ca-4df1-b5a5-87a606d24576",
+              "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
+              "component_type": "DefaultDiskThrower"
             },
             "maxDisks": 3,
             "player": {
@@ -119,15 +126,6 @@
                 ]
               }
             ]
-          },
-          {
-            "__guid": "9c5ab02f-0716-4e6c-a148-39b6d6bcb072",
-            "Flags": 0,
-            "Name": "TripleDiskThrower",
-            "Scale": "5,5,1",
-            "Enabled": true,
-            "__Prefab": "prefabs/disk/triplediskthrower.prefab",
-            "__PrefabVariables": {}
           },
           {
             "__guid": "28afdd4c-41be-440c-bcc8-528a88b150b8",

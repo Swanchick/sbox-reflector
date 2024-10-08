@@ -1,5 +1,4 @@
-﻿using Sandbox;
-using Sandbox.Utility;
+﻿using Sandbox.Utility;
 using System;
 
 
@@ -7,6 +6,8 @@ public class Player : Component
 {
 	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.None;
 	public CharacterController playerController { get; private set; }
+
+	public DiskWeapon DiskWeapon { get; private set; }
 
 	[Property]
 	private GameObject playerHead;
@@ -33,6 +34,9 @@ public class Player : Component
 	
 	[Property]
 	private float shakeRecoverySpeed = 1f;
+
+	[Property]
+	private DiskWeapon diskWeapon;
 
 	private float shakeTrauma = 0;
 	private Vector3 shakeMax;
@@ -65,14 +69,13 @@ public class Player : Component
 		sceneGravity = Scene.PhysicsWorld.Gravity.z;
 
 		shakeSeed = Game.Random.Next();
-		Log.Info( shakeSeed );
+		DiskWeapon = diskWeapon;
 
 		if ( IsProxy )
 		{
 			playerCamera.Destroy();
-
-			return;
 		}
+			
 	}
 
 	protected override void OnUpdate()
@@ -108,7 +111,6 @@ public class Player : Component
 
 		playerShake.LocalPosition = Vector3.Lerp( playerShake.LocalPosition, shakeVelocity, Time.Delta * playerCameraSpeed );
 		playerShake.LocalRotation = Rotation.Lerp( playerShake.LocalRotation, shakeRotationalVelocity.ToRotation(), Time.Delta * playerCameraSpeed );
-
 
 		shakeTrauma = Math.Clamp( shakeTrauma - shakeRecoverySpeed * Time.Delta, 0, 1 );
 	}
