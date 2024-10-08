@@ -6284,20 +6284,20 @@
               "-0,0,-1"
             ],
             "TextureScale": [
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
+              "0.25,0.2499999",
+              "0.25,0.2499999",
+              "0.2499999,0.25",
+              "0.2499999,0.25",
               "0.25,0.25",
               "0.25,0.25"
             ],
             "TextureOffset": [
-              "0,0",
-              "0,0",
+              "0.0009765625,511.999",
+              "0.0009765625,511.999",
+              "511.999,259.5264",
+              "0.0009765625,259.5264",
               "0,259.5263",
-              "0,259.5263",
-              "0,259.5263",
-              "0,259.5263"
+              "0,259.5264"
             ],
             "MaterialIndex": [
               0,
@@ -6351,15 +6351,15 @@
       ]
     },
     {
-      "__guid": "520db727-1a48-462a-8770-9a8ca4ab44f7",
+      "__guid": "cb7442c3-9de9-41af-b867-a102c3753d07",
       "Flags": 0,
-      "Name": "Cube",
-      "Position": "382.2992,-672.8118,44.57458",
+      "Name": "ItemStand",
+      "Position": "0,0,-6.757578",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
-          "__guid": "7f251bbe-4f17-4fa9-b290-1ec4d9156fea",
+          "__guid": "9b81e7ec-58d7-4d9f-bf11-fcd31ea8c01a",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
           "RenderOptions": {
@@ -6372,215 +6372,28 @@
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "Item",
-          "__guid": "e6b969d3-f13c-4399-9673-566e41ecd8b7",
-          "diskThrower": {
+          "__type": "ItemStand",
+          "__guid": "b65c4c47-0152-4e49-8ae7-10da178f885c",
+          "Items": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/items/triplediskitem.prefab"
+            }
+          ],
+          "itemSpace": {
             "_type": "gameobject",
-            "prefab": "prefabs/disk/triplediskthrower.prefab"
-          }
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "a6fa3bc5-7d03-4707-ac3a-ad6feca6766d",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
+            "go": "44c17b57-ffc1-4495-9f9d-76d700e857e3"
+          },
+          "respawnTime": 5000
         }
-      ]
-    },
-    {
-      "__guid": "e43fb5de-bc06-4ecd-add8-ec60136ef3d6",
-      "Flags": 0,
-      "Name": "Cube (1)",
-      "Position": "388.7266,667.8752,44.57459",
-      "Enabled": true,
-      "Components": [
+      ],
+      "Children": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "cfe4ece4-b312-4c16-ab65-68556901319b",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Item",
-          "__guid": "7055564f-db7e-4320-af50-b9fdbb771209",
-          "diskThrower": {
-            "_type": "gameobject",
-            "prefab": "prefabs/disk/triplediskthrower.prefab"
-          }
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "bf4c381e-846c-4d5c-a3ba-21af1898af9a",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "0a2635f4-ca05-403c-afa7-f88b0fa41160",
-      "Flags": 0,
-      "Name": "Cube (2)",
-      "Position": "-359.8764,662.1167,44.57457",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "6fcca5d8-4829-47db-b721-6b55ee94bd59",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Item",
-          "__guid": "bb3cccd4-9e74-43c9-8817-841e1c3c60dc",
-          "diskThrower": {
-            "_type": "gameobject",
-            "prefab": "prefabs/disk/triplediskthrower.prefab"
-          }
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "79ed83f2-3729-4f94-8a3f-202f06e43877",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "a053ffca-6b03-414c-b1fe-89f0b96ce295",
-      "Flags": 0,
-      "Name": "Cube (3)",
-      "Position": "-349.0457,-655.0272,44.57415",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "31589d70-817b-4a3d-ac8f-2d252fe151a1",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Item",
-          "__guid": "ea10b35d-c30b-4e14-87e0-9150098f0227",
-          "diskThrower": {
-            "_type": "gameobject",
-            "prefab": "prefabs/disk/triplediskthrower.prefab"
-          }
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "6c6d9217-eb83-4514-8ffd-230d33aaa302",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "145a3060-2852-48dd-8602-d21dc5be7839",
-      "Flags": 0,
-      "Name": "Cube (4)",
-      "Position": "-619.8912,4.981812,44.57414",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "75d10c94-da02-4bd0-b2e0-ec3ead9d8ceb",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Item",
-          "__guid": "c2726ae7-5133-4a16-853b-ff1bca28eeef",
-          "diskThrower": {
-            "_type": "gameobject",
-            "prefab": "prefabs/disk/triplediskthrower.prefab"
-          }
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "166af86c-928c-4900-87fc-53bd3e2d5677",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "6837926f-a6b6-42e3-a254-e67edffb746c",
-      "Flags": 0,
-      "Name": "Cube (5)",
-      "Position": "650.7132,-5.526899,44.57413",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "49a6a8de-9663-4642-85dc-e3e9b5a0efcc",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Item",
-          "__guid": "eda301fb-4c1d-4bab-ac9d-20c86263f0b4",
-          "diskThrower": {
-            "_type": "gameobject",
-            "prefab": "prefabs/disk/triplediskthrower.prefab"
-          }
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "9d32c5aa-a3aa-4937-a9a5-0362a49aa966",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
+          "__guid": "44c17b57-ffc1-4495-9f9d-76d700e857e3",
+          "Flags": 0,
+          "Name": "Object",
+          "Position": "0,0,48.7294",
+          "Enabled": true
         }
       ]
     }

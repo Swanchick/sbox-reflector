@@ -1,0 +1,49 @@
+{
+  "RootObject": {
+    "__guid": "520db727-1a48-462a-8770-9a8ca4ab44f7",
+    "Flags": 0,
+    "Name": "TripleDiskItem",
+    "Position": "3.335388,-24.21045,44.57456",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "7f251bbe-4f17-4fa9-b290-1ec4d9156fea",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/dev/box.vmdl",
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Item",
+        "__guid": "e6b969d3-f13c-4399-9673-566e41ecd8b7",
+        "diskThrower": {
+          "_type": "gameobject",
+          "prefab": "prefabs/disk/triplediskthrower.prefab"
+        }
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "a6fa3bc5-7d03-4707-ac3a-ad6feca6766d",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "50,50,50",
+        "Static": false
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "IsValid": true,
+  "__version": 1
+}
