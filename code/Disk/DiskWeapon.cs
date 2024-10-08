@@ -23,9 +23,10 @@
 
 	public List<BaseDiskThrower> DiskThrowers { get; set; } = new List<BaseDiskThrower>();
 
-	public void ReturnDisk()
+	public void ReturnDisk( GameObject diskThrower )
 	{
 		diskCount--;
+		diskThrower.Destroy();
 	}
 
 	public bool CanAddThrower()
@@ -77,11 +78,6 @@
 
 		disk.Weapon = this;
 		disk.Shoot( player );
-
-		if ( !isDefaultDisk )
-		{
-			disk.GameObject.Destroy();
-		}
 
 		diskCount++;
 	}
