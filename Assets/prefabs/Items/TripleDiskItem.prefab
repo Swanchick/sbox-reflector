@@ -2,9 +2,10 @@
   "RootObject": {
     "__guid": "520db727-1a48-462a-8770-9a8ca4ab44f7",
     "Flags": 0,
-    "Name": "TripleDiskItem",
-    "Position": "3.335388,-24.21045,44.57456",
+    "Name": "triplediskitem",
     "Enabled": true,
+    "NetworkMode": 1,
+    "OwnerTransfer": 0,
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
@@ -36,7 +37,9 @@
         "Scale": "50,50,50",
         "Static": false
       }
-    ]
+    ],
+    "Children": [],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

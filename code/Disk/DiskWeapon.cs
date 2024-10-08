@@ -1,13 +1,17 @@
-﻿public class DiskWeapon : Component
+﻿using System;
+
+public class DiskWeapon : Component
 {
 	[Sync]
 	public int diskCount { get; set; } = 0;
 
-	[Property]
-	private int maxDisks = 3;
+	public List<BaseDiskThrower> DiskThrowers { get; set; } = new List<BaseDiskThrower>();
 
 	[Property]
-	private Player player;
+	private Player Player;
+
+	[Property]
+	private int maxDisks = 3;
 
 	[Property]
 	private GameObject throwerSpace;
@@ -21,13 +25,11 @@
 	[Property]
 	private int defaultDiskCount = 3;
 
-	public List<BaseDiskThrower> DiskThrowers { get; set; } = new List<BaseDiskThrower>();
-
 	public void ReturnDisk( GameObject diskThrower )
 	{
 		diskCount--;
-		DefaultDiskThrower defaultDiskThrower = diskThrower.Components.Get<DefaultDiskThrower>();
-		if ( defaultDiskThrower != null )
+
+		if ( diskThrower.Id == defaultDiskThrower.GameObject.Id )
 			return;
 		
 		diskThrower.Destroy();
@@ -38,10 +40,14 @@
 		return DiskThrowers.Count < defaultDiskCount;
 	}
 
-	public void AddThrower(GameObject diskPrefab)
+	public void AddThrower( GameObject diskPrefab )
 	{
 		GameObject diskThrowerObject = diskPrefab.Clone(throwerSpace, Vector3.Zero, Rotation.Identity, Vector3.One);
+		diskThrowerObject.NetworkSpawn();
+
 		BaseDiskThrower diskThrower = diskThrowerObject.GetComponent<BaseDiskThrower>();
+
+
 		if ( diskThrower == null )
 			return;
 
@@ -66,6 +72,8 @@
 
 	private void Shoot()
 	{
+		Log.Info( DiskThrowers.Count );
+
 		if ( diskCount >= maxDisks )
 			return;
 
@@ -75,13 +83,14 @@
 
 		if ( !isDefaultDisk )
 		{
-			BaseDiskThrower lastDisk = DiskThrowers.First();
+			BaseDiskThrower lastDisk = DiskThrowers[0];
 			DiskThrowers.RemoveAt(0);
+
 			disk = lastDisk;
 		}
 
 		disk.Weapon = this;
-		disk.Shoot( player );
+		disk.Shoot( Player );
 
 		diskCount++;
 	}

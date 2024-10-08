@@ -17,7 +17,7 @@
 
 			TripleDisk disk = diskObject.GetComponent<TripleDisk>();
 			disk.Container = container;
-			disk.Setup( dir, Weapon.GameObject.Parent.Id, this );
+			disk.Setup( dir, player.GameObject.Id, this );
 		}
 	}
 }

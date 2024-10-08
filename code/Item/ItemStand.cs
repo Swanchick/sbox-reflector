@@ -2,6 +2,13 @@
 
 public class ItemStand : Component
 {
+	[Sync]
+	public float CurrentTime { get; set; } = 0;
+
+
+	[Sync]
+	public bool IsItemTaken { get; set; } = false;
+
 	[Property]
 	private List<GameObject> Items;
 
@@ -11,13 +18,10 @@ public class ItemStand : Component
 	[Property]
 	private GameObject itemSpace;
 
-	private bool isItemTaken = false;
-
-	private float currentTime = 0;
 
 	public void OnItemPickup()
 	{
-		isItemTaken = true;
+		IsItemTaken = true;
 	}
 
 	protected override void OnStart()
@@ -27,15 +31,15 @@ public class ItemStand : Component
 
 	protected override void OnUpdate()
 	{
-		if ( !isItemTaken )
+		if ( !IsItemTaken )
 			return;
 
-		currentTime += Time.Delta;
+		CurrentTime += Time.Delta;
 
-		if (currentTime >= respawnTime)
+		if ( CurrentTime >= respawnTime)
 		{
-			isItemTaken = false;
-			currentTime = 0;
+			IsItemTaken = false;
+			CurrentTime = 0;
 
 			SpawnRandomItem();
 		}
@@ -43,17 +47,17 @@ public class ItemStand : Component
 
 	private void SpawnRandomItem()
 	{
-		GameObject itemObject = Items[Game.Random.Next( 0, Items.Count - 1 )];
-		if ( itemObject == null )
+		GameObject randomItem = Items[Game.Random.Next( 0, Items.Count - 1 )];
+		if ( randomItem == null )
 			return;
 
-		GameObject itemObjectNew = itemObject.Clone( itemSpace, Vector3.Zero, Rotation.Identity, Vector3.One );
+		GameObject itemObjectNew = randomItem.Clone( itemSpace.WorldPosition );
 		itemObjectNew.NetworkSpawn();
 
 		Item item = itemObjectNew.GetComponent<Item>();
 		if ( item == null )
 			return;
 
-		item.ItemStand = this;
+		item.ItemStandId = GameObject.Id;
 	}
 }

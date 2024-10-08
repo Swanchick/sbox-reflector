@@ -32,8 +32,8 @@
         "cameraSensitivity": 0.1,
         "diskWeapon": {
           "_type": "component",
-          "component_id": "cc7b175c-5300-4190-8f7f-0cc9b92b62b7",
-          "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83",
+          "component_id": "4b2a2d8a-0b45-458a-b655-61e7d5eff2e8",
+          "go": "66f0dd89-29f3-4bcc-9fbd-40d7140aeae9",
           "component_type": "DiskWeapon"
         },
         "playerAirFriction": 0.3,
@@ -66,36 +66,6 @@
         "Name": "Head",
         "Position": "0,0,57",
         "Enabled": true,
-        "Components": [
-          {
-            "__type": "DiskWeapon",
-            "__guid": "cc7b175c-5300-4190-8f7f-0cc9b92b62b7",
-            "defaultDiskCount": 3,
-            "defaultDiskThrower": {
-              "_type": "component",
-              "component_id": "7a4bce3d-80c5-40bb-9b42-f71a677ae292",
-              "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
-              "component_type": "DefaultDiskThrower"
-            },
-            "maxDisks": 3,
-            "player": {
-              "_type": "component",
-              "component_id": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
-              "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
-              "component_type": "Player"
-            },
-            "playerCamera": {
-              "_type": "component",
-              "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
-              "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
-              "component_type": "CameraComponent"
-            },
-            "throwerSpace": {
-              "_type": "gameobject",
-              "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
-            }
-          }
-        ],
         "Children": [
           {
             "__guid": "609eb73c-0e02-4e16-9ad4-ca66be967c50",
@@ -138,6 +108,42 @@
             "Enabled": true,
             "__Prefab": "prefabs/disk/defaultdiskthrower.prefab",
             "__PrefabVariables": {}
+          },
+          {
+            "__guid": "66f0dd89-29f3-4bcc-9fbd-40d7140aeae9",
+            "Flags": 0,
+            "Name": "DiskWeapon",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "DiskWeapon",
+                "__guid": "4b2a2d8a-0b45-458a-b655-61e7d5eff2e8",
+                "defaultDiskCount": 3,
+                "defaultDiskThrower": {
+                  "_type": "component",
+                  "component_id": "f8ce5428-6aeb-4e10-9c8a-f486716a4aec",
+                  "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
+                  "component_type": "DefaultDiskThrower"
+                },
+                "maxDisks": 3,
+                "Player": {
+                  "_type": "component",
+                  "component_id": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
+                  "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
+                  "component_type": "Player"
+                },
+                "playerCamera": {
+                  "_type": "component",
+                  "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
+                  "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
+                  "component_type": "CameraComponent"
+                },
+                "throwerSpace": {
+                  "_type": "gameobject",
+                  "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
+                }
+              }
+            ]
           }
         ]
       },

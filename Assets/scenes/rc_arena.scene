@@ -6356,6 +6356,8 @@
       "Name": "ItemStand",
       "Position": "0,0,-6.757578",
       "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 3,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
@@ -6384,7 +6386,7 @@
             "_type": "gameobject",
             "go": "44c17b57-ffc1-4495-9f9d-76d700e857e3"
           },
-          "respawnTime": 5000
+          "respawnTime": 5
         }
       ],
       "Children": [
@@ -6393,7 +6395,8 @@
           "Flags": 0,
           "Name": "Object",
           "Position": "0,0,48.7294",
-          "Enabled": true
+          "Enabled": true,
+          "NetworkMode": 1
         }
       ]
     }

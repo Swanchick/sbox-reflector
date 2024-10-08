@@ -7,7 +7,7 @@ public class Player : Component
 	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.None;
 	public CharacterController playerController { get; private set; }
 
-	public DiskWeapon DiskWeapon { get; private set; }
+	public DiskWeapon DiskWeapon { get; set; }
 
 	[Property]
 	private GameObject playerHead;
@@ -69,13 +69,15 @@ public class Player : Component
 		sceneGravity = Scene.PhysicsWorld.Gravity.z;
 
 		shakeSeed = Game.Random.Next();
-		DiskWeapon = diskWeapon;
 
-		if ( IsProxy )
+		if ( !IsProxy )
 		{
-			playerCamera.Destroy();
-		}
+			DiskWeapon = diskWeapon;
 			
+			return;
+		}
+		
+		playerCamera.Destroy();
 	}
 
 	protected override void OnUpdate()

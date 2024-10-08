@@ -2,8 +2,9 @@
   "RootObject": {
     "__guid": "28afdd4c-41be-440c-bcc8-528a88b150b8",
     "Flags": 0,
-    "Name": "DefaultDiskThrower",
+    "Name": "defaultdiskthrower",
     "Enabled": true,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "DefaultDiskThrower",
@@ -13,7 +14,9 @@
           "prefab": "prefabs/disk/disk.prefab"
         }
       }
-    ]
+    ],
+    "Children": [],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

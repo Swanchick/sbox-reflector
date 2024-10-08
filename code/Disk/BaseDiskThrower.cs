@@ -23,7 +23,7 @@
 		diskObject.NetworkSpawn();
 
 		BaseDisk disk = diskObject.GetComponent<BaseDisk>();
-		disk.Setup( dir, Weapon.GameObject.Parent.Id, this );
+		disk.Setup( dir, player.GameObject.Id, this );
 	}
 
 	protected virtual void OnDiskReturn()

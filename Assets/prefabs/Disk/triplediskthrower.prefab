@@ -5,6 +5,7 @@
     "Name": "triplediskthrower",
     "Scale": "5,5,1",
     "Enabled": true,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "TripleDiskThrower",

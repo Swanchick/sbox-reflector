@@ -5,6 +5,7 @@
     "Name": "disk",
     "Tags": "disk",
     "Enabled": true,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "Sandbox.CharacterController",
@@ -263,6 +264,6 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [],
-  "IsValid": false,
+  "IsValid": true,
   "__version": 1
 }
