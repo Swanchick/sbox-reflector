@@ -64,7 +64,7 @@ public class DiskWeapon : Component
 		if ( IsProxy )
 			return;
 
-		if ( Input.Pressed("attack1") )
+		if ( Input.Pressed("attack1") && !Player.IsSpectator )
 		{
 			Shoot();
 		}
