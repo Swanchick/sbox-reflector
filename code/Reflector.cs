@@ -1,12 +1,31 @@
-﻿public class Reflector : Component
+﻿using System.Threading.Channels;
+using System.Threading.Tasks;
+
+public class Reflector : Component, Component.INetworkListener
 {
 	[Property]
-	private string test;
-	
-	private static Reflector instance;
+	private GameObject playerPrefab;
 
-	public void Test()
+	protected override async Task OnLoad()
 	{
-		Log.Info( test );
+		if ( Scene.IsEditor )
+			return;
+
+		if ( Networking.IsActive )
+			return;
+
+		LoadingScreen.Title = "Creating Lobby";
+		await Task.DelayRealtimeSeconds( 0.1f );
+		Networking.CreateLobby();
+	}
+
+	public void OnActive( Connection channel )
+	{
+		Log.Info( $"Player '{channel.DisplayName}' has joined the game" );
+		if ( !playerPrefab.IsValid() )
+			return;
+
+
+
 	}
 }

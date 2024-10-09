@@ -958,7 +958,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "0be5e600-1a09-4670-8b53-d2323c61fd8d",
+                  "__guid": "44d171bd-96ae-4cfa-81ab-aa9d340a1410",
+                  "activateInNoclip": false,
                   "jumpDirection": "-1,1,1.1",
                   "jumpForce": 500
                 }
@@ -1023,7 +1024,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "651cb43d-03ab-4f48-a08c-8d24c0429d8b",
+                  "__guid": "7dc9897d-65ac-477f-9301-9a7856b86a9f",
+                  "activateInNoclip": false,
                   "jumpDirection": "-0.9,-1,1.1",
                   "jumpForce": 500
                 }
@@ -1442,7 +1444,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "067b4a02-71fd-427a-a7af-23b91aaa3e20",
+                  "__guid": "cf7fcdfd-a156-41d8-85a5-877d4413b7e6",
+                  "activateInNoclip": false,
                   "jumpDirection": "0.32,1,1",
                   "jumpForce": 500
                 }
@@ -1507,7 +1510,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "a9eb052c-672e-43bf-bf5f-5b5ae46934d0",
+                  "__guid": "8efdb205-d525-44eb-b1f1-7810dda22e94",
+                  "activateInNoclip": false,
                   "jumpDirection": "0.32,-1,1",
                   "jumpForce": 500
                 }
@@ -1955,7 +1959,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "00b856d8-6f4e-4095-aa0a-05d6219b49d3",
+                  "__guid": "6408cc37-35a2-49bf-a013-0fbc4605ff7c",
+                  "activateInNoclip": false,
                   "jumpDirection": "1,1,1",
                   "jumpForce": 500
                 }
@@ -2020,7 +2025,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "182d844c-dd3e-434a-83d6-45c4bedc2823",
+                  "__guid": "2fc29261-c8d3-407a-97fb-b805b9a6c385",
+                  "activateInNoclip": false,
                   "jumpDirection": "-0.32,0.9,1.1",
                   "jumpForce": 500
                 }
@@ -2454,7 +2460,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "780b55d6-645c-4eab-8c75-024efefee7e0",
+                  "__guid": "0234b326-9b80-4c0d-897e-e3534d03dc90",
+                  "activateInNoclip": false,
                   "jumpDirection": "1,-1,1.1",
                   "jumpForce": 500
                 }
@@ -2519,7 +2526,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "af6d5f13-4400-45ee-bf73-1cfa1ecc87da",
+                  "__guid": "c95bbc49-8b81-4a77-821d-597888b0abbc",
+                  "activateInNoclip": false,
                   "jumpDirection": "-0.32,-1,1",
                   "jumpForce": 500
                 }
@@ -2938,7 +2946,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "4a5c7299-d5d0-4e94-aa60-8a1c750b5780",
+                  "__guid": "3c9643b1-9375-4c22-8096-b7fb6d54d2e8",
+                  "activateInNoclip": false,
                   "jumpDirection": "1,-0.9,1.1",
                   "jumpForce": 500
                 }
@@ -3003,7 +3012,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "9062ee79-e74c-4a67-8aed-ea039fe6afa2",
+                  "__guid": "bc0dec6a-6243-4a96-a64b-8c482cd75622",
+                  "activateInNoclip": false,
                   "jumpDirection": "1,1,1.1",
                   "jumpForce": 500
                 }
@@ -3422,7 +3432,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "8ff1d233-1ca0-4074-a8b8-061f6948f026",
+                  "__guid": "4b13d2e8-8a91-4c99-90c5-778598de033a",
+                  "activateInNoclip": false,
                   "jumpDirection": "-0.32,-1,1",
                   "jumpForce": 500
                 }
@@ -3487,7 +3498,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "23f5b260-b3e1-4b49-81a4-63442303f195",
+                  "__guid": "39c422c9-0721-4db6-80ac-c4f42105b0c4",
+                  "activateInNoclip": false,
                   "jumpDirection": "-0.32,1,1",
                   "jumpForce": 500
                 }
@@ -3921,7 +3933,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "528a8c6d-b43b-41bf-9982-bb3b66b68278",
+                  "__guid": "c1c76f59-e5fd-432c-ab42-89d8da04da08",
+                  "activateInNoclip": false,
                   "jumpDirection": "0.32,1,1",
                   "jumpForce": 500
                 }
@@ -3986,7 +3999,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "6a93dd75-e65b-4157-8556-d2cd63f617ec",
+                  "__guid": "445bbd12-1918-4ea7-8b7f-2de4ec7526f4",
+                  "activateInNoclip": false,
                   "jumpDirection": "-1,0.9,1.1",
                   "jumpForce": 500
                 }
@@ -4420,7 +4434,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "4c4795bd-450c-4593-981e-1e868dd74629",
+                  "__guid": "b68da810-b07b-4637-bfcc-bc71b175da9d",
+                  "activateInNoclip": false,
                   "jumpDirection": "-1,-1,1.1",
                   "jumpForce": 500
                 }
@@ -4485,7 +4500,8 @@
                 },
                 {
                   "__type": "JumpPad",
-                  "__guid": "c856b0b0-0cd2-4b32-baf1-1b57604757ca",
+                  "__guid": "d723f682-b752-471a-b8df-dc3ac79a441d",
+                  "activateInNoclip": false,
                   "jumpDirection": "0.32,-1,1",
                   "jumpForce": 500
                 }
@@ -6343,6 +6359,7 @@
         {
           "__type": "DeathTeleport",
           "__guid": "f60b067d-2b7f-4334-a05a-b83f7b453f97",
+          "activateInNoclip": false,
           "teleport": {
             "_type": "gameobject",
             "go": "c55b2d10-835b-44ee-ad67-b1f1c379367b"
@@ -6410,8 +6427,7 @@
       "Components": [
         {
           "__type": "Reflector",
-          "__guid": "c28c782d-1527-4acc-90d9-6c6c33e6ab6c",
-          "test": "Hello World! Works!"
+          "__guid": "c28c782d-1527-4acc-90d9-6c6c33e6ab6c"
         }
       ]
     }

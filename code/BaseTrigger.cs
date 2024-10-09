@@ -1,5 +1,8 @@
 ﻿public class BaseTrigger : Component, Component.ITriggerListener
 {
+	[Property]
+	protected bool activateInNoclip = false;
+
 	protected virtual void OnPlayerEnter( Player player ) { }
 
 	protected virtual void OnPlayerLeave( Player player ) { }
@@ -13,6 +16,9 @@
 		if ( player == null )
 			return;
 
+		if ( player.IsSpectator && !activateInNoclip )
+			return;
+
 		OnPlayerEnter( player );
 	}
 
@@ -23,6 +29,9 @@
 
 		Player player = other.GetComponent<Player>();
 		if ( player == null ) 
+			return;
+
+		if ( player.IsSpectator && !activateInNoclip )
 			return;
 
 		OnPlayerLeave( player );

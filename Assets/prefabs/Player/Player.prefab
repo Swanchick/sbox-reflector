@@ -37,6 +37,10 @@
           "component_type": "DiskWeapon"
         },
         "playerAirFriction": 0.3,
+        "playerBody": {
+          "_type": "gameobject",
+          "go": "df476ff0-0ed7-43b6-8b4d-0c439468d04c"
+        },
         "playerCamera": {
           "_type": "component",
           "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
@@ -50,7 +54,7 @@
           "_type": "gameobject",
           "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
         },
-        "playerNoclipSpeed": 1500,
+        "playerNoclipSpeed": 500,
         "playerShake": {
           "_type": "gameobject",
           "go": "609eb73c-0e02-4e16-9ad4-ca66be967c50"
@@ -121,7 +125,7 @@
                 "defaultDiskCount": 3,
                 "defaultDiskThrower": {
                   "_type": "component",
-                  "component_id": "f8ce5428-6aeb-4e10-9c8a-f486716a4aec",
+                  "component_id": "b44898a0-301f-4b0a-ba9a-8040ed0bb23c",
                   "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
                   "component_type": "DefaultDiskThrower"
                 },

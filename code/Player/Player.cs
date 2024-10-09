@@ -1,13 +1,22 @@
 ﻿using Sandbox.Utility;
 using System;
+using System.Linq.Expressions;
 
 
 public class Player : Component
 {
 	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.None;
 	public CharacterController playerController { get; private set; }
+	public BoxCollider collider { get; private set; }
 
 	public DiskWeapon DiskWeapon { get; set; }
+
+	public bool IsSpectator { 
+		get
+		{
+			return playerMovementState == PlayerMovementState.Noclip;
+		} 
+	}
 
 	[Property]
 	private GameObject playerHead;
@@ -15,6 +24,8 @@ public class Player : Component
 	private CameraComponent playerCamera;
 	[Property]
 	private GameObject playerShake;
+	[Property]
+	private GameObject playerBody;
 
 	[Property]
 	private float playerSpeed = 100f;
@@ -37,6 +48,8 @@ public class Player : Component
 
 	[Property]
 	private DiskWeapon diskWeapon;
+
+	private Vector3 noclipVelocity;
 
 	private float shakeTrauma = 0;
 	private Vector3 shakeMax;
@@ -85,6 +98,9 @@ public class Player : Component
 		CameraRotation();
 		CameraMovement();
 		Shaking();
+
+		if ( Input.Pressed( "Noclip" ) && !IsProxy )
+			Noclip();
 	}
 
 	private void Shaking()
@@ -119,12 +135,10 @@ public class Player : Component
 
 	protected override void OnFixedUpdate()
 	{
-		Movement();
-	}
-
-	private bool IsNoclip()
-	{
-		return playerMovementState == PlayerMovementState.Noclip;
+		if ( IsSpectator )
+			NoclipMovement();
+		else
+			Movement();
 	}
 
 	private Vector3 BuildDirection()
@@ -141,7 +155,7 @@ public class Player : Component
 		dir += playerRotation.Forward * vertical;
 		dir += playerRotation.Right * horizontal;
 
-		if ( IsNoclip() )
+		if ( IsSpectator )
 		{
 			dir += Vector3.Up * upDown;
 			dir -= Vector3.Up * vertical * (playerCameraAngles.pitch / 90f);
@@ -151,32 +165,27 @@ public class Player : Component
 		return dir.Normal;
 	}
 
-	private void CameraMovement()
-	{
-		if ( IsProxy )
-			return;
-
-		float dir = (Input.Down("Right") ? 1 : 0) - (Input.Down("Left") ? 1 : 0);
-
-		Angles playerAngles = playerCamera.LocalRotation.Angles();
-
-		playerAngles.roll = dir * playerCameraRotation;
-		Rotation playerRotation = playerAngles.ToRotation();
-
-		Rotation defaultRotation = new Angles( playerAngles.pitch, 0, 0 );
-
-		playerCamera.LocalRotation = Rotation.Lerp( playerCamera.LocalRotation, (playerController.IsOnGround) ? playerRotation : defaultRotation, Time.Delta * playerCameraSpeed );
-	}
-
 	private void Noclip()
 	{
+		playerController.Velocity = Vector3.Zero;
+
 		switch (playerMovementState)
 		{
 			case PlayerMovementState.None:
 				playerMovementState = PlayerMovementState.Noclip;
+				
+				playerController.Enabled = false;
+				playerBody.Enabled = false;
+
 				break;
 			case PlayerMovementState.Noclip:
 				playerMovementState = PlayerMovementState.None;
+
+				playerController.Enabled = true;
+				playerBody.Enabled = true;
+
+				playerController.Velocity = noclipVelocity;
+
 				break;
 		}
 	}
@@ -188,7 +197,7 @@ public class Player : Component
 
 		Vector3 velocity = BuildDirection();
 
-		if ( IsNoclip() )
+		if ( IsSpectator )
 		{
 			velocity *= playerNoclipSpeed;
 		}
@@ -197,21 +206,15 @@ public class Player : Component
 			velocity *= playerSpeed;
 			velocity = velocity.WithZ( 0 );
 		}
-			
-		
-		if (Input.Pressed("Noclip"))
-		{
-			Noclip();
-		}
 
-		if ( playerController.IsOnGround && !IsNoclip() )
+		if ( playerController.IsOnGround && !IsSpectator )
 		{
 			playerController.ApplyFriction( playerGroundFriction );
 			playerController.Velocity = playerController.Velocity.WithZ( 0 );
 		}
 		else
 		{
-			if ( !IsNoclip() )
+			if ( !IsSpectator )
 			{
 				playerController.ApplyFriction( playerAirFriction );
 				playerController.Velocity += Vector3.Up * sceneGravity * Time.Delta;
@@ -226,6 +229,19 @@ public class Player : Component
 
 		playerController.Accelerate( velocity );
 		playerController.Move();
+	}
+
+	private void NoclipMovement()
+	{
+		if ( IsProxy )
+			return;
+
+		Vector3 velocity = BuildDirection();
+		velocity *= playerNoclipSpeed;
+
+		noclipVelocity = velocity;
+
+		WorldPosition += velocity * Time.Delta;
 	}
 
 	private void CameraRotation()
@@ -245,5 +261,22 @@ public class Player : Component
 
 		playerHead.LocalRotation = headAngles.ToRotation();
 		playerCamera.LocalRotation = cameraAngles.ToRotation();
+	}
+
+	private void CameraMovement()
+	{
+		if ( IsProxy )
+			return;
+
+		float dir = (Input.Down( "Right" ) ? 1 : 0) - (Input.Down( "Left" ) ? 1 : 0);
+
+		Angles playerAngles = playerCamera.LocalRotation.Angles();
+
+		playerAngles.roll = dir * playerCameraRotation;
+		Rotation playerRotation = playerAngles.ToRotation();
+
+		Rotation defaultRotation = new Angles( playerAngles.pitch, 0, 0 );
+
+		playerCamera.LocalRotation = Rotation.Lerp( playerCamera.LocalRotation, ((playerController.IsOnGround && playerController.Enabled) || !IsSpectator) ? playerRotation : defaultRotation, Time.Delta * playerCameraSpeed );
 	}
 }
