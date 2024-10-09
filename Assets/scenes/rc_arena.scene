@@ -6399,6 +6399,21 @@
           "NetworkMode": 1
         }
       ]
+    },
+    {
+      "__guid": "a22b8ffa-3b39-4c30-aa12-3cbe51f53234",
+      "Flags": 0,
+      "Name": "ReflectorManager",
+      "Position": "300,0,277.4042",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "Reflector",
+          "__guid": "c28c782d-1527-4acc-90d9-6c6c33e6ab6c",
+          "test": "Hello World! Works!"
+        }
+      ]
     }
   ],
   "SceneProperties": {
