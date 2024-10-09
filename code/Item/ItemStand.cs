@@ -2,13 +2,6 @@
 
 public class ItemStand : Component
 {
-	[Sync]
-	public float CurrentTime { get; set; } = 0;
-
-
-	[Sync]
-	public bool IsItemTaken { get; set; } = false;
-
 	[Property]
 	private List<GameObject> Items;
 
@@ -18,35 +11,32 @@ public class ItemStand : Component
 	[Property]
 	private GameObject itemSpace;
 
-
+	[Broadcast]
 	public void OnItemPickup()
 	{
-		IsItemTaken = true;
+		_ = WaitAndSpawn();
+	}
+
+	private async Task WaitAndSpawn()
+	{
+		await Task.DelaySeconds( respawnTime );
+
+		SpawnRandomItem();
 	}
 
 	protected override void OnStart()
 	{
-		SpawnRandomItem();
-	}
-
-	protected override void OnUpdate()
-	{
-		if ( !IsItemTaken )
+		if ( IsProxy )
 			return;
 
-		CurrentTime += Time.Delta;
-
-		if ( CurrentTime >= respawnTime)
-		{
-			IsItemTaken = false;
-			CurrentTime = 0;
-
-			SpawnRandomItem();
-		}
+		SpawnRandomItem();
 	}
 
 	private void SpawnRandomItem()
 	{
+		if ( IsProxy )
+			return;
+
 		GameObject randomItem = Items[Game.Random.Next( 0, Items.Count - 1 )];
 		if ( randomItem == null )
 			return;

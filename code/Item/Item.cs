@@ -41,9 +41,11 @@ public class Item : BaseTrigger
 		TryToDestroy();
 	}
 
-	[Broadcast]
+	[Broadcast(NetPermission.Anyone)]
 	private void TryToDestroy()
 	{
+		Log.Info( "Hello World" );
+
 		GameObject.Destroy();
 	}
 }
