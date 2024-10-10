@@ -25,7 +25,7 @@ public class Reflector : Component, Component.INetworkListener
 		if ( !playerPrefab.IsValid() )
 			return;
 
-
+		GameObject player = playerPrefab.Clone(Transform.World.WithScale( 0 ).WithRotation(Rotation.Identity), name: $"Player - {channel.DisplayName}");
 
 	}
 }
