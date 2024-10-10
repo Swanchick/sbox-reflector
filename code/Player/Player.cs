@@ -75,6 +75,31 @@ public class Player : Component
 		shakeAnglesMax = maxAngle;
 	}
 
+	public void Spectate()
+	{
+		playerController.Velocity = Vector3.Zero;
+
+		switch ( playerMovementState )
+		{
+			case PlayerMovementState.None:
+				playerMovementState = PlayerMovementState.Noclip;
+
+				playerController.Enabled = false;
+				playerBody.Enabled = false;
+
+				break;
+			case PlayerMovementState.Noclip:
+				playerMovementState = PlayerMovementState.None;
+
+				playerController.Enabled = true;
+				playerBody.Enabled = true;
+
+				playerController.Velocity = noclipVelocity;
+
+				break;
+		}
+	}
+
 	protected override void OnStart()
 	{
 		playerController = Components.Get<CharacterController>();
@@ -100,7 +125,7 @@ public class Player : Component
 		Shaking();
 
 		if ( Input.Pressed( "Noclip" ) && !IsProxy )
-			Noclip();
+			Spectate();
 	}
 
 	private void Shaking()
@@ -163,31 +188,6 @@ public class Player : Component
 		}
 
 		return dir.Normal;
-	}
-
-	private void Noclip()
-	{
-		playerController.Velocity = Vector3.Zero;
-
-		switch (playerMovementState)
-		{
-			case PlayerMovementState.None:
-				playerMovementState = PlayerMovementState.Noclip;
-				
-				playerController.Enabled = false;
-				playerBody.Enabled = false;
-
-				break;
-			case PlayerMovementState.Noclip:
-				playerMovementState = PlayerMovementState.None;
-
-				playerController.Enabled = true;
-				playerBody.Enabled = true;
-
-				playerController.Velocity = noclipVelocity;
-
-				break;
-		}
 	}
 
 	private void Movement()

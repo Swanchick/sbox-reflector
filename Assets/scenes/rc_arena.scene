@@ -5044,6 +5044,7 @@
         {
           "__type": "Sandbox.NetworkHelper",
           "__guid": "e837898c-3587-4137-9324-ad28e01ffb2d",
+          "__enabled": false,
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player/player.prefab"
@@ -6421,13 +6422,17 @@
       "__guid": "a22b8ffa-3b39-4c30-aa12-3cbe51f53234",
       "Flags": 0,
       "Name": "ReflectorManager",
-      "Position": "300,0,277.4042",
+      "Position": "0,0,379.4001",
       "Enabled": true,
       "NetworkMode": 1,
       "Components": [
         {
           "__type": "Reflector",
-          "__guid": "c28c782d-1527-4acc-90d9-6c6c33e6ab6c"
+          "__guid": "c28c782d-1527-4acc-90d9-6c6c33e6ab6c",
+          "playerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player/player.prefab"
+          }
         }
       ]
     }
