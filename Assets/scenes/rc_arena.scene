@@ -15,11 +15,6 @@
           "SkyIndirectLighting": true,
           "SkyMaterial": "materials/skyboxes/skybox_nostalgic.vmat",
           "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "SkyRotate",
-          "__guid": "204a06a1-5674-4006-ae10-c92317dd389d",
-          "rotatingSpeed": 0.5
         }
       ]
     },
