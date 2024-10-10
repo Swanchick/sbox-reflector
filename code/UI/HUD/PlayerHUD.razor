@@ -1,0 +1,29 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent;
+@attribute [StyleSheet]
+
+
+<root>
+    <Crosshair />
+
+     <div class="main">
+        @for (int i = 0; i < disks; i++)
+        {
+            <img class="disk" src="@diskTexture" />
+        }
+    </div>
+</root>
+
+@code
+{
+    private string diskTexture = "textures/ui/disk.png";
+
+    private int disks = 3;
+
+    public void ChangeDisks(int disks)
+    {
+        this.disks = disks;
+        StateHasChanged();
+    }
+}

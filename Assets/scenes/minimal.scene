@@ -34,7 +34,7 @@
           "__type": "Sandbox.SkyBox2D",
           "__guid": "de79e9e0-5c37-4c54-ac67-bfcdb1d5483b",
           "SkyIndirectLighting": true,
-          "SkyMaterial": "materials/skybox3.vmat",
+          "SkyMaterial": "materials/skyboxes/skybox_green.vmat",
           "Tint": "1,1,1,1"
         },
         {
@@ -56,6 +56,11 @@
           "UpdateStrategy": "OnEnabled",
           "ZFar": 4096,
           "ZNear": 16
+        },
+        {
+          "__type": "SkyRotate",
+          "__guid": "097e7953-2826-4ee2-bea2-e9ff0738c981",
+          "rotatingSpeed": 0.5
         }
       ]
     },
@@ -82,18 +87,18 @@
     {
       "__guid": "6f8d51c2-7b78-48dd-991d-794e23f53eca",
       "Flags": 0,
-      "Name": "NetworkManager",
+      "Name": "ReflectorManager",
       "Position": "0,0,1000",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.NetworkHelper",
-          "__guid": "72dee7bb-0fad-4ea6-9f1f-f72699cd3647",
-          "PlayerPrefab": {
+          "__type": "Reflector",
+          "__guid": "62d9d00f-6ede-4cb9-a191-4c8d1285d8e6",
+          "playerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player/player.prefab"
           },
-          "SpawnPoints": [
+          "spawnPoints": [
             {
               "_type": "gameobject",
               "go": "bb488895-1b29-4999-a1cd-3d0b983101f2"
@@ -106,8 +111,7 @@
               "_type": "gameobject",
               "go": "aa0cc868-e776-474d-882e-e4f9919930a5"
             }
-          ],
-          "StartServer": true
+          ]
         }
       ]
     },
@@ -322,6 +326,7 @@
             {
               "__type": "JumpPad",
               "__guid": "5aacba16-edc1-40f5-abbe-023c0fcd14e2",
+              "activateInNoclip": false,
               "jumpDirection": "0,-1,1.5",
               "jumpForce": 400
             }
@@ -359,6 +364,7 @@
             {
               "__type": "JumpPad",
               "__guid": "4e97fbf6-6390-49d3-a19d-4dd846221441",
+              "activateInNoclip": false,
               "jumpDirection": "-1,0,1.5",
               "jumpForce": 400
             }
@@ -396,6 +402,7 @@
             {
               "__type": "JumpPad",
               "__guid": "c116d561-3a28-4c8e-a762-7ae02985f0cb",
+              "activateInNoclip": false,
               "jumpDirection": "1,0,1.5",
               "jumpForce": 400
             }
@@ -433,6 +440,7 @@
             {
               "__type": "JumpPad",
               "__guid": "7acfc8fd-3f1d-452c-a2e0-7d5d70e8f8d7",
+              "activateInNoclip": false,
               "jumpDirection": "1,0,1.5",
               "jumpForce": 400
             }
@@ -470,6 +478,7 @@
             {
               "__type": "JumpPad",
               "__guid": "e6d62bf7-ad27-4b02-a62b-21df28e599da",
+              "activateInNoclip": false,
               "jumpDirection": "-1,0,1.5",
               "jumpForce": 400
             }
@@ -507,6 +516,7 @@
             {
               "__type": "JumpPad",
               "__guid": "d6e92b57-330a-498b-9898-0bfcb748ba20",
+              "activateInNoclip": false,
               "jumpDirection": "0,-1,1.5",
               "jumpForce": 400
             }
@@ -544,6 +554,7 @@
             {
               "__type": "JumpPad",
               "__guid": "be275bb8-fd5d-40f9-bcef-be31f2d10680",
+              "activateInNoclip": false,
               "jumpDirection": "0,1,1.5",
               "jumpForce": 400
             }
@@ -581,6 +592,7 @@
             {
               "__type": "JumpPad",
               "__guid": "85aff7a4-ac15-4f47-94f5-0089e8d5d8f6",
+              "activateInNoclip": false,
               "jumpDirection": "0,1,1.5",
               "jumpForce": 400
             }
@@ -1225,6 +1237,7 @@
         {
           "__type": "DeathTeleport",
           "__guid": "c6262d54-796c-47b1-8ff7-24449254c168",
+          "activateInNoclip": false,
           "teleport": {
             "_type": "gameobject",
             "go": "48f927d1-30c0-4e40-8137-df675ad26f55"
@@ -1259,6 +1272,12 @@
       "Flags": 0,
       "Name": "GameObject",
       "Enabled": true
+    },
+    {
+      "__guid": "b1c3c505-b25d-487b-a0e9-430cc119e1a5",
+      "Flags": 0,
+      "Name": "GameObject",
+      "Enabled": true
     }
   ],
   "SceneProperties": {
@@ -1289,6 +1308,5 @@
   "__references": [
     "hyperscroll.grassfloor001a#64264"
   ],
-  "IsValid": true,
   "__version": 1
 }

@@ -125,7 +125,7 @@
                 "defaultDiskCount": 3,
                 "defaultDiskThrower": {
                   "_type": "component",
-                  "component_id": "b44898a0-301f-4b0a-ba9a-8040ed0bb23c",
+                  "component_id": "fa264473-2d24-412c-9cb3-8a8561e87e35",
                   "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
                   "component_type": "DefaultDiskThrower"
                 },
@@ -141,6 +141,12 @@
                   "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
                   "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
                   "component_type": "CameraComponent"
+                },
+                "playerHUD": {
+                  "_type": "component",
+                  "component_id": "21ee686e-ab17-4d5a-8fe9-4b172f14dbe9",
+                  "go": "cc718295-e0c3-4dc0-80d8-c4ccbc966578",
+                  "component_type": "PlayerHUD"
                 },
                 "throwerSpace": {
                   "_type": "gameobject",
@@ -173,6 +179,27 @@
             "Tint": "1,1,1,1"
           }
         ]
+      },
+      {
+        "__guid": "cc718295-e0c3-4dc0-80d8-c4ccbc966578",
+        "Flags": 0,
+        "Name": "Screen",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ScreenPanel",
+            "__guid": "d17581d9-be0c-4ea9-8c15-daf6ef767765",
+            "AutoScreenScale": true,
+            "Opacity": 1,
+            "Scale": 1,
+            "ScaleStrategy": "ConsistentHeight",
+            "ZIndex": 100
+          },
+          {
+            "__type": "PlayerHUD",
+            "__guid": "21ee686e-ab17-4d5a-8fe9-4b172f14dbe9"
+          }
+        ]
       }
     ],
     "__variables": []
@@ -183,6 +210,5 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [],
-  "IsValid": true,
   "__version": 1
 }

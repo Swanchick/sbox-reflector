@@ -25,9 +25,14 @@ public class DiskWeapon : Component
 	[Property]
 	private int defaultDiskCount = 3;
 
+	[Property]
+	private PlayerHUD playerHUD;
+
 	public void ReturnDisk( GameObject diskThrower )
 	{
 		diskCount--;
+
+		playerHUD.ChangeDisks( maxDisks - diskCount );
 
 		if ( diskThrower.Id == defaultDiskThrower.GameObject.Id )
 			return;
@@ -93,5 +98,7 @@ public class DiskWeapon : Component
 		disk.Shoot( Player );
 
 		diskCount++;
+
+		playerHUD.ChangeDisks( maxDisks - diskCount );
 	}
 }

@@ -7,6 +7,9 @@ public class Reflector : Component, Component.INetworkListener
 	[Property]
 	private GameObject playerPrefab;
 
+	[Property]
+	private List<GameObject> spawnPoints = new();
+
 	private NetList<Guid> playerIds = new();
 
 	public List<GameObject> PlayerObjects
@@ -39,7 +42,9 @@ public class Reflector : Component, Component.INetworkListener
 		if ( !playerPrefab.IsValid() )
 			return;
 
-		GameObject playerObject = playerPrefab.Clone( Transform.World.WithScale( 1 ).WithRotation( Rotation.Identity ), name: $"Player - {channel.DisplayName}" );
+		Transform spawnPoint = GetRandomSpawnpoint();
+
+		GameObject playerObject = playerPrefab.Clone( spawnPoint.WithScale( 1 ), name: $"Player - {channel.DisplayName}" );
 		playerObject.NetworkSpawn( channel );
 
 		_ = SetupPlayer( playerObject );
@@ -68,11 +73,19 @@ public class Reflector : Component, Component.INetworkListener
 		Networking.CreateLobby();
 	}
 
-	private async Task SetupPlayer(GameObject playerObject)
+	private async Task SetupPlayer( GameObject playerObject )
 	{
 		await Task.Delay( 1 );
 		Player player = playerObject.GetComponent<Player>();
 		player.Reflector = this;
 		//player.Spectate( true );
+	}
+
+	private Transform GetRandomSpawnpoint()
+	{
+		GameObject spawn = spawnPoints[Game.Random.Next( 0, spawnPoints.Count - 1 )];
+
+
+		return spawn.Transform.World;
 	}
 }

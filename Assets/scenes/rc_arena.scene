@@ -15,6 +15,11 @@
           "SkyIndirectLighting": true,
           "SkyMaterial": "materials/skyboxes/skybox_nostalgic.vmat",
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SkyRotate",
+          "__guid": "204a06a1-5674-4006-ae10-c92317dd389d",
+          "rotatingSpeed": 0.5
         }
       ]
     },
@@ -5037,30 +5042,18 @@
     {
       "__guid": "770a971b-5496-4024-a652-78e401330935",
       "Flags": 0,
-      "Name": "NetworkManager",
+      "Name": "ReflectorManager",
       "Position": "0,0,1000",
       "Enabled": true,
       "Components": [
         {
-          "__type": "Sandbox.NetworkHelper",
-          "__guid": "e837898c-3587-4137-9324-ad28e01ffb2d",
-          "PlayerPrefab": {
+          "__type": "Reflector",
+          "__guid": "33475d06-0562-4c88-965a-b7e3972372cb",
+          "playerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player/player.prefab"
           },
-          "SpawnPoints": [
-            {
-              "_type": "gameobject",
-              "go": "be13485f-73b7-48ff-ad87-72f89d9027cf"
-            },
-            {
-              "_type": "gameobject",
-              "go": "d361d9f2-018b-44ee-8a76-db7b28799545"
-            },
-            {
-              "_type": "gameobject",
-              "go": "a45d05f2-5289-43d0-b5be-df0f04c246b9"
-            },
+          "spawnPoints": [
             {
               "_type": "gameobject",
               "go": "bedf599d-bfef-444b-800c-a911144ebad3"
@@ -5071,10 +5064,21 @@
             },
             {
               "_type": "gameobject",
+              "go": "a45d05f2-5289-43d0-b5be-df0f04c246b9"
+            },
+            {
+              "_type": "gameobject",
+              "go": "d361d9f2-018b-44ee-8a76-db7b28799545"
+            },
+            {
+              "_type": "gameobject",
               "go": "5736f077-2533-4a52-abb0-918a66b9fe1f"
+            },
+            {
+              "_type": "gameobject",
+              "go": "be13485f-73b7-48ff-ad87-72f89d9027cf"
             }
-          ],
-          "StartServer": true
+          ]
         }
       ]
     },
@@ -6251,6 +6255,5 @@
   "Description": "",
   "ResourceVersion": 1,
   "__references": [],
-  "IsValid": true,
   "__version": 1
 }
