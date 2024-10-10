@@ -1,6 +1,7 @@
 ﻿using Sandbox.Utility;
 using System;
 using System.Linq.Expressions;
+using System.Runtime.InteropServices;
 
 
 public class Player : Component
@@ -10,6 +11,8 @@ public class Player : Component
 	public BoxCollider collider { get; private set; }
 
 	public DiskWeapon DiskWeapon { get; set; }
+
+	public Reflector Reflector { get; set; }
 
 	public bool IsSpectator { 
 		get
@@ -75,28 +78,30 @@ public class Player : Component
 		shakeAnglesMax = maxAngle;
 	}
 
-	public void Spectate()
+	public void Spectate(bool turn)
 	{
-		playerController.Velocity = Vector3.Zero;
+		if ( IsProxy )
+			return;
 
-		switch ( playerMovementState )
+		Log.Info( "Hello World" );
+
+		if (turn)
 		{
-			case PlayerMovementState.None:
-				playerMovementState = PlayerMovementState.Noclip;
+			playerController.Velocity = Vector3.Zero;
 
-				playerController.Enabled = false;
-				playerBody.Enabled = false;
+			playerMovementState = PlayerMovementState.Noclip;
 
-				break;
-			case PlayerMovementState.Noclip:
-				playerMovementState = PlayerMovementState.None;
+			playerController.Enabled = false;
+			playerBody.Enabled = false;
+		}
+		else
+		{
+			playerMovementState = PlayerMovementState.None;
 
-				playerController.Enabled = true;
-				playerBody.Enabled = true;
+			playerController.Enabled = true;
+			playerBody.Enabled = true;
 
-				playerController.Velocity = noclipVelocity;
-
-				break;
+			playerController.Velocity = noclipVelocity;
 		}
 	}
 
@@ -124,8 +129,8 @@ public class Player : Component
 		CameraMovement();
 		Shaking();
 
-		if ( Input.Pressed( "Noclip" ) && !IsProxy )
-			Spectate();
+		//if ( Input.Pressed( "Noclip" ) && !IsProxy )
+		//	Spectate(true);
 	}
 
 	private void Shaking()

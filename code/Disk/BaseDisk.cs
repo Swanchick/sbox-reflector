@@ -33,6 +33,8 @@ public abstract class BaseDisk : Component
 	protected CharacterController diskController;
 	protected int currentCollisions = 0;
 
+	protected Reflector reflector;
+
 	private BaseDiskThrower baseDiskThrower;
 
 	public void Setup( Vector3 direction, Guid OwnerId, BaseDiskThrower diskThrower )
@@ -45,6 +47,12 @@ public abstract class BaseDisk : Component
 	protected override void OnStart()
 	{
 		diskController = Components.Get<CharacterController>();
+
+		GameObject reflectorObject = Scene.Directory.FindByName( "ReflectorManager" ).FirstOrDefault();
+		if ( reflectorObject == null )
+			return;
+
+		reflector = reflectorObject.Components.Get<Reflector>();
 	}
 
 	protected override void OnUpdate()
@@ -158,6 +166,7 @@ public abstract class BaseDisk : Component
 		if ( player == null ) 
 			return;
 
+		reflector.OnPlayerHit( gameObject, player );
 		OnPlayerHit( trace, gameObject, player );
 	}
 
