@@ -54,6 +54,12 @@
           "_type": "gameobject",
           "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
         },
+        "playerHUD": {
+          "_type": "component",
+          "component_id": "21ee686e-ab17-4d5a-8fe9-4b172f14dbe9",
+          "go": "cc718295-e0c3-4dc0-80d8-c4ccbc966578",
+          "component_type": "PlayerHUD"
+        },
         "playerNoclipSpeed": 500,
         "playerShake": {
           "_type": "gameobject",
@@ -125,7 +131,7 @@
                 "defaultDiskCount": 3,
                 "defaultDiskThrower": {
                   "_type": "component",
-                  "component_id": "fa264473-2d24-412c-9cb3-8a8561e87e35",
+                  "component_id": "5808af26-6343-4927-a332-83131db851a7",
                   "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
                   "component_type": "DefaultDiskThrower"
                 },
@@ -183,7 +189,7 @@
       {
         "__guid": "cc718295-e0c3-4dc0-80d8-c4ccbc966578",
         "Flags": 0,
-        "Name": "Screen",
+        "Name": "HUD",
         "Enabled": true,
         "Components": [
           {

@@ -1,6 +1,7 @@
 ﻿using Sandbox.Utility;
 using System;
 using System.Linq.Expressions;
+using System.Net.Quic;
 using System.Runtime.InteropServices;
 
 
@@ -20,6 +21,8 @@ public class Player : Component
 			return playerMovementState == PlayerMovementState.Noclip;
 		} 
 	}
+
+	public bool CanUseTrigger { get; set; } = true;
 
 	[Property]
 	private GameObject playerHead;
@@ -52,16 +55,20 @@ public class Player : Component
 	[Property]
 	private DiskWeapon diskWeapon;
 
+	[Property]
+	private PlayerHUD playerHUD; 
+
 	private Vector3 noclipVelocity;
 
 	private float shakeTrauma = 0;
 	private Vector3 shakeMax;
 	private Vector3 shakeAnglesMax;
 	private float shakeFrequecy;
-
 	private float sceneGravity;
 
 	private float shakeSeed;
+
+	private bool noclip = false;
 
 
 	public void Jump(Vector3 dir, float jumpForce)
@@ -82,8 +89,6 @@ public class Player : Component
 	{
 		if ( IsProxy )
 			return;
-
-		Log.Info( "Hello World" );
 
 		if (turn)
 		{
@@ -121,6 +126,7 @@ public class Player : Component
 		}
 		
 		playerCamera.Destroy();
+		playerHUD.GameObject.Destroy();
 	}
 
 	protected override void OnUpdate()
@@ -129,8 +135,15 @@ public class Player : Component
 		CameraMovement();
 		Shaking();
 
-		//if ( Input.Pressed( "Noclip" ) && !IsProxy )
-		//	Spectate(true);
+		if (IsProxy)
+			return;
+
+		if ( Input.Pressed( "Noclip" ) )
+		{
+			noclip = !noclip;
+
+			Spectate( noclip );
+		}
 	}
 
 	private void Shaking()

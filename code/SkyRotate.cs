@@ -7,10 +7,9 @@
 	protected override void OnFixedUpdate()
 	{
 		Angles angles = WorldRotation.Angles();
-		angles.pitch = Time.Now * rotatingSpeed;
-		angles.yaw = Time.Now * rotatingSpeed;
+		angles.pitch += Time.Delta * rotatingSpeed;
+		angles.yaw += Time.Delta * rotatingSpeed;
 
 		WorldRotation = angles;
-
 	}
 }
