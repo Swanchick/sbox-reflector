@@ -1,9 +1,5 @@
 ﻿using Sandbox.Utility;
 using System;
-using System.Linq.Expressions;
-using System.Net.Quic;
-using System.Runtime.InteropServices;
-
 
 public class Player : Component
 {
@@ -13,13 +9,19 @@ public class Player : Component
 
 	public DiskWeapon DiskWeapon { get; set; }
 
-	public Reflector Reflector { get; set; }
-
 	public bool IsSpectator { 
 		get
 		{
 			return playerMovementState == PlayerMovementState.Noclip;
 		} 
+	}
+
+	public string Name
+	{
+		get
+		{
+			return Network.Owner.DisplayName;
+		}
 	}
 
 	public bool CanUseTrigger { get; set; } = true;

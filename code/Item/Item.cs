@@ -23,8 +23,6 @@ public class Item : BaseTrigger
 		if ( standObject == null )
 			return;
 
-		Log.Info( "Test 4" );
-
 		ItemStand stand = standObject.Components.Get<ItemStand>();
 		stand.OnItemPickup();
 

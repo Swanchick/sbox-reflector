@@ -1,7 +1,4 @@
-﻿using Sandbox;
-
-
-public enum PlayerMovementState
+﻿public enum PlayerMovementState
 {
 	None,
 	Noclip

@@ -42,7 +42,7 @@ public class ItemStand : Component
 			return;
 
 		GameObject itemObjectNew = randomItem.Clone( itemSpace.WorldPosition );
-		itemObjectNew.NetworkSpawn();
+		itemObjectNew.NetworkSpawn( Network.Owner );
 
 		Item item = itemObjectNew.GetComponent<Item>();
 		if ( item == null )

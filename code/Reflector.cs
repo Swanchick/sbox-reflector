@@ -2,7 +2,7 @@
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-public class Reflector : Component, Component.INetworkListener
+public class Reflector : Component, Component.INetworkListener, ISceneEvent<IReflector>
 {
 	[Property]
 	private GameObject playerPrefab;
@@ -50,7 +50,7 @@ public class Reflector : Component, Component.INetworkListener
 		_ = SetupPlayer( playerObject );
 	}
 
-	public void OnPlayerHit(GameObject playerObject, Player player)
+	public void OnPlayerHit( Player attacker, Player victim )
 	{
 
 	}
@@ -77,7 +77,6 @@ public class Reflector : Component, Component.INetworkListener
 	{
 		await Task.Delay( 1 );
 		Player player = playerObject.GetComponent<Player>();
-		player.Reflector = this;
 		//player.Spectate( true );
 	}
 

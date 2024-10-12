@@ -77,8 +77,6 @@ public class DiskWeapon : Component
 
 	private void Shoot()
 	{
-		Log.Info( DiskThrowers.Count );
-
 		if ( diskCount >= maxDisks )
 			return;
 
