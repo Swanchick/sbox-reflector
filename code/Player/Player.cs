@@ -27,6 +27,9 @@ public class Player : Component
 	public bool CanUseTrigger { get; set; } = true;
 
 	[Property]
+	public PlayerHUD PlayerHUD;
+
+	[Property]
 	private GameObject playerHead;
 	[Property]
 	private CameraComponent playerCamera;
@@ -56,9 +59,7 @@ public class Player : Component
 
 	[Property]
 	private DiskWeapon diskWeapon;
-
-	[Property]
-	private PlayerHUD playerHUD; 
+	
 
 	private Vector3 noclipVelocity;
 
@@ -71,6 +72,8 @@ public class Player : Component
 	private float shakeSeed;
 
 	private bool noclip = false;
+
+	private bool grounded = false;
 
 
 	public void Jump(Vector3 dir, float jumpForce)
@@ -128,7 +131,7 @@ public class Player : Component
 		}
 		
 		playerCamera.Destroy();
-		playerHUD.GameObject.Destroy();
+		PlayerHUD.GameObject.Destroy();
 	}
 
 	protected override void OnUpdate()
@@ -229,11 +232,20 @@ public class Player : Component
 
 		if ( playerController.IsOnGround && !IsSpectator )
 		{
+			if ( !grounded )
+			{
+				Scene.RunEvent<IReflector>( x => x.OnPlayerGrounded( this ) );
+				grounded = true;
+			}
+				
+
 			playerController.ApplyFriction( playerGroundFriction );
 			playerController.Velocity = playerController.Velocity.WithZ( 0 );
 		}
 		else
 		{
+			grounded = false;
+
 			if ( !IsSpectator )
 			{
 				playerController.ApplyFriction( playerAirFriction );

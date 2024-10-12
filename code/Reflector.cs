@@ -2,15 +2,17 @@
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-public class Reflector : Component, Component.INetworkListener, ISceneEvent<IReflector>
+public class Reflector : Component, Component.INetworkListener, IReflector
 {
 	[Property]
 	private GameObject playerPrefab;
 
 	[Property]
 	private List<GameObject> spawnPoints = new();
-
 	private NetList<Guid> playerIds = new();
+
+
+	private Dictionary<Guid, Guid> hitedPlayers = new();
 
 	public List<GameObject> PlayerObjects
 	{
@@ -50,14 +52,43 @@ public class Reflector : Component, Component.INetworkListener, ISceneEvent<IRef
 		_ = SetupPlayer( playerObject );
 	}
 
+	[Broadcast]
 	public void OnPlayerHit( Player attacker, Player victim )
 	{
-
+		hitedPlayers[victim.GameObject.Id] = attacker.GameObject.Id;
 	}
 
-	public void OnPlayerDeath(GameObject playerObject, Player player)
-	{ 
+	[Broadcast]
+	public void OnPlayerDeath( Player player )
+	{
+		Guid playerId = player.GameObject.Id;
+		
+		if ( hitedPlayers.ContainsKey( playerId ) )
+		{
+			GameObject attackerObject = Scene.Directory.FindByGuid( hitedPlayers[playerId] );
+			Player attacker = attackerObject.Components.Get<Player>();
 
+			Log.Info( $"{attacker.Name} killed {player.Name}" );
+			
+			hitedPlayers.Remove( playerId );
+
+
+			return;
+		}
+
+		Log.Info( $"{player.Name}: Died" );
+	}
+
+	[Broadcast]
+	public void OnPlayerGrounded( Player player )
+	{
+		Guid playerId = player.GameObject.Id;
+		if ( hitedPlayers.ContainsKey( playerId ) )
+		{
+			hitedPlayers.Remove( playerId );
+		}
+		
+		Log.Info( $"{player.Name}: has landed on the ground" );
 	}
 
 	protected override async Task OnLoad()

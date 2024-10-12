@@ -17,9 +17,6 @@ public class DiskWeapon : Component
 	private GameObject throwerSpace;
 
 	[Property]
-	private CameraComponent playerCamera;
-
-	[Property]
 	private BaseDiskThrower defaultDiskThrower;
 
 	[Property]

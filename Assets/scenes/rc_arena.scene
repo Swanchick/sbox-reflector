@@ -5045,6 +5045,7 @@
       "Name": "ReflectorManager",
       "Position": "0,0,1000",
       "Enabled": true,
+      "NetworkMode": 1,
       "Components": [
         {
           "__type": "Reflector",
@@ -6233,6 +6234,7 @@
       "Flags": 0,
       "Name": "DeathTrigger",
       "Position": "0,0,-128.2731",
+      "Tags": "trigger",
       "Enabled": true,
       "Components": [
         {

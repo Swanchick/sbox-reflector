@@ -13,7 +13,7 @@
         "Bounciness": 0.3,
         "GroundAngle": 45,
         "Height": 64,
-        "IgnoreLayers": "",
+        "IgnoreLayers": "trigger",
         "Radius": 10,
         "StepHeight": 18,
         "UseCollisionRules": false
@@ -54,7 +54,7 @@
           "_type": "gameobject",
           "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
         },
-        "playerHUD": {
+        "PlayerHUD": {
           "_type": "component",
           "component_id": "21ee686e-ab17-4d5a-8fe9-4b172f14dbe9",
           "go": "cc718295-e0c3-4dc0-80d8-c4ccbc966578",
@@ -131,7 +131,7 @@
                 "defaultDiskCount": 3,
                 "defaultDiskThrower": {
                   "_type": "component",
-                  "component_id": "5808af26-6343-4927-a332-83131db851a7",
+                  "component_id": "6bab1b63-732b-4d56-b460-fbfe06e29490",
                   "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
                   "component_type": "DefaultDiskThrower"
                 },
@@ -141,12 +141,6 @@
                   "component_id": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
                   "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
                   "component_type": "Player"
-                },
-                "playerCamera": {
-                  "_type": "component",
-                  "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
-                  "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
-                  "component_type": "CameraComponent"
                 },
                 "playerHUD": {
                   "_type": "component",

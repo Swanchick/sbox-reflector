@@ -1,0 +1,29 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel;
+@attribute [StyleSheet]
+
+<root>
+    <div class="text-container">
+        @foreach (Kill kill in kills.Reverse<Kill>())
+        {
+            <p>@(kill.Attacker.Name) killed @(kill.Victim.Name)</p>
+        }
+
+    </div>
+    
+</root>
+
+@code
+{
+    private List<Kill> kills = new();
+
+    public void AddKill(Player attacker, Player victim)
+    {
+        Log.Info( "Hello World" );
+
+        Kill kill = new Kill(attacker, victim);
+
+        kills.Add( kill );
+    }
+}
