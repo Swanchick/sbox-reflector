@@ -6,7 +6,6 @@
 
 <root>
     <Crosshair />
-    <KillFeed />
 
      <div class="main">
         @for (int i = 0; i < disks; i++)
@@ -18,20 +17,13 @@
 
 @code
 {
-    public KillFeed KillFeed { get; set; } = new();
-
     private string diskTexture = "/ui/disk.png";
     private int disks = 3;
 
-    public void ChangeDisks(int disks)
+    public void ChangeDisks( int disks )
     {
         this.disks = disks;
-        StateHasChanged();
-    }
 
-    [Broadcast]
-    public void Test()
-    {
-        Log.Info("Hello World");
+        StateHasChanged();
     }
 }

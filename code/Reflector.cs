@@ -71,7 +71,7 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 			Log.Info( $"{attacker.Name} killed {player.Name}" );
 			
 			hitedPlayers.Remove( playerId );
-
+			Scene.RunEvent<IKillFeed>( x => x.AddKill( attacker, player ) );
 
 			return;
 		}

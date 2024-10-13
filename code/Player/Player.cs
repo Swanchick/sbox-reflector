@@ -27,7 +27,7 @@ public class Player : Component
 	public bool CanUseTrigger { get; set; } = true;
 
 	[Property]
-	public PlayerHUD PlayerHUD;
+	private GameObject ClientHUD;
 
 	[Property]
 	private GameObject playerHead;
@@ -59,9 +59,6 @@ public class Player : Component
 
 	[Property]
 	private DiskWeapon diskWeapon;
-	
-
-	private Vector3 noclipVelocity;
 
 	private float shakeTrauma = 0;
 	private Vector3 shakeMax;
@@ -111,7 +108,7 @@ public class Player : Component
 			playerController.Enabled = true;
 			playerBody.Enabled = true;
 
-			playerController.Velocity = noclipVelocity;
+			playerController.Velocity = Vector3.Zero;
 		}
 	}
 
@@ -126,12 +123,12 @@ public class Player : Component
 		if ( !IsProxy )
 		{
 			DiskWeapon = diskWeapon;
-			
+
 			return;
 		}
 		
 		playerCamera.Destroy();
-		PlayerHUD.GameObject.Destroy();
+		ClientHUD.Destroy();
 	}
 
 	protected override void OnUpdate()
@@ -270,8 +267,6 @@ public class Player : Component
 
 		Vector3 velocity = BuildDirection();
 		velocity *= playerNoclipSpeed;
-
-		noclipVelocity = velocity;
 
 		WorldPosition += velocity * Time.Delta;
 	}

@@ -9,9 +9,11 @@ public class DeathTeleport : BaseTrigger
 
 	protected override void OnPlayerEnter( Player player )
 	{
-		player.CanUseTrigger = false;
+		player.Spectate( true );
+
 		player.Transform.World = GetRandomSpawnpoint();
-		player.CanUseTrigger = true;
+
+		player.Spectate( false );
 
 		Scene.RunEvent<IReflector>( x => x.OnPlayerDeath( player ) );
 		

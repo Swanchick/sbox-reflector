@@ -1,11 +1,13 @@
 @using Sandbox;
 @using Sandbox.UI;
-@inherits Panel;
+@using System.Threading.Tasks;
+@inherits PanelComponent;
 @attribute [StyleSheet]
+@implements IKillFeed;
 
 <root>
-    <div class="text-container">
-        @foreach (Kill kill in kills.Reverse<Kill>())
+    <div class="text-container">        
+        @foreach ( Kill kill in kills.Reverse<Kill>() )
         {
             <p>@(kill.Attacker.Name) killed @(kill.Victim.Name)</p>
         }
@@ -18,12 +20,36 @@
 {
     private List<Kill> kills = new();
 
-    public void AddKill(Player attacker, Player victim)
+    [Property]
+    private int messageLifeTime = 5000;
+
+    public void AddKill( Player attacker, Player victim )
     {
+        if (IsProxy)
+            return;
+
         Log.Info( "Hello World" );
 
         Kill kill = new Kill(attacker, victim);
 
         kills.Add( kill );
+
+        StateHasChanged();
+
+        _ = DestroyMessage();
+    }
+
+    private async Task DestroyMessage() 
+    {
+        if (IsProxy)
+            return;
+
+        await Task.Delay(messageLifeTime);
+
+        if (kills.Count > 0)
+        {
+            kills.RemoveAt(0);
+            StateHasChanged();
+        }
     }
 }

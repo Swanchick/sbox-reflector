@@ -30,6 +30,10 @@
         "__type": "Player",
         "__guid": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
         "cameraSensitivity": 0.1,
+        "ClientHUD": {
+          "_type": "gameobject",
+          "go": "dc05aa74-7384-437d-9c4d-dc29e1e9723d"
+        },
         "diskWeapon": {
           "_type": "component",
           "component_id": "4b2a2d8a-0b45-458a-b655-61e7d5eff2e8",
@@ -53,12 +57,6 @@
         "playerHead": {
           "_type": "gameobject",
           "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
-        },
-        "PlayerHUD": {
-          "_type": "component",
-          "component_id": "21ee686e-ab17-4d5a-8fe9-4b172f14dbe9",
-          "go": "cc718295-e0c3-4dc0-80d8-c4ccbc966578",
-          "component_type": "PlayerHUD"
         },
         "playerNoclipSpeed": 500,
         "playerShake": {
@@ -131,7 +129,7 @@
                 "defaultDiskCount": 3,
                 "defaultDiskThrower": {
                   "_type": "component",
-                  "component_id": "6bab1b63-732b-4d56-b460-fbfe06e29490",
+                  "component_id": "2e00e1ea-8df0-492f-8dd6-fa7a305a0425",
                   "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
                   "component_type": "DefaultDiskThrower"
                 },
@@ -144,8 +142,8 @@
                 },
                 "playerHUD": {
                   "_type": "component",
-                  "component_id": "21ee686e-ab17-4d5a-8fe9-4b172f14dbe9",
-                  "go": "cc718295-e0c3-4dc0-80d8-c4ccbc966578",
+                  "component_id": "6b5a2ca6-645b-4a8d-a375-78c54334df1b",
+                  "go": "ff6ab4e1-7eaf-42d6-ae80-073d7f3061cc",
                   "component_type": "PlayerHUD"
                 },
                 "throwerSpace": {
@@ -181,23 +179,55 @@
         ]
       },
       {
-        "__guid": "cc718295-e0c3-4dc0-80d8-c4ccbc966578",
+        "__guid": "b03d0a79-e3a5-4c1a-bda8-b0983deffb06",
         "Flags": 0,
         "Name": "HUD",
         "Enabled": true,
         "Components": [
           {
             "__type": "Sandbox.ScreenPanel",
-            "__guid": "d17581d9-be0c-4ea9-8c15-daf6ef767765",
+            "__guid": "ae0114be-3c06-420d-bafe-f620b70db922",
             "AutoScreenScale": true,
             "Opacity": 1,
             "Scale": 1,
             "ScaleStrategy": "ConsistentHeight",
             "ZIndex": 100
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "08c5ba37-ae33-4b76-9dff-54d66fff48e8",
+            "Flags": 0,
+            "Name": "KillFeed",
+            "Enabled": true,
+            "NetworkMode": 1,
+            "Components": [
+              {
+                "__type": "KillFeed",
+                "__guid": "de24391f-0573-4b70-a7a1-3cf9ed08c4b8",
+                "messageLifeTime": 5000
+              }
+            ]
           },
           {
-            "__type": "PlayerHUD",
-            "__guid": "21ee686e-ab17-4d5a-8fe9-4b172f14dbe9"
+            "__guid": "dc05aa74-7384-437d-9c4d-dc29e1e9723d",
+            "Flags": 0,
+            "Name": "Client",
+            "Enabled": true,
+            "Children": [
+              {
+                "__guid": "ff6ab4e1-7eaf-42d6-ae80-073d7f3061cc",
+                "Flags": 0,
+                "Name": "PlayerHUD",
+                "Enabled": true,
+                "Components": [
+                  {
+                    "__type": "PlayerHUD",
+                    "__guid": "6b5a2ca6-645b-4a8d-a375-78c54334df1b"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
