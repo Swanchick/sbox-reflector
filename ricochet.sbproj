@@ -5,7 +5,7 @@
   "Ident": "reflector",
   "Schema": 1,
   "IncludeSourceFiles": false,
-  "Resources": "/ui/disk.png\n/ui/crosshair.png",
+  "Resources": "/ui/disk.png\n/ui/crosshair.png\n/ui/killicon.png",
   "PackageReferences": [],
   "EditorReferences": null,
   "IsWhitelistDisabled": false,
