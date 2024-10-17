@@ -14,10 +14,11 @@ KillFeed {
     .killfeed-entry {
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 30px;
         align-items: center;
         
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
         font-size: 36px;
         
         .killicon {
