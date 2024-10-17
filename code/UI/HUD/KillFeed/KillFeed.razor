@@ -5,19 +5,21 @@
 @attribute [StyleSheet]
 @implements IKillFeed;
 
-<root>
-    <div class="text-container">        
-        @foreach ( Kill kill in kills.Reverse<Kill>() )
-        {
-            <p>@(kill.Attacker.Name) killed @(kill.Victim.Name)</p>
-        }
-
-    </div>
-    
+<root> 
+	@foreach ( Kill kill in kills.Reverse<Kill>() )
+	{
+		<div class="killfeed-entry">
+			<span class="attacker">@( kill.Attacker.Name )</span>
+			@* killed *@
+			<img class="killicon" src="@killfeed_icon"/>
+			<span class="victim">@( kill.Victim.Name )</span>
+		</div>
+	}
 </root>
 
 @code
 {
+	private string killfeed_icon = "/ui/killicon.png";
     private List<Kill> kills = new();
 
     [Property]
