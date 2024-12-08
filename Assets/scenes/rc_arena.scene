@@ -2,6 +2,21 @@
   "__guid": "c8998620-f539-45b4-a460-4565d1d4d92c",
   "GameObjects": [
     {
+      "__guid": "8609e58a-d2b9-47d5-b724-8e54c0d9ab2e",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "8451aa59-8661-4218-9041-490dee7b08fe",
+          "Description": "",
+          "SceneTags": "",
+          "Title": "rc_arena"
+        }
+      ]
+    },
+    {
       "__guid": "9212a69f-f9a7-41cc-8a8c-9cc4f3ac7bc1",
       "Flags": 0,
       "Name": "2D Skybox",
@@ -58,7 +73,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "0,-104,8",
               "8,-104,8",
@@ -166,7 +181,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -186,7 +202,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "0,-104,8",
               "8,-104,8",
@@ -294,7 +310,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -314,7 +331,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "0,-104,8",
               "8,-104,8",
@@ -353,7 +370,7 @@
             ],
             "TextureUAxis": [
               "1,0.00000330607,-0.000000000001261166",
-              "1,0.000003306071,-0.000000000001366263",
+              "1,0.000003306071,-0.000000000001261166",
               "0.4228859,0.9061829,-0.0000004321017",
               "-0.4228856,-0.906183,0.0000004321017",
               "-1,0,0",
@@ -361,8 +378,8 @@
             ],
             "TextureVAxis": [
               "-0,1,-0.0000003814696",
-              "0,1,-0.0000004132588",
-              "-0.00000003654597,0.0000003985244,1",
+              "0,1,-0.0000003814696",
+              "-0.00000003654597,0.0000003985245,1",
               "-0.00000003654594,0.0000003985244,1",
               "0,0.0000004768372,1",
               "0,0,1"
@@ -373,7 +390,7 @@
               "0.2613322,0.25",
               "0.2613321,0.25",
               "0.2500019,0.25",
-              "0.25,0.2499999"
+              "0.25,0.25"
             ],
             "TextureOffset": [
               "351.9897,416.0001",
@@ -381,7 +398,7 @@
               "468.6253,303.9999",
               "64.28748,303.9999",
               "160.0118,304.0001",
-              "352,303.9999"
+              "352,304"
             ],
             "MaterialIndex": [
               0,
@@ -422,7 +439,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -442,7 +460,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "0,-104,8",
               "8,-104,8",
@@ -550,7 +568,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -569,7 +588,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2UiVJTQRBFe0JCwiYiOyoCooKIiBu4s2\u002BugAqooP//FfapOq/qUXXLTDyZ6b63Z2Yi4l/qRoq/RqqZ6k51Ur2p/tS11HW5kdRYaiI1lbqVmk7NpOZS86n7qYXUw9Sj1OPUk9TT1PPUy9R66nXqbep9qihqqP9deTbfd1lf1Ng/qUH/r2Xt9V5\u002BWT\u002Bf2/YV8rDnqQF/22PPIQ/7Uw9g\u002B/wc8rDf/b7tPpwV8rAnch3rpJeQh/3muWhIj0Me9ouf2WNY/0Me9pN7UcOo2YQ87FGtlnFzC3nYA3uh9kkzDXnYPb2g1pvmHfKwO3pJb7edhZCH3ahlesd/Qx52277RrDNU7J2Z2vL39HrX\u002BSrysJuejzf3nL0iD7tr/XjxwLks8rD79o93i85skYc91D\u002B8WnKeizzsR/3H22VnvcjDfjY/vFzxHhR52K9mifer3pEiD3tslnj9zPtT5GFPzZJsXni3ijzsD7MkizXvXZGHPTNLsnvlnSzysBdmSVZvvK9FHva3WZLtu9pdnpa9NEv0wUyLPOzfWv6bzkDDMzess5qvbc9tuN\u002BWe1b3ZtcZ6bKnHX1qmve\u002BM9LUkz1zaJn3oTPS0tMDcyb/UbNedN3r3Ro2/zGzXnLd490cMv9xs1523fFuD8pOmPWK67Zvw4BnTZr1qutu3xbq7DNvsmZGWNMDbxN70Ss\u002BkjUzwhoPeNuqd4u8yZoZYY2HvI3sQxb4TtbMCGsy4G2tsiFvsmZGWJMxb3N1l8mbrJmR6g3kbed7POL3zAOZMgdkSV5kgu94i394hA/0Sj/UTF2czf7/AfhBv3zUBgAA",
+            "Topology": "H4sIAAAAAAAACk2Uh24bMRQEh7LKSU7i9B7H6b336t67Hae3//\u002BKYJE5gAIIiac58r3dJaeAv8Bx/n86QBfoAw0wAg4BR4CjcieB08BZ4DxwEZgEpoCrwHXgJnAbuAvcBx4Cj4GnwHPgJfAaeAu8Bz4CxZEa6s9v987zMeujYn8CE/7Xs/a6l\u002B/Wn98D\u002B0I\u002B7FfgsO8O7Rn5sJ/VIOy4v5EP\u002B8nnA9fJXsiH3ZNrrDO9IB92x30zjlVeNLJblRcn1B/5sBuulRpO6Q3yYdeqWs7oG/JhV\u002BwltZ/TU\u002BTDLqlFar2g38iHXVDL9HbJLCAfdqby9HLl64TsvH1nXDFDxd6TqTnfT6/XzFeRDzvr/tHmhtkr8mEXrT9a3DKXRT7ssv1HuztmtsiHXVW/aHXPPBf5sOvqH20fmPUiH3ZT/6LlI89BkQ\u002B7rZfR/olnpMiH3dXLaP3M81Pkw\u002B7rZbx54dkq8mEP9DJevPLcFfmwX/Qy3r3xTBb5sN/0Ml6987wW\u002BbA/9DLefqjO8qTsL73MmNbTIh/2T\u002BX/rBnouOeMdbb5mnffjuvNuWZ7bhbNyJg9LahTV7\u002BXzUhXTZb0oaffq2akp6Yr\u002Btz3e92M9PVkzXUH\u002Br1pRgZ6umFtjftsm5HGsWVfQ/3eNSND19ixj5F97JuRkTXsWee4fh\u002BYkczTQ\u002B6mrJVeo2O8TkYyjwa529p7K37H62Qk82iYuzHrxIvoHq\u002BTkczjQe7W1pv4Ha\u002BTkczjce7m9izH73idjLR3YO72PI9GeT95iKfJQbyMX/Ekukfb6BeNokN6TT\u002BpOXVl76z/D/hBv3zUBgAA",
             "Positions": [
               "-48.98348,118.2566,8",
               "-90.50964,90.5097,8",
@@ -902,7 +921,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -918,6 +938,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "da66aeef-a3fe-4f38-bab9-8d3e5de5bf72",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -943,6 +964,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "ecd20065-19c7-489c-b10c-c23b0aca36ee",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -959,7 +981,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -984,6 +1007,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "226bad1d-fcfb-4781-bbde-5b91682c4519",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -1009,6 +1033,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "d0b028ac-4c89-4da7-9b66-ea6dc59049b4",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -1025,7 +1050,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -1055,7 +1081,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2UiVJTQRBFe0JCwiYiOyoCooKIiBu4s2\u002BugAqooP//FfapOq/qUXXLTDyZ6b63Z2Yi4l/qRoq/RqqZ6k51Ur2p/tS11HW5kdRYaiI1lbqVmk7NpOZS86n7qYXUw9Sj1OPUk9TT1PPUy9R66nXqbep9qihqqP9deTbfd1lf1Ng/qUH/r2Xt9V5\u002BWT\u002Bf2/YV8rDnqQF/22PPIQ/7Uw9g\u002B/wc8rDf/b7tPpwV8rAnch3rpJeQh/3muWhIj0Me9ouf2WNY/0Me9pN7UcOo2YQ87FGtlnFzC3nYA3uh9kkzDXnYPb2g1pvmHfKwO3pJb7edhZCH3ahlesd/Qx52277RrDNU7J2Z2vL39HrX\u002BSrysJuejzf3nL0iD7tr/XjxwLks8rD79o93i85skYc91D\u002B8WnKeizzsR/3H22VnvcjDfjY/vFzxHhR52K9mifer3pEiD3tslnj9zPtT5GFPzZJsXni3ijzsD7MkizXvXZGHPTNLsnvlnSzysBdmSVZvvK9FHva3WZLtu9pdnpa9NEv0wUyLPOzfWv6bzkDDMzess5qvbc9tuN\u002BWe1b3ZtcZ6bKnHX1qmve\u002BM9LUkz1zaJn3oTPS0tMDcyb/UbNedN3r3Ro2/zGzXnLd490cMv9xs1523fFuD8pOmPWK67Zvw4BnTZr1qutu3xbq7DNvsmZGWNMDbxN70Ss\u002BkjUzwhoPeNuqd4u8yZoZYY2HvI3sQxb4TtbMCGsy4G2tsiFvsmZGWJMxb3N1l8mbrJmR6g3kbed7POL3zAOZMgdkSV5kgu94i394hA/0Sj/UTF2czf7/AfhBv3zUBgAA",
+            "Topology": "H4sIAAAAAAAACk2Uh24bMRQEh7LKSU7i9B7H6b336t67Hae3//\u002BKYJE5gAIIiac58r3dJaeAv8Bx/n86QBfoAw0wAg4BR4CjcieB08BZ4DxwEZgEpoCrwHXgJnAbuAvcBx4Cj4GnwHPgJfAaeAu8Bz4CxZEa6s9v987zMeujYn8CE/7Xs/a6l\u002B/Wn98D\u002B0I\u002B7FfgsO8O7Rn5sJ/VIOy4v5EP\u002B8nnA9fJXsiH3ZNrrDO9IB92x30zjlVeNLJblRcn1B/5sBuulRpO6Q3yYdeqWs7oG/JhV\u002BwltZ/TU\u002BTDLqlFar2g38iHXVDL9HbJLCAfdqby9HLl64TsvH1nXDFDxd6TqTnfT6/XzFeRDzvr/tHmhtkr8mEXrT9a3DKXRT7ssv1HuztmtsiHXVW/aHXPPBf5sOvqH20fmPUiH3ZT/6LlI89BkQ\u002B7rZfR/olnpMiH3dXLaP3M81Pkw\u002B7rZbx54dkq8mEP9DJevPLcFfmwX/Qy3r3xTBb5sN/0Ml6987wW\u002BbA/9DLefqjO8qTsL73MmNbTIh/2T\u002BX/rBnouOeMdbb5mnffjuvNuWZ7bhbNyJg9LahTV7\u002BXzUhXTZb0oaffq2akp6Yr\u002Btz3e92M9PVkzXUH\u002Br1pRgZ6umFtjftsm5HGsWVfQ/3eNSND19ixj5F97JuRkTXsWee4fh\u002BYkczTQ\u002B6mrJVeo2O8TkYyjwa529p7K37H62Qk82iYuzHrxIvoHq\u002BTkczjQe7W1pv4Ha\u002BTkczjce7m9izH73idjLR3YO72PI9GeT95iKfJQbyMX/Ekukfb6BeNokN6TT\u002BpOXVl76z/D/hBv3zUBgAA",
             "Positions": [
               "-48.98348,118.2566,8",
               "-90.50964,90.5097,8",
@@ -1388,7 +1414,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -1404,6 +1431,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "686b16c8-9ceb-4544-be15-75c18dfc3502",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -1429,6 +1457,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "008c05e9-2f25-419c-973f-c3a63d856a0a",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -1445,7 +1474,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -1470,6 +1500,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "3aacbf9f-8967-4977-9ed0-d219e0f97815",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -1495,6 +1526,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "c465ff91-6090-40d7-bfd3-a084a442ff83",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -1511,7 +1543,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -1555,7 +1588,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2UiVJTQRBFe0JCwiYiOyoCooKIiBu4s2\u002BugAqooP//FfapOq/qUXXLTDyZ6b63Z2Yi4l/qRoq/RqqZ6k51Ur2p/tS11HW5kdRYaiI1lbqVmk7NpOZS86n7qYXUw9Sj1OPUk9TT1PPUy9R66nXqbep9qihqqP9deTbfd1lf1Ng/qUH/r2Xt9V5\u002BWT\u002Bf2/YV8rDnqQF/22PPIQ/7Uw9g\u002B/wc8rDf/b7tPpwV8rAnch3rpJeQh/3muWhIj0Me9ouf2WNY/0Me9pN7UcOo2YQ87FGtlnFzC3nYA3uh9kkzDXnYPb2g1pvmHfKwO3pJb7edhZCH3ahlesd/Qx52277RrDNU7J2Z2vL39HrX\u002BSrysJuejzf3nL0iD7tr/XjxwLks8rD79o93i85skYc91D\u002B8WnKeizzsR/3H22VnvcjDfjY/vFzxHhR52K9mifer3pEiD3tslnj9zPtT5GFPzZJsXni3ijzsD7MkizXvXZGHPTNLsnvlnSzysBdmSVZvvK9FHva3WZLtu9pdnpa9NEv0wUyLPOzfWv6bzkDDMzess5qvbc9tuN\u002BWe1b3ZtcZ6bKnHX1qmve\u002BM9LUkz1zaJn3oTPS0tMDcyb/UbNedN3r3Ro2/zGzXnLd490cMv9xs1523fFuD8pOmPWK67Zvw4BnTZr1qutu3xbq7DNvsmZGWNMDbxN70Ss\u002BkjUzwhoPeNuqd4u8yZoZYY2HvI3sQxb4TtbMCGsy4G2tsiFvsmZGWJMxb3N1l8mbrJmR6g3kbed7POL3zAOZMgdkSV5kgu94i394hA/0Sj/UTF2czf7/AfhBv3zUBgAA",
+            "Topology": "H4sIAAAAAAAACk2Uh24bMRQEh7LKSU7i9B7H6b336t67Hae3//\u002BKYJE5gAIIiac58r3dJaeAv8Bx/n86QBfoAw0wAg4BR4CjcieB08BZ4DxwEZgEpoCrwHXgJnAbuAvcBx4Cj4GnwHPgJfAaeAu8Bz4CxZEa6s9v987zMeujYn8CE/7Xs/a6l\u002B/Wn98D\u002B0I\u002B7FfgsO8O7Rn5sJ/VIOy4v5EP\u002B8nnA9fJXsiH3ZNrrDO9IB92x30zjlVeNLJblRcn1B/5sBuulRpO6Q3yYdeqWs7oG/JhV\u002BwltZ/TU\u002BTDLqlFar2g38iHXVDL9HbJLCAfdqby9HLl64TsvH1nXDFDxd6TqTnfT6/XzFeRDzvr/tHmhtkr8mEXrT9a3DKXRT7ssv1HuztmtsiHXVW/aHXPPBf5sOvqH20fmPUiH3ZT/6LlI89BkQ\u002B7rZfR/olnpMiH3dXLaP3M81Pkw\u002B7rZbx54dkq8mEP9DJevPLcFfmwX/Qy3r3xTBb5sN/0Ml6987wW\u002BbA/9DLefqjO8qTsL73MmNbTIh/2T\u002BX/rBnouOeMdbb5mnffjuvNuWZ7bhbNyJg9LahTV7\u002BXzUhXTZb0oaffq2akp6Yr\u002Btz3e92M9PVkzXUH\u002Br1pRgZ6umFtjftsm5HGsWVfQ/3eNSND19ixj5F97JuRkTXsWee4fh\u002BYkczTQ\u002B6mrJVeo2O8TkYyjwa529p7K37H62Qk82iYuzHrxIvoHq\u002BTkczjQe7W1pv4Ha\u002BTkczjce7m9izH73idjLR3YO72PI9GeT95iKfJQbyMX/Ekukfb6BeNokN6TT\u002BpOXVl76z/D/hBv3zUBgAA",
             "Positions": [
               "-48.98348,118.2566,8",
               "-90.50964,90.5097,8",
@@ -1888,7 +1921,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -1919,6 +1953,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "e4c1f883-d793-42ad-98e6-c2e4c502f580",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -1944,6 +1979,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "50f98a8f-46af-4821-aa73-d99b8f7b73cf",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -1960,7 +1996,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -1985,6 +2022,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "d3a7e696-6eac-498c-bc5d-62836858a61a",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -2010,6 +2048,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "ad1b1f34-3697-41e3-b28a-1013322efbcc",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -2026,7 +2065,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -2056,7 +2096,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2UiVJTQRBFe0JCwiYiOyoCooKIiBu4s2\u002BugAqooP//FfapOq/qUXXLTDyZ6b63Z2Yi4l/qRoq/RqqZ6k51Ur2p/tS11HW5kdRYaiI1lbqVmk7NpOZS86n7qYXUw9Sj1OPUk9TT1PPUy9R66nXqbep9qihqqP9deTbfd1lf1Ng/qUH/r2Xt9V5\u002BWT\u002Bf2/YV8rDnqQF/22PPIQ/7Uw9g\u002B/wc8rDf/b7tPpwV8rAnch3rpJeQh/3muWhIj0Me9ouf2WNY/0Me9pN7UcOo2YQ87FGtlnFzC3nYA3uh9kkzDXnYPb2g1pvmHfKwO3pJb7edhZCH3ahlesd/Qx52277RrDNU7J2Z2vL39HrX\u002BSrysJuejzf3nL0iD7tr/XjxwLks8rD79o93i85skYc91D\u002B8WnKeizzsR/3H22VnvcjDfjY/vFzxHhR52K9mifer3pEiD3tslnj9zPtT5GFPzZJsXni3ijzsD7MkizXvXZGHPTNLsnvlnSzysBdmSVZvvK9FHva3WZLtu9pdnpa9NEv0wUyLPOzfWv6bzkDDMzess5qvbc9tuN\u002BWe1b3ZtcZ6bKnHX1qmve\u002BM9LUkz1zaJn3oTPS0tMDcyb/UbNedN3r3Ro2/zGzXnLd490cMv9xs1523fFuD8pOmPWK67Zvw4BnTZr1qutu3xbq7DNvsmZGWNMDbxN70Ss\u002BkjUzwhoPeNuqd4u8yZoZYY2HvI3sQxb4TtbMCGsy4G2tsiFvsmZGWJMxb3N1l8mbrJmR6g3kbed7POL3zAOZMgdkSV5kgu94i394hA/0Sj/UTF2czf7/AfhBv3zUBgAA",
+            "Topology": "H4sIAAAAAAAACk2Uh24bMRQEh7LKSU7i9B7H6b336t67Hae3//\u002BKYJE5gAIIiac58r3dJaeAv8Bx/n86QBfoAw0wAg4BR4CjcieB08BZ4DxwEZgEpoCrwHXgJnAbuAvcBx4Cj4GnwHPgJfAaeAu8Bz4CxZEa6s9v987zMeujYn8CE/7Xs/a6l\u002B/Wn98D\u002B0I\u002B7FfgsO8O7Rn5sJ/VIOy4v5EP\u002B8nnA9fJXsiH3ZNrrDO9IB92x30zjlVeNLJblRcn1B/5sBuulRpO6Q3yYdeqWs7oG/JhV\u002BwltZ/TU\u002BTDLqlFar2g38iHXVDL9HbJLCAfdqby9HLl64TsvH1nXDFDxd6TqTnfT6/XzFeRDzvr/tHmhtkr8mEXrT9a3DKXRT7ssv1HuztmtsiHXVW/aHXPPBf5sOvqH20fmPUiH3ZT/6LlI89BkQ\u002B7rZfR/olnpMiH3dXLaP3M81Pkw\u002B7rZbx54dkq8mEP9DJevPLcFfmwX/Qy3r3xTBb5sN/0Ml6987wW\u002BbA/9DLefqjO8qTsL73MmNbTIh/2T\u002BX/rBnouOeMdbb5mnffjuvNuWZ7bhbNyJg9LahTV7\u002BXzUhXTZb0oaffq2akp6Yr\u002Btz3e92M9PVkzXUH\u002Br1pRgZ6umFtjftsm5HGsWVfQ/3eNSND19ixj5F97JuRkTXsWee4fh\u002BYkczTQ\u002B6mrJVeo2O8TkYyjwa529p7K37H62Qk82iYuzHrxIvoHq\u002BTkczjQe7W1pv4Ha\u002BTkczjce7m9izH73idjLR3YO72PI9GeT95iKfJQbyMX/Ekukfb6BeNokN6TT\u002BpOXVl76z/D/hBv3zUBgAA",
             "Positions": [
               "-48.98348,118.2566,8",
               "-90.50964,90.5097,8",
@@ -2389,7 +2429,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -2420,6 +2461,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "ea7c40d3-0ec8-4771-9b89-d924e8523e14",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -2445,6 +2487,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "c2452c7c-bc50-4a9c-b19c-3eb80040a7f5",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -2461,7 +2504,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -2486,6 +2530,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "f9e5fb80-537e-499f-a646-c6e9ece780fd",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -2511,6 +2556,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "61f5759c-ad99-4529-b401-c2549d3788df",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -2527,7 +2573,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -2557,7 +2604,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2UiVJTQRBFe0JCwiYiOyoCooKIiBu4s2\u002BugAqooP//FfapOq/qUXXLTDyZ6b63Z2Yi4l/qRoq/RqqZ6k51Ur2p/tS11HW5kdRYaiI1lbqVmk7NpOZS86n7qYXUw9Sj1OPUk9TT1PPUy9R66nXqbep9qihqqP9deTbfd1lf1Ng/qUH/r2Xt9V5\u002BWT\u002Bf2/YV8rDnqQF/22PPIQ/7Uw9g\u002B/wc8rDf/b7tPpwV8rAnch3rpJeQh/3muWhIj0Me9ouf2WNY/0Me9pN7UcOo2YQ87FGtlnFzC3nYA3uh9kkzDXnYPb2g1pvmHfKwO3pJb7edhZCH3ahlesd/Qx52277RrDNU7J2Z2vL39HrX\u002BSrysJuejzf3nL0iD7tr/XjxwLks8rD79o93i85skYc91D\u002B8WnKeizzsR/3H22VnvcjDfjY/vFzxHhR52K9mifer3pEiD3tslnj9zPtT5GFPzZJsXni3ijzsD7MkizXvXZGHPTNLsnvlnSzysBdmSVZvvK9FHva3WZLtu9pdnpa9NEv0wUyLPOzfWv6bzkDDMzess5qvbc9tuN\u002BWe1b3ZtcZ6bKnHX1qmve\u002BM9LUkz1zaJn3oTPS0tMDcyb/UbNedN3r3Ro2/zGzXnLd490cMv9xs1523fFuD8pOmPWK67Zvw4BnTZr1qutu3xbq7DNvsmZGWNMDbxN70Ss\u002BkjUzwhoPeNuqd4u8yZoZYY2HvI3sQxb4TtbMCGsy4G2tsiFvsmZGWJMxb3N1l8mbrJmR6g3kbed7POL3zAOZMgdkSV5kgu94i394hA/0Sj/UTF2czf7/AfhBv3zUBgAA",
+            "Topology": "H4sIAAAAAAAACk2Uh24bMRQEh7LKSU7i9B7H6b336t67Hae3//\u002BKYJE5gAIIiac58r3dJaeAv8Bx/n86QBfoAw0wAg4BR4CjcieB08BZ4DxwEZgEpoCrwHXgJnAbuAvcBx4Cj4GnwHPgJfAaeAu8Bz4CxZEa6s9v987zMeujYn8CE/7Xs/a6l\u002B/Wn98D\u002B0I\u002B7FfgsO8O7Rn5sJ/VIOy4v5EP\u002B8nnA9fJXsiH3ZNrrDO9IB92x30zjlVeNLJblRcn1B/5sBuulRpO6Q3yYdeqWs7oG/JhV\u002BwltZ/TU\u002BTDLqlFar2g38iHXVDL9HbJLCAfdqby9HLl64TsvH1nXDFDxd6TqTnfT6/XzFeRDzvr/tHmhtkr8mEXrT9a3DKXRT7ssv1HuztmtsiHXVW/aHXPPBf5sOvqH20fmPUiH3ZT/6LlI89BkQ\u002B7rZfR/olnpMiH3dXLaP3M81Pkw\u002B7rZbx54dkq8mEP9DJevPLcFfmwX/Qy3r3xTBb5sN/0Ml6987wW\u002BbA/9DLefqjO8qTsL73MmNbTIh/2T\u002BX/rBnouOeMdbb5mnffjuvNuWZ7bhbNyJg9LahTV7\u002BXzUhXTZb0oaffq2akp6Yr\u002Btz3e92M9PVkzXUH\u002Br1pRgZ6umFtjftsm5HGsWVfQ/3eNSND19ixj5F97JuRkTXsWee4fh\u002BYkczTQ\u002B6mrJVeo2O8TkYyjwa529p7K37H62Qk82iYuzHrxIvoHq\u002BTkczjQe7W1pv4Ha\u002BTkczjce7m9izH73idjLR3YO72PI9GeT95iKfJQbyMX/Ekukfb6BeNokN6TT\u002BpOXVl76z/D/hBv3zUBgAA",
             "Positions": [
               "-48.98348,118.2566,8",
               "-90.50964,90.5097,8",
@@ -2890,7 +2937,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -2906,6 +2954,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "39246660-6b6e-4154-ac95-7bb5aa245bd2",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -2931,6 +2980,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "92cfe7e3-a9d6-4e7b-824e-b9979251e382",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -2947,7 +2997,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -2972,6 +3023,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "c4065494-832f-40d3-ad90-ff36f466ae6e",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -2997,6 +3049,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "4821e176-a7f5-405f-88f3-960b3015d96a",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -3013,7 +3066,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -3043,7 +3097,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2UiVJTQRBFe0JCwiYiOyoCooKIiBu4s2\u002BugAqooP//FfapOq/qUXXLTDyZ6b63Z2Yi4l/qRoq/RqqZ6k51Ur2p/tS11HW5kdRYaiI1lbqVmk7NpOZS86n7qYXUw9Sj1OPUk9TT1PPUy9R66nXqbep9qihqqP9deTbfd1lf1Ng/qUH/r2Xt9V5\u002BWT\u002Bf2/YV8rDnqQF/22PPIQ/7Uw9g\u002B/wc8rDf/b7tPpwV8rAnch3rpJeQh/3muWhIj0Me9ouf2WNY/0Me9pN7UcOo2YQ87FGtlnFzC3nYA3uh9kkzDXnYPb2g1pvmHfKwO3pJb7edhZCH3ahlesd/Qx52277RrDNU7J2Z2vL39HrX\u002BSrysJuejzf3nL0iD7tr/XjxwLks8rD79o93i85skYc91D\u002B8WnKeizzsR/3H22VnvcjDfjY/vFzxHhR52K9mifer3pEiD3tslnj9zPtT5GFPzZJsXni3ijzsD7MkizXvXZGHPTNLsnvlnSzysBdmSVZvvK9FHva3WZLtu9pdnpa9NEv0wUyLPOzfWv6bzkDDMzess5qvbc9tuN\u002BWe1b3ZtcZ6bKnHX1qmve\u002BM9LUkz1zaJn3oTPS0tMDcyb/UbNedN3r3Ro2/zGzXnLd490cMv9xs1523fFuD8pOmPWK67Zvw4BnTZr1qutu3xbq7DNvsmZGWNMDbxN70Ss\u002BkjUzwhoPeNuqd4u8yZoZYY2HvI3sQxb4TtbMCGsy4G2tsiFvsmZGWJMxb3N1l8mbrJmR6g3kbed7POL3zAOZMgdkSV5kgu94i394hA/0Sj/UTF2czf7/AfhBv3zUBgAA",
+            "Topology": "H4sIAAAAAAAACk2Uh24bMRQEh7LKSU7i9B7H6b336t67Hae3//\u002BKYJE5gAIIiac58r3dJaeAv8Bx/n86QBfoAw0wAg4BR4CjcieB08BZ4DxwEZgEpoCrwHXgJnAbuAvcBx4Cj4GnwHPgJfAaeAu8Bz4CxZEa6s9v987zMeujYn8CE/7Xs/a6l\u002B/Wn98D\u002B0I\u002B7FfgsO8O7Rn5sJ/VIOy4v5EP\u002B8nnA9fJXsiH3ZNrrDO9IB92x30zjlVeNLJblRcn1B/5sBuulRpO6Q3yYdeqWs7oG/JhV\u002BwltZ/TU\u002BTDLqlFar2g38iHXVDL9HbJLCAfdqby9HLl64TsvH1nXDFDxd6TqTnfT6/XzFeRDzvr/tHmhtkr8mEXrT9a3DKXRT7ssv1HuztmtsiHXVW/aHXPPBf5sOvqH20fmPUiH3ZT/6LlI89BkQ\u002B7rZfR/olnpMiH3dXLaP3M81Pkw\u002B7rZbx54dkq8mEP9DJevPLcFfmwX/Qy3r3xTBb5sN/0Ml6987wW\u002BbA/9DLefqjO8qTsL73MmNbTIh/2T\u002BX/rBnouOeMdbb5mnffjuvNuWZ7bhbNyJg9LahTV7\u002BXzUhXTZb0oaffq2akp6Yr\u002Btz3e92M9PVkzXUH\u002Br1pRgZ6umFtjftsm5HGsWVfQ/3eNSND19ixj5F97JuRkTXsWee4fh\u002BYkczTQ\u002B6mrJVeo2O8TkYyjwa529p7K37H62Qk82iYuzHrxIvoHq\u002BTkczjQe7W1pv4Ha\u002BTkczjce7m9izH73idjLR3YO72PI9GeT95iKfJQbyMX/Ekukfb6BeNokN6TT\u002BpOXVl76z/D/hBv3zUBgAA",
             "Positions": [
               "-48.98348,118.2566,8",
               "-90.50964,90.5097,8",
@@ -3376,7 +3430,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -3392,6 +3447,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "8e923074-0f6c-4b5c-ba71-f1575f0df1aa",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -3417,6 +3473,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "1984bd77-47e3-4de6-9ae7-742dc2be5174",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -3433,7 +3490,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -3458,6 +3516,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "5425998a-d9de-46c6-9ca0-9d11e7053045",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -3483,6 +3542,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "131e9c83-9f6a-4876-b574-d150d042cf1f",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -3499,7 +3559,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -3544,7 +3605,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2UiVJTQRBFe0JCwiYiOyoCooKIiBu4s2\u002BugAqooP//FfapOq/qUXXLTDyZ6b63Z2Yi4l/qRoq/RqqZ6k51Ur2p/tS11HW5kdRYaiI1lbqVmk7NpOZS86n7qYXUw9Sj1OPUk9TT1PPUy9R66nXqbep9qihqqP9deTbfd1lf1Ng/qUH/r2Xt9V5\u002BWT\u002Bf2/YV8rDnqQF/22PPIQ/7Uw9g\u002B/wc8rDf/b7tPpwV8rAnch3rpJeQh/3muWhIj0Me9ouf2WNY/0Me9pN7UcOo2YQ87FGtlnFzC3nYA3uh9kkzDXnYPb2g1pvmHfKwO3pJb7edhZCH3ahlesd/Qx52277RrDNU7J2Z2vL39HrX\u002BSrysJuejzf3nL0iD7tr/XjxwLks8rD79o93i85skYc91D\u002B8WnKeizzsR/3H22VnvcjDfjY/vFzxHhR52K9mifer3pEiD3tslnj9zPtT5GFPzZJsXni3ijzsD7MkizXvXZGHPTNLsnvlnSzysBdmSVZvvK9FHva3WZLtu9pdnpa9NEv0wUyLPOzfWv6bzkDDMzess5qvbc9tuN\u002BWe1b3ZtcZ6bKnHX1qmve\u002BM9LUkz1zaJn3oTPS0tMDcyb/UbNedN3r3Ro2/zGzXnLd490cMv9xs1523fFuD8pOmPWK67Zvw4BnTZr1qutu3xbq7DNvsmZGWNMDbxN70Ss\u002BkjUzwhoPeNuqd4u8yZoZYY2HvI3sQxb4TtbMCGsy4G2tsiFvsmZGWJMxb3N1l8mbrJmR6g3kbed7POL3zAOZMgdkSV5kgu94i394hA/0Sj/UTF2czf7/AfhBv3zUBgAA",
+            "Topology": "H4sIAAAAAAAACk2Uh24bMRQEh7LKSU7i9B7H6b336t67Hae3//\u002BKYJE5gAIIiac58r3dJaeAv8Bx/n86QBfoAw0wAg4BR4CjcieB08BZ4DxwEZgEpoCrwHXgJnAbuAvcBx4Cj4GnwHPgJfAaeAu8Bz4CxZEa6s9v987zMeujYn8CE/7Xs/a6l\u002B/Wn98D\u002B0I\u002B7FfgsO8O7Rn5sJ/VIOy4v5EP\u002B8nnA9fJXsiH3ZNrrDO9IB92x30zjlVeNLJblRcn1B/5sBuulRpO6Q3yYdeqWs7oG/JhV\u002BwltZ/TU\u002BTDLqlFar2g38iHXVDL9HbJLCAfdqby9HLl64TsvH1nXDFDxd6TqTnfT6/XzFeRDzvr/tHmhtkr8mEXrT9a3DKXRT7ssv1HuztmtsiHXVW/aHXPPBf5sOvqH20fmPUiH3ZT/6LlI89BkQ\u002B7rZfR/olnpMiH3dXLaP3M81Pkw\u002B7rZbx54dkq8mEP9DJevPLcFfmwX/Qy3r3xTBb5sN/0Ml6987wW\u002BbA/9DLefqjO8qTsL73MmNbTIh/2T\u002BX/rBnouOeMdbb5mnffjuvNuWZ7bhbNyJg9LahTV7\u002BXzUhXTZb0oaffq2akp6Yr\u002Btz3e92M9PVkzXUH\u002Br1pRgZ6umFtjftsm5HGsWVfQ/3eNSND19ixj5F97JuRkTXsWee4fh\u002BYkczTQ\u002B6mrJVeo2O8TkYyjwa529p7K37H62Qk82iYuzHrxIvoHq\u002BTkczjQe7W1pv4Ha\u002BTkczjce7m9izH73idjLR3YO72PI9GeT95iKfJQbyMX/Ekukfb6BeNokN6TT\u002BpOXVl76z/D/hBv3zUBgAA",
             "Positions": [
               "-48.98348,118.2566,8",
               "-90.50964,90.5097,8",
@@ -3877,7 +3938,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -3893,6 +3955,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "421309fd-6ac9-450a-947b-c09ebb712e48",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -3918,6 +3981,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "10efc770-7f3a-4d8f-aea1-6098781a69bc",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -3934,7 +3998,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -3959,6 +4024,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "0230aaa0-f676-4eac-a470-3cae1d5f0389",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -3984,6 +4050,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "f6e45336-2f14-4a7b-b27a-3c9407b84228",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -4000,7 +4067,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -4045,7 +4113,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2UiVJTQRBFe0JCwiYiOyoCooKIiBu4s2\u002BugAqooP//FfapOq/qUXXLTDyZ6b63Z2Yi4l/qRoq/RqqZ6k51Ur2p/tS11HW5kdRYaiI1lbqVmk7NpOZS86n7qYXUw9Sj1OPUk9TT1PPUy9R66nXqbep9qihqqP9deTbfd1lf1Ng/qUH/r2Xt9V5\u002BWT\u002Bf2/YV8rDnqQF/22PPIQ/7Uw9g\u002B/wc8rDf/b7tPpwV8rAnch3rpJeQh/3muWhIj0Me9ouf2WNY/0Me9pN7UcOo2YQ87FGtlnFzC3nYA3uh9kkzDXnYPb2g1pvmHfKwO3pJb7edhZCH3ahlesd/Qx52277RrDNU7J2Z2vL39HrX\u002BSrysJuejzf3nL0iD7tr/XjxwLks8rD79o93i85skYc91D\u002B8WnKeizzsR/3H22VnvcjDfjY/vFzxHhR52K9mifer3pEiD3tslnj9zPtT5GFPzZJsXni3ijzsD7MkizXvXZGHPTNLsnvlnSzysBdmSVZvvK9FHva3WZLtu9pdnpa9NEv0wUyLPOzfWv6bzkDDMzess5qvbc9tuN\u002BWe1b3ZtcZ6bKnHX1qmve\u002BM9LUkz1zaJn3oTPS0tMDcyb/UbNedN3r3Ro2/zGzXnLd490cMv9xs1523fFuD8pOmPWK67Zvw4BnTZr1qutu3xbq7DNvsmZGWNMDbxN70Ss\u002BkjUzwhoPeNuqd4u8yZoZYY2HvI3sQxb4TtbMCGsy4G2tsiFvsmZGWJMxb3N1l8mbrJmR6g3kbed7POL3zAOZMgdkSV5kgu94i394hA/0Sj/UTF2czf7/AfhBv3zUBgAA",
+            "Topology": "H4sIAAAAAAAACk2Uh24bMRQEh7LKSU7i9B7H6b336t67Hae3//\u002BKYJE5gAIIiac58r3dJaeAv8Bx/n86QBfoAw0wAg4BR4CjcieB08BZ4DxwEZgEpoCrwHXgJnAbuAvcBx4Cj4GnwHPgJfAaeAu8Bz4CxZEa6s9v987zMeujYn8CE/7Xs/a6l\u002B/Wn98D\u002B0I\u002B7FfgsO8O7Rn5sJ/VIOy4v5EP\u002B8nnA9fJXsiH3ZNrrDO9IB92x30zjlVeNLJblRcn1B/5sBuulRpO6Q3yYdeqWs7oG/JhV\u002BwltZ/TU\u002BTDLqlFar2g38iHXVDL9HbJLCAfdqby9HLl64TsvH1nXDFDxd6TqTnfT6/XzFeRDzvr/tHmhtkr8mEXrT9a3DKXRT7ssv1HuztmtsiHXVW/aHXPPBf5sOvqH20fmPUiH3ZT/6LlI89BkQ\u002B7rZfR/olnpMiH3dXLaP3M81Pkw\u002B7rZbx54dkq8mEP9DJevPLcFfmwX/Qy3r3xTBb5sN/0Ml6987wW\u002BbA/9DLefqjO8qTsL73MmNbTIh/2T\u002BX/rBnouOeMdbb5mnffjuvNuWZ7bhbNyJg9LahTV7\u002BXzUhXTZb0oaffq2akp6Yr\u002Btz3e92M9PVkzXUH\u002Br1pRgZ6umFtjftsm5HGsWVfQ/3eNSND19ixj5F97JuRkTXsWee4fh\u002BYkczTQ\u002B6mrJVeo2O8TkYyjwa529p7K37H62Qk82iYuzHrxIvoHq\u002BTkczjQe7W1pv4Ha\u002BTkczjce7m9izH73idjLR3YO72PI9GeT95iKfJQbyMX/Ekukfb6BeNokN6TT\u002BpOXVl76z/D/hBv3zUBgAA",
             "Positions": [
               "-48.98348,118.2566,8",
               "-90.50964,90.5097,8",
@@ -4378,7 +4446,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -4394,6 +4463,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "1a651493-bbb3-4140-ab94-e39033097917",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -4419,6 +4489,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "0410d858-def9-41b8-8ebc-37589e580ab6",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -4435,7 +4506,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -4460,6 +4532,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "7066d203-f5d1-4716-b700-29059ca5eb45",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/jump_pad.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -4485,6 +4558,7 @@
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "18c05ff5-7a17-416c-9aa7-1f38a8b03ccd",
                   "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
                   "Model": "models/dev/box.vmdl",
                   "RenderOptions": {
                     "GameLayer": true,
@@ -4501,7 +4575,8 @@
                   "Center": "0,0,0",
                   "IsTrigger": true,
                   "Scale": "50,50,50",
-                  "Static": false
+                  "Static": false,
+                  "SurfaceVelocity": "0,0,0"
                 },
                 {
                   "__type": "JumpPad",
@@ -4546,7 +4621,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "8,-32,8",
               "32,-8,8.000004",
@@ -4654,7 +4729,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -4673,7 +4749,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "8,-16,8.000001",
               "32,8,8.000004",
@@ -4781,7 +4857,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -4800,7 +4877,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-8,-16,8.000035",
               "16,8,8",
@@ -4908,7 +4985,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -4927,7 +5005,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-8,-32,8",
               "16,-8,7.999984",
@@ -5035,7 +5113,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -5097,7 +5176,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-96,-48,8",
               "96,-48,8",
@@ -5205,7 +5284,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -5224,7 +5304,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-296,120,-4",
               "296,-128,-4",
@@ -5332,7 +5412,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -5352,7 +5433,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-296,120,-4",
               "296,-128,-4",
@@ -5460,7 +5541,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -5479,7 +5561,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-296,-128,-4",
               "296,120,-4",
@@ -5587,7 +5669,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -5607,7 +5690,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-296,-128,-4",
               "296,120,-4",
@@ -5715,7 +5798,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -5734,7 +5818,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "112,-136,-4",
               "120,-136,-4",
@@ -5842,7 +5926,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -5862,7 +5947,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "112,-136,-4",
               "120,-136,-4",
@@ -5900,36 +5985,36 @@
               "-4.125,0.15625"
             ],
             "TextureUAxis": [
-              "-1,-0.0000004487881,0",
-              "-1,-0.0000004487881,0",
-              "-0.6489469,0.7608336,0",
-              "0.6489469,-0.7608336,0",
-              "1,0,0",
-              "-1,0,0"
+              "-1,-0.0000004487866,0",
+              "-1,-0.0000004487866,0",
+              "-0.6489469,0.7608337,0",
+              "0.6489469,-0.7608337,0",
+              "1,0.000003814697,0",
+              "-1,-0.000003814697,0"
             ],
             "TextureVAxis": [
-              "0,1,-0",
-              "-0,1,0",
+              "-0.000003814697,1,-0",
+              "-0.000003814697,1,0",
               "0,0,-1",
               "0,0,-1",
               "0,0,-1",
               "0,0,-1"
             ],
             "TextureScale": [
-              "0.25,0.2499999",
-              "0.25,0.2499999",
+              "0.25,0.2500007",
+              "0.25,0.2500007",
               "0.3285868,0.25",
               "0.3285868,0.25",
               "0.25,0.25",
               "0.25,0.25"
             ],
             "TextureOffset": [
-              "288,160.0004",
-              "288,160.0004",
-              "342.7053,256",
-              "185.0944,256",
-              "223.9993,256",
-              "288.0002,256"
+              "288,159.9859",
+              "288,159.9858",
+              "342.7054,256",
+              "185.0943,256",
+              "224.0059,256",
+              "287.9978,256"
             ],
             "MaterialIndex": [
               0,
@@ -5970,7 +6055,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -5989,7 +6075,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-120,-136,-4",
               "-112,-136,-4",
@@ -6097,7 +6183,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -6117,7 +6204,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-120,-136,-4",
               "-112,-136,-4",
@@ -6155,12 +6242,12 @@
               "-5.90625,0.15625"
             ],
             "TextureUAxis": [
-              "-1,-0.0000004487877,0",
-              "-1,-0.0000004487877,0",
-              "0.6423984,0.7663708,0",
-              "-0.6423985,-0.7663709,0",
+              "-1,-0.0000004487878,0",
+              "-1,-0.0000004487878,0",
+              "0.6423985,0.7663708,0",
+              "-0.6423986,-0.7663708,0",
               "1,0,0",
-              "-1,0,0"
+              "-1,-0.000003814697,0"
             ],
             "TextureVAxis": [
               "0,1,0",
@@ -6179,12 +6266,12 @@
               "0.25,0.25"
             ],
             "TextureOffset": [
-              "288,352.0006",
-              "288,352.0005",
+              "288,352.0004",
+              "288,352.0004",
               "105.5095,256",
               "403.8916,256",
               "224.0002,256",
-              "287.9993,256"
+              "288.0059,256"
             ],
             "MaterialIndex": [
               0,
@@ -6225,7 +6312,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -6245,7 +6333,7 @@
           "HideInGame": true,
           "IsTrigger": true,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-3121.608,-2367.908,64",
               "3121.609,-2367.908,64",
@@ -6353,7 +6441,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "DeathTeleport",
@@ -6423,6 +6512,9 @@
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "rc_arena"
+    },
     "NavMesh": {
       "Enabled": false,
       "IncludeStaticBodies": true,
@@ -6436,9 +6528,9 @@
       "IncludedBodies": ""
     }
   },
+  "ResourceVersion": 2,
   "Title": "rc_arena",
-  "Description": "",
-  "ResourceVersion": 1,
+  "Description": null,
   "__references": [],
-  "__version": 1
+  "__version": 2
 }
