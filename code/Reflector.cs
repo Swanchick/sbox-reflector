@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Channels;
 using System.Threading.Tasks;
 
 public class Reflector : Component, Component.INetworkListener, IReflector
@@ -52,13 +51,13 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		_ = SetupPlayer( playerObject );
 	}
 
-	[Broadcast]
+	[Rpc.Broadcast]
 	public void OnPlayerHit( Player attacker, Player victim )
 	{
 		hitedPlayers[victim.GameObject.Id] = attacker.GameObject.Id;
 	}
 
-	[Broadcast]
+	[Rpc.Broadcast]
 	public void OnPlayerDeath( Player player )
 	{
 		Guid playerId = player.GameObject.Id;
@@ -79,7 +78,7 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		Log.Info( $"{player.Name}: Died" );
 	}
 
-	[Broadcast]
+	[Rpc.Broadcast]
 	public void OnPlayerGrounded( Player player )
 	{
 		Guid playerId = player.GameObject.Id;
@@ -101,7 +100,7 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 
 		LoadingScreen.Title = "Creating Lobby";
 		await Task.DelayRealtimeSeconds( 0.1f );
-		Networking.CreateLobby();
+		Networking.CreateLobby( new() );
 	}
 
 	private async Task SetupPlayer( GameObject playerObject )
@@ -114,7 +113,6 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 	private Transform GetRandomSpawnpoint()
 	{
 		GameObject spawn = spawnPoints[Game.Random.Next( 0, spawnPoints.Count - 1 )];
-
 
 		return spawn.Transform.World;
 	}

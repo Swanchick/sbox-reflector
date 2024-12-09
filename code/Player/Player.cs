@@ -4,6 +4,7 @@ using System;
 public class Player : Component
 {
 	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.None;
+	public bool Alive { get; set; } = true;
 	public CharacterController playerController { get; private set; }
 	public BoxCollider collider { get; private set; }
 
@@ -109,6 +110,10 @@ public class Player : Component
 			playerBody.Enabled = true;
 
 			playerController.Velocity = Vector3.Zero;
+
+			Log.Info( "====================" );
+			Log.Info( "Turnded Off" );
+			Log.Info( "====================" );
 		}
 	}
 

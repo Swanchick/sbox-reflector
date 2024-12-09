@@ -1,4 +1,3 @@
-using Sandbox;
 using System.Threading.Tasks;
 
 public class DeathTeleport : BaseTrigger
@@ -6,24 +5,26 @@ public class DeathTeleport : BaseTrigger
 	[Property]
 	private List<GameObject> spawnPoints;
 
-
 	protected override void OnPlayerEnter( Player player )
 	{
+		if ( !player.Alive )
+			return;
+
 		player.Spectate( true );
+		GameObject randomGameObject = GetRandomSpawnpoint();
+		player.Jump( Vector3.Zero, 0 );
+		player.Transform.World = randomGameObject.Transform.World;
+		player.Transform.ClearInterpolation();
+		player.Spectate(false);
 
-		player.Transform.World = GetRandomSpawnpoint();
-
-		player.Spectate( false );
-
+		Log.Info( $"Spawned on - {player.Transform.World.Position}" );
 		Scene.RunEvent<IReflector>( x => x.OnPlayerDeath( player ) );
-		
 	}
 
-	private Transform GetRandomSpawnpoint()
+	private GameObject GetRandomSpawnpoint()
 	{
 		GameObject spawn = spawnPoints[Game.Random.Next( 0, spawnPoints.Count - 1 )];
 
-
-		return spawn.Transform.World;
+		return spawn;
 	}
 }
