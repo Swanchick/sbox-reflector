@@ -1,5 +1,3 @@
-using System.Threading.Tasks;
-
 public class DeathTeleport : BaseTrigger
 {
 	[Property]
@@ -10,12 +8,10 @@ public class DeathTeleport : BaseTrigger
 		if ( !player.Alive )
 			return;
 
-		player.Spectate( true );
 		GameObject randomGameObject = GetRandomSpawnpoint();
 		player.Jump( Vector3.Zero, 0 );
 		player.Transform.World = randomGameObject.Transform.World;
 		player.Transform.ClearInterpolation();
-		player.Spectate(false);
 
 		Log.Info( $"Spawned on - {player.Transform.World.Position}" );
 		Scene.RunEvent<IReflector>( x => x.OnPlayerDeath( player ) );

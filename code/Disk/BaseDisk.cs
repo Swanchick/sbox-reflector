@@ -45,6 +45,8 @@ public abstract class BaseDisk : Component
 
 	private BaseDiskThrower baseDiskThrower;
 
+	private bool isDestroying = false;
+
 	public void Setup( Vector3 direction, Guid OwnerId, BaseDiskThrower diskThrower )
 	{
 		Direction = direction;
@@ -89,13 +91,16 @@ public abstract class BaseDisk : Component
 		if ( playerObject.Id == PlayerOwnerId )
 			return;
 
-		player.Jump( (Direction + Vector3.Up).Normal, collisionForce );
+		player.Jump( (Direction + Vector3.Up * 0.1f).Normal, collisionForce );
 		player.Shake( 
 			50f, 
 			100f, 
 			new Vector3( shakeMagnitude, shakeMagnitude, shakeMagnitude ), 
 			new Vector3( shakeMagnitude * 2, shakeMagnitude * 2, shakeMagnitude * 2 )
 			);
+
+		OnPreDestroy();
+		GameObject.Destroy();
 	}
 
 	protected virtual void OnDiskReturn()
