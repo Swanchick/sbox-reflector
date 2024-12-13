@@ -36,7 +36,8 @@
           "go": "11376b17-c4e8-48e3-b656-c5463bfabfe7"
         },
         "rotationSpeed": 1500,
-        "shakeMagnitude": 5
+        "shakeMagnitude": 5,
+        "timeToDestroy": 0.5
       }
     ],
     "Children": [

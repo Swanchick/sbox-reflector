@@ -1,5 +1,6 @@
 ﻿using Sandbox.Utility;
 using System;
+using System.Runtime.InteropServices.Swift;
 
 
 public class Player : Component
@@ -28,7 +29,8 @@ public class Player : Component
 
 	public bool CanUseTrigger { get; set; } = true;
 
-	public Guid LastAttacker {  get; set; } = Guid.Empty;
+	[Sync]
+	public Guid LastAttacker { get; set; }
 
 	[Property]
 	private GameObject ClientHUD;
@@ -143,6 +145,7 @@ public class Player : Component
 		CameraRotation();
 		CameraMovement();
 		Shaking();
+		RotateBody();
 
 		if (IsProxy)
 			return;
@@ -238,7 +241,8 @@ public class Player : Component
 		{
 			if ( !grounded )
 			{
-				Scene.RunEvent<IReflector>( x => x.OnPlayerGrounded( this ) );
+				LastAttacker = Guid.Empty;
+
 				grounded = true;
 			}
 				
@@ -312,5 +316,10 @@ public class Player : Component
 		Rotation defaultRotation = new Angles( playerAngles.pitch, 0, 0 );
 
 		playerCamera.LocalRotation = Rotation.Lerp( playerCamera.LocalRotation, ((playerController.IsOnGround && playerController.Enabled) || !IsSpectator) ? playerRotation : defaultRotation, Time.Delta * playerCameraSpeed );
+	}
+
+	private void RotateBody()
+	{
+		playerBody.LocalRotation = playerHead.LocalRotation;
 	}
 }

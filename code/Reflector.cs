@@ -10,9 +10,6 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 	private List<GameObject> spawnPoints = new();
 	private NetList<Guid> playerIds = new();
 
-
-	private Dictionary<Guid, Guid> hitedPlayers = new();
-
 	public List<GameObject> PlayerObjects
 	{
 		get
@@ -51,44 +48,45 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		_ = SetupPlayer( playerObject );
 	}
 
-	[Rpc.Broadcast]
 	public void OnPlayerHit( Player attacker, Player victim )
 	{
-		hitedPlayers[victim.GameObject.Id] = attacker.GameObject.Id;
+
+		if ( attacker.GameObject.Id == victim.GameObject.Id )
+			return;
+
+		Log.Info( $"Attacker: {attacker.GameObject.Id} =========== Victim: {victim.GameObject.Id}" );
+
+		Log.Info( "Message for everyone" );
+
+		victim.LastAttacker = attacker.GameObject.Id;
+	}
+
+	private void SendKillFeed( Guid attackerId, Player victim )
+	{
+		GameObject attackerObject = Scene.Directory.FindByGuid( attackerId );
+		if ( attackerObject == null )
+			return;
+
+		Player attacker = attackerObject.Components.Get<Player>();
+		if ( attacker == null )
+			return;
+
+		Scene.RunEvent<IKillFeed>( x => x.AddKill( attacker, victim ) );
 	}
 
 	[Rpc.Broadcast]
 	public void OnPlayerDeath( Player player )
 	{
-		Guid playerId = player.GameObject.Id;
-		
-		if ( hitedPlayers.ContainsKey( playerId ) )
-		{
-			GameObject attackerObject = Scene.Directory.FindByGuid( hitedPlayers[playerId] );
-			Player attacker = attackerObject.Components.Get<Player>();
+		Guid attackerId = player.LastAttacker;
 
-			Log.Info( $"{attacker.Name} killed {player.Name}" );
-			
-			hitedPlayers.Remove( playerId );
-			Scene.RunEvent<IKillFeed>( x => x.AddKill( attacker, player ) );
+		if ( attackerId != Guid.Empty )
+		{
+			SendKillFeed( attackerId, player );
 
 			return;
 		}
-
-		Log.Info( $"{player.Name}: Died" );
 	}
 
-	[Rpc.Broadcast]
-	public void OnPlayerGrounded( Player player )
-	{
-		Guid playerId = player.GameObject.Id;
-		if ( hitedPlayers.ContainsKey( playerId ) )
-		{
-			hitedPlayers.Remove( playerId );
-		}
-		
-		Log.Info( $"{player.Name}: has landed on the ground" );
-	}
 
 	protected override async Task OnLoad()
 	{

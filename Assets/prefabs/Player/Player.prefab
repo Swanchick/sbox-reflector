@@ -73,7 +73,7 @@
         "__guid": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83",
         "Flags": 0,
         "Name": "Head",
-        "Position": "0,0,57",
+        "Position": "0,0,55",
         "Enabled": true,
         "Children": [
           {
@@ -130,7 +130,7 @@
                 "defaultDiskCount": 3,
                 "defaultDiskThrower": {
                   "_type": "component",
-                  "component_id": "e9c4516f-580a-42d0-b2d3-0d441f42fe47",
+                  "component_id": "93ceac0d-3bc4-4c4b-bae3-c0356681c30d",
                   "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
                   "component_type": "DefaultDiskThrower"
                 },
@@ -160,8 +160,8 @@
         "__guid": "df476ff0-0ed7-43b6-8b4d-0c439468d04c",
         "Flags": 0,
         "Name": "Mesh",
-        "Position": "0,0,31.94847",
-        "Scale": "0.4,0.4,1.29078",
+        "Position": "0,0,32",
+        "Scale": "0.4,0.4,1.3",
         "Enabled": true,
         "Components": [
           {

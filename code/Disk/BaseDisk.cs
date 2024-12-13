@@ -103,6 +103,7 @@ public abstract class BaseDisk : Component
 		particleTrail.SetParent( null );
 
 		OnDiskReturn();
+		
 		OnPreDestroy();
 
 
@@ -127,7 +128,7 @@ public abstract class BaseDisk : Component
 		if ( playerObject.Id == PlayerOwnerId )
 			return;
 
-		player.Jump( (Direction + Vector3.Up * 0.2f).Normal, collisionForce );
+		player.Jump( (Direction + Vector3.Up * 0.5f).Normal, collisionForce );
 		player.Shake(
 			50f,
 			100f,
@@ -140,6 +141,9 @@ public abstract class BaseDisk : Component
 
 	protected virtual void OnDiskReturn()
 	{
+		if ( baseDiskThrower == null )
+			return;
+
 		baseDiskThrower.ReturnDisk();
 	}
 
@@ -181,9 +185,12 @@ public abstract class BaseDisk : Component
 
 	private void GetCollisionWithPlayers()
 	{
+		if ( isDestroying ) 
+			return;
+
 		SceneTraceResult trace = Scene.Trace
-			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance / 2 )
-			.Size( BBox.FromPositionAndSize(Vector3.Zero, collisionDistance) )
+			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance / 5 )
+			.Size( BBox.FromPositionAndSize(Vector3.Zero, collisionDistance / 5) )
 			.WithoutTags( "disk" )
 			.Run();
 
@@ -204,7 +211,7 @@ public abstract class BaseDisk : Component
 			return;
 
 		Scene.RunEvent<IReflector>( x => x.OnPlayerHit( playerOwner, victim ) );
-
+		
 		OnPlayerHit( trace, gameObject, victim );
 	}
 

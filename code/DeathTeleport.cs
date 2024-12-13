@@ -1,3 +1,5 @@
+using System;
+
 public class DeathTeleport : BaseTrigger
 {
 	[Property]
@@ -15,6 +17,8 @@ public class DeathTeleport : BaseTrigger
 		player.Transform.ClearInterpolation();
 
 		Scene.RunEvent<IReflector>( x => x.OnPlayerDeath( player ) );
+		
+		player.LastAttacker = Guid.Empty;
 	}
 
 	private GameObject GetRandomSpawnpoint()

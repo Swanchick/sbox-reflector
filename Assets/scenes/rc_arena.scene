@@ -6321,7 +6321,7 @@
       "__guid": "762105b9-ffd5-4416-83ca-34b4a0cac4d5",
       "Flags": 0,
       "Name": "DeathTrigger",
-      "Position": "0,0,-100",
+      "Position": "0,0,-300",
       "Tags": "trigger",
       "Enabled": true,
       "Components": [
@@ -6397,10 +6397,10 @@
             "TextureOffset": [
               "0.0009765625,0.0009765625",
               "0.0009765625,0",
-              "0,112",
-              "0,112",
-              "0,112",
-              "0,112"
+              "0,336",
+              "0,336",
+              "0,336",
+              "0,336"
             ],
             "MaterialIndex": [
               0,

@@ -7,19 +7,19 @@
 
 <root> 
 	@foreach ( Kill kill in kills.Reverse<Kill>() )
-	{
-		<div class="killfeed-entry">
-			<span class="attacker">@( kill.Attacker.Name )</span>
-			@* killed *@
-			<img class="killicon" src="@killfeed_icon"/>
-			<span class="victim">@( kill.Victim.Name )</span>
-		</div>
-	}
+    {
+        <div class="killfeed-entry">
+            <span class="attacker">@( kill.Attacker.Name )</span>
+            @* killed *@
+            <img class="killicon" src="@killfeed_icon"/>
+            <span class="victim">@( kill.Victim.Name )</span>
+        </div>
+    }
 </root>
 
 @code
 {
-	private string killfeed_icon = "/ui/killicon.png";
+    private string killfeed_icon = "/ui/killicon.png";
     private List<Kill> kills = new();
 
     [Property]
@@ -27,14 +27,11 @@
 
     public void AddKill( Player attacker, Player victim )
     {
-        if (IsProxy)
+        if ( IsProxy )
             return;
 
-        Log.Info( "Hello World" );
-
         Kill kill = new Kill(attacker, victim);
-
-        kills.Add( kill );
+        kills.Add(kill);
 
         StateHasChanged();
 
@@ -43,15 +40,10 @@
 
     private async Task DestroyMessage() 
     {
-        if (IsProxy)
-            return;
+        await Task.Delay( 5000 );
 
-        await Task.Delay(messageLifeTime);
+        kills.RemoveAt( kills.Count - 1 );
 
-        if (kills.Count > 0)
-        {
-            kills.RemoveAt(0);
-            StateHasChanged();
-        }
+        StateHasChanged();
     }
 }
