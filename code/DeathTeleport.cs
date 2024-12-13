@@ -9,11 +9,11 @@ public class DeathTeleport : BaseTrigger
 			return;
 
 		GameObject randomGameObject = GetRandomSpawnpoint();
-		player.Jump( Vector3.Zero, 0 );
+		player.Transform.ClearInterpolation();
 		player.Transform.World = randomGameObject.Transform.World;
+		player.playerController.Velocity = Vector3.Zero;
 		player.Transform.ClearInterpolation();
 
-		Log.Info( $"Spawned on - {player.Transform.World.Position}" );
 		Scene.RunEvent<IReflector>( x => x.OnPlayerDeath( player ) );
 	}
 

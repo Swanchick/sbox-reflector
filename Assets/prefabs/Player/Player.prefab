@@ -130,7 +130,7 @@
                 "defaultDiskCount": 3,
                 "defaultDiskThrower": {
                   "_type": "component",
-                  "component_id": "954669ed-fe02-4f35-ae64-80829d5a2cb2",
+                  "component_id": "d8dd1dae-6280-498a-9f79-5b14ea3ad6e4",
                   "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
                   "component_type": "DefaultDiskThrower"
                 },
@@ -238,6 +238,7 @@
         "Flags": 0,
         "Name": "Trail",
         "Tags": "particles",
+        "Enabled": true,
         "Components": [
           {
             "__type": "Sandbox.ParticleEffect",

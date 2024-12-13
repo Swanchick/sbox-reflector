@@ -1,6 +1,7 @@
 ﻿using Sandbox.Utility;
 using System;
 
+
 public class Player : Component
 {
 	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.None;
@@ -26,6 +27,8 @@ public class Player : Component
 	}
 
 	public bool CanUseTrigger { get; set; } = true;
+
+	public Guid LastAttacker {  get; set; } = Guid.Empty;
 
 	[Property]
 	private GameObject ClientHUD;
@@ -72,7 +75,6 @@ public class Player : Component
 	private bool noclip = false;
 
 	private bool grounded = false;
-
 
 	public void Jump(Vector3 dir, float jumpForce)
 	{

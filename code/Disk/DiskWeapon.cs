@@ -1,6 +1,4 @@
-﻿using System;
-
-public class DiskWeapon : Component
+﻿public class DiskWeapon : Component
 {
 	[Sync]
 	public int diskCount { get; set; } = 0;

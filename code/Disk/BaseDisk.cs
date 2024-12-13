@@ -8,16 +8,6 @@ public abstract class BaseDisk : Component
 	[Sync]
 	public Guid PlayerOwnerId { get; set; }
 
-	protected Player playerOwner
-	{
-		get
-		{
-			GameObject playerObject = Scene.Directory.FindByGuid( PlayerOwnerId );
-
-			return playerObject.Components.Get<Player>();
-		}
-	}
-
 	[Property]
 	protected float diskSpeed = 100f;
 	[Property]
@@ -40,18 +30,31 @@ public abstract class BaseDisk : Component
 	[Property]
 	protected float rotationSpeed = 50f;
 
+	[Property]
+	protected float timeToDestroy = 0.1f;
+
 	protected CharacterController diskController;
 	protected int currentCollisions = 0;
 
 	private BaseDiskThrower baseDiskThrower;
 
 	private bool isDestroying = false;
+	private float currentTimeDestory = 0;
 
 	public void Setup( Vector3 direction, Guid OwnerId, BaseDiskThrower diskThrower )
 	{
 		Direction = direction;
 		PlayerOwnerId = OwnerId;
 		baseDiskThrower = diskThrower;
+	}
+
+	protected Player GetPlayerOwner()
+	{
+		GameObject playerObject = Scene.Directory.FindByGuid( PlayerOwnerId );
+		if ( playerObject == null )
+			return null;
+
+		return playerObject.Components.Get<Player>();
 	}
 
 	protected override void OnStart()
@@ -66,12 +69,45 @@ public abstract class BaseDisk : Component
 		GetCollisionWithPlayers();
 		Alive();
 		DoProceduralAnimation();
+		DestroyThink();
+	}
+
+	private void DestroyThink()
+	{
+		if ( !isDestroying )
+			return;
+
+		currentTimeDestory += Time.Delta;
+
+		if ( currentTimeDestory > timeToDestroy )
+		{
+			GameObject.Destroy();
+		}
 	}
 
 	private void DestroyDisk()
 	{
+		if (isDestroying) 
+			return;
+
+		if ( particleTrail == null )
+			return;
+
+		ParticleRingEmitter emitter = particleTrail.Components.Get<ParticleRingEmitter>();
+		if ( emitter == null )
+			return;
+
+		emitter.Loop = false;
+		emitter.DestroyOnEnd = true;
+
+		particleTrail.SetParent( null );
+
+		OnDiskReturn();
 		OnPreDestroy();
-		GameObject.Destroy();
+
+
+		diskController.Enabled = false;
+		isDestroying = true;
 	}
 
 	protected virtual void OnWallHit( SceneTraceResult trace )
@@ -91,16 +127,15 @@ public abstract class BaseDisk : Component
 		if ( playerObject.Id == PlayerOwnerId )
 			return;
 
-		player.Jump( (Direction + Vector3.Up * 0.1f).Normal, collisionForce );
-		player.Shake( 
-			50f, 
-			100f, 
-			new Vector3( shakeMagnitude, shakeMagnitude, shakeMagnitude ), 
+		player.Jump( (Direction + Vector3.Up * 0.2f).Normal, collisionForce );
+		player.Shake(
+			50f,
+			100f,
+			new Vector3( shakeMagnitude, shakeMagnitude, shakeMagnitude ),
 			new Vector3( shakeMagnitude * 2, shakeMagnitude * 2, shakeMagnitude * 2 )
 			);
 
-		OnPreDestroy();
-		GameObject.Destroy();
+		DestroyDisk();
 	}
 
 	protected virtual void OnDiskReturn()
@@ -110,19 +145,7 @@ public abstract class BaseDisk : Component
 
 	protected virtual void OnPreDestroy()
 	{
-		if ( particleTrail == null )
-			return;
-
-		ParticleRingEmitter emitter = particleTrail.Components.Get<ParticleRingEmitter>();
-		if ( emitter == null )
-			return;
-
-		emitter.Loop = false;
-		emitter.DestroyOnEnd = true;
-
-		particleTrail.SetParent( null );
-
-		OnDiskReturn();
+		
 	}
 
 	protected virtual void DoProceduralAnimation()
@@ -144,6 +167,9 @@ public abstract class BaseDisk : Component
 
 	private void MoveDisk()
 	{
+		if (isDestroying) 
+			return;
+
 		diskController.Accelerate( Direction * diskSpeed );
 		diskController.Move();
 	}
@@ -156,7 +182,7 @@ public abstract class BaseDisk : Component
 	private void GetCollisionWithPlayers()
 	{
 		SceneTraceResult trace = Scene.Trace
-			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance )
+			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance / 2 )
 			.Size( BBox.FromPositionAndSize(Vector3.Zero, collisionDistance) )
 			.WithoutTags( "disk" )
 			.Run();
@@ -171,6 +197,10 @@ public abstract class BaseDisk : Component
 
 		Player victim = gameObject.Components.Get<Player>();
 		if ( victim == null ) 
+			return;
+
+		Player playerOwner = GetPlayerOwner();
+		if ( playerOwner == null ) 
 			return;
 
 		Scene.RunEvent<IReflector>( x => x.OnPlayerHit( playerOwner, victim ) );
