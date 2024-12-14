@@ -74,6 +74,9 @@ public abstract class BaseDisk : Component
 
 	private void DestroyThink()
 	{
+		if ( IsProxy )
+			return;
+		
 		if ( !isDestroying )
 			return;
 
@@ -81,12 +84,14 @@ public abstract class BaseDisk : Component
 
 		if ( currentTimeDestory > timeToDestroy )
 		{
+			OnDiskReturn();
 			GameObject.Destroy();
 		}
 	}
 
 	private void DestroyDisk()
 	{
+
 		if (isDestroying) 
 			return;
 
@@ -102,11 +107,9 @@ public abstract class BaseDisk : Component
 
 		particleTrail.SetParent( null );
 
-		OnDiskReturn();
+		diskModel.Enabled = false;
 		
 		OnPreDestroy();
-
-
 		diskController.Enabled = false;
 		isDestroying = true;
 	}
@@ -154,6 +157,9 @@ public abstract class BaseDisk : Component
 
 	protected virtual void DoProceduralAnimation()
 	{
+		if ( isDestroying ) 
+			return;
+
 		Angles diskAngles = diskModel.LocalRotation.Angles();
 		diskAngles.yaw = -Time.Now * rotationSpeed;
 		diskModel.LocalRotation = diskAngles.ToRotation();

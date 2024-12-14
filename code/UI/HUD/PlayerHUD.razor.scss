@@ -16,6 +16,12 @@ PlayerHUD {
         justify-content: center;
         gap: 10px;
 
+        > .logo {
+            position: absolute;
+            width: 96px;
+            height: auto;
+        }
+
         > .disk {
             width: 96px;
             height: 96px;

@@ -13,11 +13,14 @@
             <img class="disk" src="@diskTexture" />
         }
     </div>
+
+    @* <img class="logo" src="@reflector"> *@
 </root>
 
 @code
 {
     private string diskTexture = "/ui/disk.png";
+    private string reflector = "/ui/reflector.png";
     private int disks = 3;
 
     public void ChangeDisks( int disks )

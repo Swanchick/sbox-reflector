@@ -4,6 +4,9 @@
 
 	protected override void OnDiskReturn()
 	{
+		if ( Container == null )
+			return;
+
 		Container.ReturnDisk();
 	}
 }
