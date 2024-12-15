@@ -7,21 +7,24 @@
 <root>
     <Crosshair />
 
-     <div class="main">
+    <div class="main">
         @for (int i = 0; i < disks; i++)
         {
             <img class="disk" src="@diskTexture" />
         }
     </div>
-
-    @* <img class="logo" src="@reflector"> *@
 </root>
 
 @code
 {
     private string diskTexture = "/ui/disk.png";
-    private string reflector = "/ui/reflector.png";
+
     private int disks = 3;
+
+    protected override void OnStart()
+    {
+        Log.Info("Hello World Menu");
+    }
 
     public void ChangeDisks( int disks )
     {

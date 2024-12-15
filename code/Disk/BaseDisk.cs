@@ -112,6 +112,8 @@ public abstract class BaseDisk : Component
 		OnPreDestroy();
 		diskController.Enabled = false;
 		isDestroying = true;
+
+		//GameObject.Destroy();
 	}
 
 	protected virtual void OnWallHit( SceneTraceResult trace )
@@ -195,8 +197,8 @@ public abstract class BaseDisk : Component
 			return;
 
 		SceneTraceResult trace = Scene.Trace
-			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance / 5 )
-			.Size( BBox.FromPositionAndSize(Vector3.Zero, collisionDistance / 5) )
+			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance / 3 )
+			.Size( BBox.FromPositionAndSize(Vector3.Zero, collisionDistance / 3) )
 			.WithoutTags( "disk" )
 			.Run();
 

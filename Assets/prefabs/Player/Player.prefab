@@ -130,7 +130,7 @@
                 "defaultDiskCount": 3,
                 "defaultDiskThrower": {
                   "_type": "component",
-                  "component_id": "93ceac0d-3bc4-4c4b-bae3-c0356681c30d",
+                  "component_id": "5d52c3b9-ee65-4da1-9c54-1e0e836d9e83",
                   "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
                   "component_type": "DefaultDiskThrower"
                 },
@@ -200,14 +200,28 @@
           {
             "__guid": "08c5ba37-ae33-4b76-9dff-54d66fff48e8",
             "Flags": 0,
-            "Name": "KillFeed",
+            "Name": "NetworkHUD",
             "Enabled": true,
             "NetworkMode": 1,
             "Components": [
               {
+                "__type": "Sandbox.ScreenPanel",
+                "__guid": "bc75c631-5d63-424d-a98b-773865440dca",
+                "AutoScreenScale": true,
+                "Opacity": 1,
+                "Scale": 1,
+                "ScaleStrategy": "ConsistentHeight",
+                "ZIndex": 100
+              },
+              {
                 "__type": "KillFeed",
-                "__guid": "de24391f-0573-4b70-a7a1-3cf9ed08c4b8",
+                "__guid": "3bf273c3-2ba8-4589-8916-62609c5a0319",
+                "__enabled": false,
                 "messageLifeTime": 5000
+              },
+              {
+                "__type": "Chat",
+                "__guid": "1fb4d83f-aba1-47a9-b46e-dec5a305d38a"
               }
             ]
           },
@@ -223,6 +237,15 @@
                 "Name": "PlayerHUD",
                 "Enabled": true,
                 "Components": [
+                  {
+                    "__type": "Sandbox.ScreenPanel",
+                    "__guid": "206a1308-6700-4ac0-9c3e-23d1c0f52d22",
+                    "AutoScreenScale": true,
+                    "Opacity": 1,
+                    "Scale": 1,
+                    "ScaleStrategy": "ConsistentHeight",
+                    "ZIndex": 100
+                  },
                   {
                     "__type": "PlayerHUD",
                     "__guid": "6b5a2ca6-645b-4a8d-a375-78c54334df1b"
