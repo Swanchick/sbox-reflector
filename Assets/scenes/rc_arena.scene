@@ -672,6 +672,7 @@
         {
           "__type": "Sandbox.MeshComponent",
           "__guid": "85cc1bcd-de12-4994-a351-81624cd81a3f",
+          "__enabled": false,
           "Collision": "Mesh",
           "Color": "0,0,1,1",
           "HideInGame": false,
@@ -1010,6 +1011,29 @@
             ]
           },
           "SmoothingAngle": 40,
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "09a16c36-8c9b-403d-a18e-08ce460f0cd3",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/platform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.06667,0.06667,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "1e75eb8c-f014-49d8-8ad6-ed4740acd933",
+          "IsTrigger": false,
+          "Model": "models/platform.vmdl",
           "Static": true,
           "SurfaceVelocity": "0,0,0"
         }
@@ -1165,6 +1189,7 @@
         {
           "__type": "Sandbox.MeshComponent",
           "__guid": "fb8d62ee-5a37-4646-bf46-72f6116ff8f7",
+          "__enabled": false,
           "Collision": "Mesh",
           "Color": "0,0,1,1",
           "HideInGame": false,
@@ -1503,6 +1528,29 @@
             ]
           },
           "SmoothingAngle": 40,
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "9c71cfc8-aed4-4c9e-8cba-f5cb9a000232",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/platform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.06667,0.06667,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "a8df08d7-f2e4-424f-bab9-6e6138122be2",
+          "IsTrigger": false,
+          "Model": "models/platform.vmdl",
           "Static": true,
           "SurfaceVelocity": "0,0,0"
         }
@@ -1658,6 +1706,7 @@
         {
           "__type": "Sandbox.MeshComponent",
           "__guid": "e946ce23-064f-4596-ba6f-e20c3756ff37",
+          "__enabled": false,
           "Collision": "Mesh",
           "Color": "0,0,1,1",
           "HideInGame": false,
@@ -1996,6 +2045,29 @@
             ]
           },
           "SmoothingAngle": 40,
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "c311f938-2994-4980-a47f-448804ba5e30",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/platform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.06977,0.06977,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "5c800b4e-1b07-428a-a4e8-fa459dfe363e",
+          "IsTrigger": false,
+          "Model": "models/platform.vmdl",
           "Static": true,
           "SurfaceVelocity": "0,0,0"
         }
@@ -2151,6 +2223,7 @@
         {
           "__type": "Sandbox.MeshComponent",
           "__guid": "4a8d5cc0-cfc7-4aff-95ba-2194ec983e23",
+          "__enabled": false,
           "Collision": "Mesh",
           "Color": "0,0,1,1",
           "HideInGame": false,
@@ -2491,6 +2564,29 @@
           "SmoothingAngle": 40,
           "Static": true,
           "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "551f1ee3-6321-408b-be45-98542845d3bc",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/platform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.06667,0.06667,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "7b1e0711-189c-4115-92e6-3852406ef8ac",
+          "IsTrigger": false,
+          "Model": "models/platform.vmdl",
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -2644,6 +2740,7 @@
         {
           "__type": "Sandbox.MeshComponent",
           "__guid": "315b9a9e-790e-4dc1-9613-c537c1b4c62b",
+          "__enabled": false,
           "Collision": "Mesh",
           "Color": "1,0,0,1",
           "HideInGame": false,
@@ -2982,6 +3079,29 @@
             ]
           },
           "SmoothingAngle": 40,
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "df5c117c-48d1-4bcf-945b-a8298cf3ea69",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/platform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,0.06667,0.06667,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "45dc24f0-e4a2-4177-bf90-f9e3ed31b487",
+          "IsTrigger": false,
+          "Model": "models/platform.vmdl",
           "Static": true,
           "SurfaceVelocity": "0,0,0"
         }
@@ -3137,6 +3257,7 @@
         {
           "__type": "Sandbox.MeshComponent",
           "__guid": "38d08d96-29a9-4ff5-bdd4-0406f7685882",
+          "__enabled": false,
           "Collision": "Mesh",
           "Color": "1,0,0,1",
           "HideInGame": false,
@@ -3475,6 +3596,29 @@
             ]
           },
           "SmoothingAngle": 40,
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "177f9913-12d1-428f-9e89-8c82f916936e",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/platform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,0.06667,0.06667,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "7876cbcb-650a-400f-9809-c5914417b429",
+          "IsTrigger": false,
+          "Model": "models/platform.vmdl",
           "Static": true,
           "SurfaceVelocity": "0,0,0"
         }
@@ -3630,6 +3774,7 @@
         {
           "__type": "Sandbox.MeshComponent",
           "__guid": "b4a76a98-7175-43f4-a3ae-e93011456568",
+          "__enabled": false,
           "Collision": "Mesh",
           "Color": "1,0,0,1",
           "HideInGame": false,
@@ -3970,6 +4115,29 @@
           "SmoothingAngle": 40,
           "Static": true,
           "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "bdb46897-fb65-4c69-b3a4-fe37b4866417",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/platform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,0.06667,0.06667,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "98375a60-90a9-4a94-9250-db8deae89ea5",
+          "IsTrigger": false,
+          "Model": "models/platform.vmdl",
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         }
       ],
       "Children": [
@@ -4123,6 +4291,7 @@
         {
           "__type": "Sandbox.MeshComponent",
           "__guid": "9643317a-df21-435b-9718-3a94d4ce9621",
+          "__enabled": false,
           "Collision": "Mesh",
           "Color": "1,0,0,1",
           "HideInGame": false,
@@ -4461,6 +4630,29 @@
             ]
           },
           "SmoothingAngle": 40,
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "24b39abc-9939-452d-8015-b86f1f2f99ca",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/platform.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,0.06667,0.06667,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "0e4ed752-a913-4cfc-a7c1-93eb114032b5",
+          "IsTrigger": false,
+          "Model": "models/platform.vmdl",
           "Static": true,
           "SurfaceVelocity": "0,0,0"
         }
