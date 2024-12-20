@@ -21,13 +21,13 @@
 	private int defaultDiskCount = 3;
 
 	[Property]
-	private PlayerHUD playerHUD;
+	private PlayerHUD? playerHUD;
 
 	public void ReturnDisk( GameObject diskThrower )
 	{
 		diskCount--;
 
-		playerHUD.ChangeDisks( maxDisks - diskCount );
+		playerHUD?.ChangeDisks( maxDisks - diskCount );
 
 		if ( diskThrower.Id == defaultDiskThrower.GameObject.Id )
 			return;
@@ -92,6 +92,6 @@
 
 		diskCount++;
 
-		playerHUD.ChangeDisks( maxDisks - diskCount );
+		playerHUD?.ChangeDisks( maxDisks - diskCount );
 	}
 }

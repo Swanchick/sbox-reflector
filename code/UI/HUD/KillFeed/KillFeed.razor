@@ -1,7 +1,6 @@
 @using Sandbox;
 @using Sandbox.UI;
 @using System.Threading.Tasks;
-@inherits PanelComponent;
 @attribute [StyleSheet]
 @implements IKillFeed;
 
@@ -9,10 +8,9 @@
 	@foreach ( Kill kill in kills.Reverse<Kill>() )
     {
         <div class="killfeed-entry">
-            <span class="attacker">@( kill.Attacker.Name )</span>
-            @* killed *@
+            <span class="attacker">@( kill.Attacker )</span>
             <img class="killicon" src="@killfeed_icon"/>
-            <span class="victim">@( kill.Victim.Name )</span>
+            <span class="victim">@( kill.Victim )</span>
         </div>
     }
 </root>
@@ -27,8 +25,7 @@
 
     public void AddKill( Player attacker, Player victim )
     {
-        if ( IsProxy )
-            return;
+        Log.Info( "Kill added" );
 
         Kill kill = new Kill(attacker, victim);
         kills.Add(kill);
@@ -36,6 +33,18 @@
         StateHasChanged();
 
         _ = DestroyMessage();
+    }
+
+    public void Test(string attacker, string victim)
+    {
+        Log.Info("Test kill added");
+
+        Kill kill = new Kill(attacker, victim);
+        kills.Add(kill);
+
+        StateHasChanged();
+
+        // _ = DestroyMessage();
     }
 
     private async Task DestroyMessage() 

@@ -2,6 +2,20 @@
   "__guid": "9f43f1e1-dda7-4ba3-a2b0-0d68a83004b7",
   "GameObjects": [
     {
+      "__guid": "d973fcbd-06db-42dd-9dd4-62dc7e90603a",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "96933132-90dc-46ed-9663-c4c978b3f566",
+          "Description": "",
+          "Title": "minimal"
+        }
+      ]
+    },
+    {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Flags": 0,
       "Name": "Sun",
@@ -40,7 +54,6 @@
         {
           "__type": "Sandbox.EnvmapProbe",
           "__guid": "f3e304db-baab-4c1a-a4ec-8442585c2d62",
-          "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -52,6 +65,7 @@
           "MultiBounce": false,
           "Projection": "Sphere",
           "RenderDynamically": false,
+          "Texture": "textures/cubemaps/default2.vtex",
           "TintColor": "1,1,1,1",
           "UpdateStrategy": "OnEnabled",
           "ZFar": 4096,
@@ -133,6 +147,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "af7caa40-093e-436c-8f46-546c7112500f",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "MaterialOverride": "materials/grassfloor001a.vmat",
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
@@ -150,7 +165,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -166,6 +182,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "de737011-e0cb-4d62-8482-d6e408b7a9ce",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "MaterialOverride": "materials/grassfloor001a.vmat",
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
@@ -183,7 +200,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -199,6 +217,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "c60be4b0-3771-449d-8844-cafeab517035",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "MaterialOverride": "materials/grassfloor001a.vmat",
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
@@ -216,7 +235,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -232,6 +252,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "3490aca7-b0da-4039-8da1-a9e0168c842d",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "MaterialOverride": "materials/grassfloor001a.vmat",
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
@@ -249,7 +270,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         },
@@ -258,13 +280,14 @@
           "Flags": 0,
           "Name": "Platform5",
           "Position": "0,-500,-30",
-          "Scale": "5,5,1",
+          "Scale": "72.32257,5,1",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "190d3db6-c137-4bd2-9567-d8a2979ad731",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "MaterialOverride": "materials/grassfloor001a.vmat",
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
@@ -282,7 +305,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             }
           ]
         }
@@ -305,6 +329,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "3b45bdc4-e0a9-475d-91b1-55678d440be2",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -321,7 +346,8 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "JumpPad",
@@ -343,6 +369,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "eba6778b-f192-402b-9740-ad0723031928",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -359,7 +386,8 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "JumpPad",
@@ -381,6 +409,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "ab37f735-f229-4a43-b505-e174db129ab2",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -397,7 +426,8 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "JumpPad",
@@ -419,6 +449,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "af5940cd-95f8-4fd7-b9b4-fe09ac49c7da",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -435,7 +466,8 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "JumpPad",
@@ -457,6 +489,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "54f89e56-9801-443b-824e-e81835d78e8c",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -473,7 +506,8 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "JumpPad",
@@ -495,6 +529,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "3726992a-43ad-43ba-bd3d-048df0bddd97",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -511,7 +546,8 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "JumpPad",
@@ -533,6 +569,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "fca23a96-3fc0-4879-92dd-147af0e75730",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -549,7 +586,8 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "JumpPad",
@@ -571,6 +609,7 @@
               "__type": "Sandbox.ModelRenderer",
               "__guid": "b01fe1c1-aed4-4ff0-b8ef-0b7851117f0c",
               "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
               "Model": "models/dev/box.vmdl",
               "RenderOptions": {
                 "GameLayer": true,
@@ -587,7 +626,8 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "JumpPad",
@@ -615,7 +655,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-85.1803,-799.7375,64",
               "85.1803,-799.7375,64",
@@ -723,7 +763,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -742,7 +783,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-85.1803,-914.286,64",
               "85.1803,-914.286,64",
@@ -850,7 +891,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -869,7 +911,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-752.8511,-57.5553,64",
               "765.4318,-57.5553,64",
@@ -977,7 +1019,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -996,7 +1039,7 @@
           "HideInGame": false,
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-765.4318,-57.5553,64",
               "765.4318,-57.5553,64",
@@ -1104,7 +1147,8 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     },
@@ -1123,7 +1167,7 @@
           "HideInGame": false,
           "IsTrigger": true,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
             "Positions": [
               "-6112.477,-6684.351,114.0547",
               "8184.327,-6684.351,114.0547",
@@ -1232,16 +1276,13 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": true
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "DeathTeleport",
           "__guid": "c6262d54-796c-47b1-8ff7-24449254c168",
-          "activateInNoclip": false,
-          "teleport": {
-            "_type": "gameobject",
-            "go": "48f927d1-30c0-4e40-8137-df675ad26f55"
-          }
+          "activateInNoclip": false
         }
       ]
     },
@@ -1289,6 +1330,9 @@
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "minimal"
+    },
     "NavMesh": {
       "Enabled": false,
       "IncludeStaticBodies": true,
@@ -1302,11 +1346,11 @@
       "IncludedBodies": ""
     }
   },
+  "ResourceVersion": 2,
   "Title": "minimal",
-  "Description": "",
-  "ResourceVersion": 1,
+  "Description": null,
   "__references": [
     "hyperscroll.grassfloor001a#64264"
   ],
-  "__version": 1
+  "__version": 2
 }

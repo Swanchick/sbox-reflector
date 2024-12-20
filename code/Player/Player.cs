@@ -1,5 +1,6 @@
 ﻿using Sandbox.Utility;
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Swift;
 
 
@@ -66,6 +67,8 @@ public class Player : Component
 	[Property]
 	private DiskWeapon diskWeapon;
 
+	private Vector3 wishVelocity = Vector3.Zero;
+
 	private float shakeTrauma = 0;
 	private Vector3 shakeMax;
 	private Vector3 shakeAnglesMax;
@@ -91,7 +94,7 @@ public class Player : Component
 		shakeMax = maxPos;
 		shakeAnglesMax = maxAngle;
 	}
-
+	
 	public void Spectate(bool turn)
 	{
 		if ( IsProxy )
@@ -114,10 +117,6 @@ public class Player : Component
 			playerBody.Enabled = true;
 
 			playerController.Velocity = Vector3.Zero;
-
-			Log.Info( "====================" );
-			Log.Info( "Turnded Off" );
-			Log.Info( "====================" );
 		}
 	}
 
@@ -129,15 +128,14 @@ public class Player : Component
 
 		shakeSeed = Game.Random.Next();
 
-		if ( !IsProxy )
+		if ( IsProxy )
+		{
+			playerCamera.Destroy();
+			ClientHUD.Destroy();
+		} else
 		{
 			DiskWeapon = diskWeapon;
-
-			return;
 		}
-		
-		playerCamera.Destroy();
-		ClientHUD.Destroy();
 	}
 
 	protected override void OnUpdate()
@@ -147,7 +145,7 @@ public class Player : Component
 		Shaking();
 		RotateBody();
 
-		if (IsProxy)
+		if ( IsProxy )
 			return;
 
 		if ( Input.Pressed( "Noclip" ) )
@@ -191,9 +189,45 @@ public class Player : Component
 	protected override void OnFixedUpdate()
 	{
 		if ( IsSpectator )
+		{
 			NoclipMovement();
+		}
 		else
+		{
 			Movement();
+			Strafe();
+
+			playerController.Accelerate( wishVelocity );
+			playerController.Move();
+		}
+	}
+
+	private void Strafe()
+	{
+		Vector3 currentVelocity = playerController.Velocity;
+
+		float wishSpeed = wishVelocity.Length;
+		Vector3 wishDirection = wishVelocity.Normal;
+
+		if ( wishSpeed > 32 )
+		{
+			wishSpeed = 32;
+		}
+
+		float currentSpeed = Vector3.Dot( currentVelocity, wishDirection );
+		float addSpeed = wishSpeed - currentSpeed;
+		if ( addSpeed <= 0 )
+			return;
+
+		float accelSpeed = playerSpeed * 10 * Time.Delta;
+
+		if ( accelSpeed > addSpeed )
+			accelSpeed = addSpeed;
+
+		currentVelocity.x += accelSpeed * wishDirection.x;
+		currentVelocity.y += accelSpeed * wishDirection.y;
+
+		playerController.Velocity = currentVelocity;
 	}
 
 	private Vector3 BuildDirection()
@@ -225,16 +259,16 @@ public class Player : Component
 		if ( IsProxy )
 			return;
 
-		Vector3 velocity = BuildDirection();
+		wishVelocity = BuildDirection();
 
 		if ( IsSpectator )
 		{
-			velocity *= playerNoclipSpeed;
+			wishVelocity *= playerNoclipSpeed;
 		}
 		else
 		{
-			velocity *= playerSpeed;
-			velocity = velocity.WithZ( 0 );
+			wishVelocity *= playerSpeed;
+			wishVelocity = wishVelocity.WithZ( 0 );
 		}
 
 		if ( playerController.IsOnGround && !IsSpectator )
@@ -264,11 +298,8 @@ public class Player : Component
 				playerController.ApplyFriction( playerGroundFriction );
 			}
 
-			velocity *= playerAirFriction;
+			wishVelocity *= playerAirFriction;
 		}
-
-		playerController.Accelerate( velocity );
-		playerController.Move();
 	}
 
 	private void NoclipMovement()
