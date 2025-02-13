@@ -9,7 +9,7 @@ public sealed class PlayerMovement : Component
 	{
 		None,
 		Grounded,
-		Spectator,
+		Noclip,
 	}
 
 	private State currentState = State.None;
@@ -18,7 +18,7 @@ public sealed class PlayerMovement : Component
 	{
 		get 
 		{
-			return currentState == State.Spectator;
+			return currentState == State.Noclip;
 		}
 	}
 
@@ -68,13 +68,12 @@ public sealed class PlayerMovement : Component
 	{
 		switch (currentState) 
 		{
-			case State.Spectator:
+			case State.Noclip:
 				NoclipMovement();
 				break;
 			default:
 				Movement();
 				Strafe();
-
 
 				PlayerController.Accelerate( wishVelocity );
 				PlayerController.Move();

@@ -9,6 +9,9 @@ public sealed class Player : Component
 	[Property]
 	public PlayerCameraMovement CameraMovement { get; set; }
 
+	[Sync]
+	public Guid LastAttacker { get; set; }
+
 	public bool Alive { get; set; } = true;
 	public BoxCollider collider { get; private set; }
 
@@ -24,23 +27,17 @@ public sealed class Player : Component
 
 	public bool CanUseTrigger { get; set; } = true;
 
-	[Sync]
-	public Guid LastAttacker { get; set; }
-
 	[Property]
 	private GameObject ClientHUD;
-	
-	[Property]
-	private CameraComponent playerCamera;
 
 	[Property]
 	private DiskWeapon diskWeapon;
+
 
 	protected override void OnStart()
 	{
 		if ( IsProxy )
 		{
-			playerCamera.Destroy();
 			ClientHUD.Destroy();
 		} else
 		{

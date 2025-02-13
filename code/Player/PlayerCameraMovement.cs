@@ -51,6 +51,11 @@ public sealed class PlayerCameraMovement : Component
 	{
 		playerController = Components.Get<CharacterController>();
 		shakeSeed = Game.Random.Next();
+
+		if ( !IsProxy )
+			return;
+
+		playerCamera.Destroy();
 	}
 
 	protected override void OnUpdate()
@@ -84,7 +89,6 @@ public sealed class PlayerCameraMovement : Component
 	{
 		playerBody.LocalRotation = playerHead.LocalRotation;
 	}
-
 
 	private void Shaking()
 	{
