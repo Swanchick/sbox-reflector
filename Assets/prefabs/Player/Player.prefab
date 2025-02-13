@@ -48,7 +48,12 @@
       {
         "__type": "Player",
         "__guid": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
-        "cameraSensitivity": 0.1,
+        "CameraMovement": {
+          "_type": "component",
+          "component_id": "f146c278-bdc5-4b28-af46-9c7f1bdc4cf5",
+          "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
+          "component_type": "PlayerCameraMovement"
+        },
         "ClientHUD": {
           "_type": "gameobject",
           "go": "b03d0a79-e3a5-4c1a-bda8-b0983deffb06"
@@ -59,13 +64,18 @@
           "go": "66f0dd89-29f3-4bcc-9fbd-40d7140aeae9",
           "component_type": "DiskWeapon"
         },
+        "Movement": {
+          "_type": "component",
+          "component_id": "4a621f1b-35b7-42cf-8679-1fbbc78375d6",
+          "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
+          "component_type": "PlayerMovement"
+        },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "playerAirFriction": 0.3,
         "playerBody": {
           "_type": "gameobject",
           "go": "df476ff0-0ed7-43b6-8b4d-0c439468d04c"
@@ -76,21 +86,10 @@
           "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
           "component_type": "CameraComponent"
         },
-        "playerCameraRotation": 2,
-        "playerCameraSpeed": 10,
-        "playerGroundFriction": 5,
         "playerHead": {
           "_type": "gameobject",
           "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
-        },
-        "PlayerMovement": null,
-        "playerNoclipSpeed": 500,
-        "playerShake": {
-          "_type": "gameobject",
-          "go": "609eb73c-0e02-4e16-9ad4-ca66be967c50"
-        },
-        "playerSpeed": 300,
-        "shakeRecoverySpeed": 1
+        }
       },
       {
         "__type": "PlayerMovement",
@@ -101,7 +100,7 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "player": {
+        "Player": {
           "_type": "component",
           "component_id": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
           "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
@@ -119,6 +118,44 @@
         },
         "playerNoclipSpeed": 500,
         "playerSpeed": 300
+      },
+      {
+        "__type": "PlayerCameraMovement",
+        "__guid": "f146c278-bdc5-4b28-af46-9c7f1bdc4cf5",
+        "cameraSensitivity": 0.1,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Player": {
+          "_type": "component",
+          "component_id": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
+          "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
+          "component_type": "Player"
+        },
+        "playerBody": {
+          "_type": "gameobject",
+          "go": "df476ff0-0ed7-43b6-8b4d-0c439468d04c"
+        },
+        "playerCamera": {
+          "_type": "component",
+          "component_id": "795acd37-aa38-49ac-9881-15fff1f1011e",
+          "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88",
+          "component_type": "CameraComponent"
+        },
+        "playerCameraRotation": 2,
+        "playerCameraSpeed": 10,
+        "playerHead": {
+          "_type": "gameobject",
+          "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
+        },
+        "playerShake": {
+          "_type": "gameobject",
+          "go": "609eb73c-0e02-4e16-9ad4-ca66be967c50"
+        },
+        "shakeRecoverySpeed": 1
       }
     ],
     "Children": [

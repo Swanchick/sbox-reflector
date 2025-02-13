@@ -64,7 +64,7 @@
 		if ( IsProxy )
 			return;
 
-		if ( Input.Pressed("attack1") && !Player.IsSpectator )
+		if ( Input.Pressed("attack1") && !Player.Movement.IsSpectator )
 		{
 			Shoot();
 		}

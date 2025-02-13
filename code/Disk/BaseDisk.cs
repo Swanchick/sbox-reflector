@@ -134,7 +134,7 @@ public abstract class BaseDisk : Component
 			return;
 
 		player.Jump( (Direction + Vector3.Up * 0.5f).Normal, collisionForce );
-		player.Shake(
+		player.CameraMovement.Shake(
 			50f,
 			100f,
 			new Vector3( shakeMagnitude, shakeMagnitude, shakeMagnitude ),

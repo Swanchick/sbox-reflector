@@ -1,10 +1,9 @@
 using System;
 
-public class PlayerMovement : Component 
+public sealed class PlayerMovement : Component 
 {
 	[Property]
-	public Player player;
-
+	public Player Player { get; set; }
 
 	public enum State 
 	{
