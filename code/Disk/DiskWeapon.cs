@@ -86,7 +86,8 @@
 
 			disk = lastDisk;
 		}
-
+		// Todo:
+		// Fix disk.Weapon Null Exception
 		disk.Weapon = this;
 		disk.Shoot( Player );
 
