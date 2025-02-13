@@ -1,4 +1,6 @@
-﻿public abstract class BaseDiskThrower : Component, IWeapon
+﻿using System.Numerics;
+
+public abstract class BaseDiskThrower : Component, IWeapon
 {
 	public DiskWeapon Weapon { get; set; }
 	
@@ -17,9 +19,10 @@
 
 	protected virtual void OnShoot( Player player )
 	{
-		Vector3 dir = Weapon.WorldRotation.Forward;
+		Vector3 dir = Weapon.ShootDir;
+		Vector3 pos = Weapon.ShootPos;
 
-		GameObject diskObject = diskPrefab.Clone( Weapon.WorldPosition + dir * 10f + Vector3.Down * 10f, Rotation.Identity );
+		GameObject diskObject = diskPrefab.Clone( pos + dir * 10f + Vector3.Down * 10f, Rotation.Identity );
 		diskObject.NetworkSpawn();
 
 		BaseDisk disk = diskObject.GetComponent<BaseDisk>();

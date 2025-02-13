@@ -9,14 +9,14 @@ public sealed class Player : Component
 	[Property]
 	public PlayerCameraMovement CameraMovement { get; set; }
 
+	[Property]
+	public DiskWeapon DiskWeapon { get; set; }
+
 	[Sync]
 	public Guid LastAttacker { get; set; }
 
 	public bool Alive { get; set; } = true;
 	public BoxCollider collider { get; private set; }
-
-	[Property]
-	public DiskWeapon DiskWeapon { get; set; }
 
 	public string Name
 	{

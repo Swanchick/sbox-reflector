@@ -9,10 +9,11 @@
 
 		for (int i = -1; i <= 1; i++)
 		{
-			Vector3 dir = Weapon.WorldRotation.Forward;
+			Vector3 dir = Weapon.ShootDir;
+			Vector3 pos = Weapon.ShootPos;
 			dir = dir.RotateAround( Vector3.Zero, new Angles( 0, i * diskRotation, 0 ) );
 			
-			GameObject diskObject = diskPrefab.Clone( Weapon.WorldPosition + dir * 10f + Vector3.Down * 10f, Rotation.Identity );
+			GameObject diskObject = diskPrefab.Clone( pos + dir * 10f + Vector3.Down * 10f, Rotation.Identity );
 			diskObject.NetworkSpawn();
 
 			TripleDisk disk = diskObject.GetComponent<TripleDisk>();

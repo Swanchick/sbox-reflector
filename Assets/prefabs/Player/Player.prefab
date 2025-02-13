@@ -5,7 +5,6 @@
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
-    "NetworkMode": 1,
     "Components": [
       {
         "__type": "Sandbox.CharacterController",
@@ -61,8 +60,8 @@
         },
         "DiskWeapon": {
           "_type": "component",
-          "component_id": "4b2a2d8a-0b45-458a-b655-61e7d5eff2e8",
-          "go": "66f0dd89-29f3-4bcc-9fbd-40d7140aeae9",
+          "component_id": "821bf0bd-ab12-4f89-a2d8-dda9bee1a4d1",
+          "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
           "component_type": "DiskWeapon"
         },
         "Movement": {
@@ -143,9 +142,51 @@
           "go": "609eb73c-0e02-4e16-9ad4-ca66be967c50"
         },
         "shakeRecoverySpeed": 1
+      },
+      {
+        "__type": "DiskWeapon",
+        "__guid": "821bf0bd-ab12-4f89-a2d8-dda9bee1a4d1",
+        "defaultDiskCount": 3,
+        "defaultDiskThrower": {
+          "_type": "component",
+          "component_id": "521d8b99-f3eb-4a45-9c60-db61ed254f3b",
+          "go": "a2f29be1-790c-4cf9-9f56-6af12014b44e",
+          "component_type": "DefaultDiskThrower"
+        },
+        "maxDisks": 3,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Player": {
+          "_type": "component",
+          "component_id": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
+          "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
+          "component_type": "Player"
+        },
+        "playerHUD": {
+          "_type": "component",
+          "component_id": "1917f900-cce1-418f-b489-9f98cbc0fea3",
+          "go": "b03d0a79-e3a5-4c1a-bda8-b0983deffb06",
+          "component_type": "PlayerHUD"
+        },
+        "throwerSpace": {
+          "_type": "gameobject",
+          "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
+        }
       }
     ],
     "Children": [
+      {
+        "__guid": "a2f29be1-790c-4cf9-9f56-6af12014b44e",
+        "Flags": 0,
+        "Name": "defaultdiskthrower (1)",
+        "Enabled": true,
+        "__Prefab": "prefabs/disk/defaultdiskthrower.prefab",
+        "__PrefabVariables": {}
+      },
       {
         "__guid": "df476ff0-0ed7-43b6-8b4d-0c439468d04c",
         "Flags": 0,
@@ -223,57 +264,6 @@
                     "ZNear": 1
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "__guid": "28afdd4c-41be-440c-bcc8-528a88b150b8",
-            "Flags": 0,
-            "Name": "DefaultDiskThrower",
-            "Enabled": true,
-            "__Prefab": "prefabs/disk/defaultdiskthrower.prefab",
-            "__PrefabVariables": {}
-          },
-          {
-            "__guid": "66f0dd89-29f3-4bcc-9fbd-40d7140aeae9",
-            "Flags": 0,
-            "Name": "DiskWeapon",
-            "Enabled": true,
-            "NetworkMode": 1,
-            "Components": [
-              {
-                "__type": "DiskWeapon",
-                "__guid": "4b2a2d8a-0b45-458a-b655-61e7d5eff2e8",
-                "defaultDiskCount": 3,
-                "defaultDiskThrower": {
-                  "_type": "component",
-                  "component_id": "9e6bc743-59d2-46f1-acb3-76c182d9d34a",
-                  "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
-                  "component_type": "DefaultDiskThrower"
-                },
-                "maxDisks": 3,
-                "OnComponentDestroy": null,
-                "OnComponentDisabled": null,
-                "OnComponentEnabled": null,
-                "OnComponentFixedUpdate": null,
-                "OnComponentStart": null,
-                "OnComponentUpdate": null,
-                "Player": {
-                  "_type": "component",
-                  "component_id": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
-                  "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
-                  "component_type": "Player"
-                },
-                "playerHUD": {
-                  "_type": "component",
-                  "component_id": "1917f900-cce1-418f-b489-9f98cbc0fea3",
-                  "go": "b03d0a79-e3a5-4c1a-bda8-b0983deffb06",
-                  "component_type": "PlayerHUD"
-                },
-                "throwerSpace": {
-                  "_type": "gameobject",
-                  "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
-                }
               }
             ]
           }

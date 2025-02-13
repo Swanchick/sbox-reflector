@@ -5,6 +5,22 @@
 
 	public List<BaseDiskThrower> DiskThrowers { get; set; } = new List<BaseDiskThrower>();
 
+	public Vector3 ShootPos 
+	{
+		get 
+		{
+			return throwerSpace.WorldPosition;
+		}
+	}
+
+	public Vector3 ShootDir 
+	{
+		get 
+		{
+			return throwerSpace.WorldRotation.Forward;
+		}
+	}
+
 	[Property]
 	private Player Player;
 
@@ -14,7 +30,6 @@
 	[Property]
 	private GameObject throwerSpace;
 
-	[Property]
 	private BaseDiskThrower defaultDiskThrower;
 
 	[Property]
@@ -42,11 +57,10 @@
 
 	public void AddThrower( GameObject diskPrefab )
 	{
-		GameObject diskThrowerObject = diskPrefab.Clone(throwerSpace, Vector3.Zero, Rotation.Identity, Vector3.One);
+		GameObject diskThrowerObject = diskPrefab.Clone(GameObject, Vector3.Zero, Rotation.Identity, Vector3.One);
 		diskThrowerObject.NetworkSpawn();
 
-		BaseDiskThrower diskThrower = diskThrowerObject.GetComponent<BaseDiskThrower>();
-
+		BaseDiskThrower diskThrower = diskThrowerObject.Components.Get<BaseDiskThrower>();
 
 		if ( diskThrower == null )
 			return;
@@ -56,9 +70,8 @@
 
 	protected override void OnStart()
 	{
-
-		Log.Info("If the defaultDiskThrower is null check");
-		Log.Info(defaultDiskThrower == null);
+		
+		defaultDiskThrower = Components.GetInChildren<DefaultDiskThrower>();
 	}
 
 	protected override void OnUpdate()
