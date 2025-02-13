@@ -15,6 +15,7 @@ public sealed class Player : Component
 	public bool Alive { get; set; } = true;
 	public BoxCollider collider { get; private set; }
 
+	[Property]
 	public DiskWeapon DiskWeapon { get; set; }
 
 	public string Name
@@ -30,18 +31,11 @@ public sealed class Player : Component
 	[Property]
 	private GameObject ClientHUD;
 
-	[Property]
-	private DiskWeapon diskWeapon;
-
-
 	protected override void OnStart()
 	{
 		if ( IsProxy )
 		{
 			ClientHUD.Destroy();
-		} else
-		{
-			DiskWeapon = diskWeapon;
 		}
 	}
 }
