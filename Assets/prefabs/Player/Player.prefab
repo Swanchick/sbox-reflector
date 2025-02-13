@@ -238,6 +238,7 @@
             "Flags": 0,
             "Name": "DiskWeapon",
             "Enabled": true,
+            "NetworkMode": 1,
             "Components": [
               {
                 "__type": "DiskWeapon",
@@ -245,7 +246,7 @@
                 "defaultDiskCount": 3,
                 "defaultDiskThrower": {
                   "_type": "component",
-                  "component_id": "843d7ed1-e4eb-44a5-9adf-4870daa1bac7",
+                  "component_id": "9e6bc743-59d2-46f1-acb3-76c182d9d34a",
                   "go": "28afdd4c-41be-440c-bcc8-528a88b150b8",
                   "component_type": "DefaultDiskThrower"
                 },

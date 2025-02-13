@@ -54,6 +54,13 @@
 		DiskThrowers.Add( diskThrower );
 	}
 
+	protected override void OnStart()
+	{
+
+		Log.Info("If the defaultDiskThrower is null check");
+		Log.Info(defaultDiskThrower == null);
+	}
+
 	protected override void OnUpdate()
 	{
 		GetShoot();
@@ -86,8 +93,7 @@
 
 			disk = lastDisk;
 		}
-		// Todo:
-		// Fix disk.Weapon Null Exception
+
 		disk.Weapon = this;
 		disk.Shoot( Player );
 
