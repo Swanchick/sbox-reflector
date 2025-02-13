@@ -5,6 +5,7 @@
     "Name": "player",
     "Tags": "player",
     "Enabled": true,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "Sandbox.CharacterController",
@@ -147,12 +148,6 @@
         "__type": "DiskWeapon",
         "__guid": "821bf0bd-ab12-4f89-a2d8-dda9bee1a4d1",
         "defaultDiskCount": 3,
-        "defaultDiskThrower": {
-          "_type": "component",
-          "component_id": "521d8b99-f3eb-4a45-9c60-db61ed254f3b",
-          "go": "a2f29be1-790c-4cf9-9f56-6af12014b44e",
-          "component_type": "DefaultDiskThrower"
-        },
         "maxDisks": 3,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
