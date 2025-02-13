@@ -31,7 +31,7 @@ public class Item : BaseTrigger
 		TryToDestroy();
 	}
 
-	[Broadcast(NetPermission.Anyone)]
+	[Rpc.Broadcast(NetFlags.HostOnly)]
 	private void TryToDestroy()
 	{
 		GameObject.Destroy();

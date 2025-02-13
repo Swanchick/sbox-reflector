@@ -21,7 +21,7 @@
 	private int defaultDiskCount = 3;
 
 	[Property]
-	private PlayerHUD? playerHUD;
+	private PlayerHUD playerHUD;
 
 	public void ReturnDisk( GameObject diskThrower )
 	{
