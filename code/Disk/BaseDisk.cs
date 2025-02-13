@@ -133,7 +133,7 @@ public abstract class BaseDisk : Component
 		if ( playerObject.Id == PlayerOwnerId )
 			return;
 
-		player.Jump( (Direction + Vector3.Up * 0.5f).Normal, collisionForce );
+		player.Movement.Jump( (Direction + Vector3.Up * 0.5f).Normal, collisionForce );
 		player.CameraMovement.Shake(
 			50f,
 			100f,
