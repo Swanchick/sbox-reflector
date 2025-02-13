@@ -126,6 +126,7 @@ public abstract class BaseDisk : Component
 		}
 	}
 
+	[Rpc.Broadcast(NetFlags.HostOnly)]
 	protected virtual void OnPlayerHit( SceneTraceResult trace, GameObject playerObject, Player player )
 	{
 		if ( playerObject.Id == PlayerOwnerId )
