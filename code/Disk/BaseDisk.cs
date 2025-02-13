@@ -112,8 +112,6 @@ public abstract class BaseDisk : Component
 		OnPreDestroy();
 		diskController.Enabled = false;
 		isDestroying = true;
-
-		//GameObject.Destroy();
 	}
 
 	protected virtual void OnWallHit( SceneTraceResult trace )
