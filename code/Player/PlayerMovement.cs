@@ -44,7 +44,7 @@ public sealed class PlayerMovement : Component
 	[Property]
 	private GameObject playerCamera;
 
-	private CharacterController playerController;
+	public CharacterController PlayerController;
 
 	private Vector3 wishVelocity = Vector3.Zero;
 
@@ -52,13 +52,13 @@ public sealed class PlayerMovement : Component
 
 	public void Jump(Vector3 dir, float jumpForce)
 	{
-		playerController.Velocity = Vector3.Zero;
-		playerController.Punch( dir * jumpForce );
+		PlayerController.Velocity = Vector3.Zero;
+		PlayerController.Punch( dir * jumpForce );
 	}
 	
 	protected override void OnStart()
 	{
-		playerController = Components.Get<CharacterController>();
+		PlayerController = Components.Get<CharacterController>();
 		
 		
 		sceneGravity = Scene.PhysicsWorld.Gravity.z;
@@ -76,8 +76,8 @@ public sealed class PlayerMovement : Component
 				Strafe();
 
 
-				playerController.Accelerate( wishVelocity );
-				playerController.Move();
+				PlayerController.Accelerate( wishVelocity );
+				PlayerController.Move();
 
 				break;
 		}
@@ -85,7 +85,7 @@ public sealed class PlayerMovement : Component
 
 	private void Strafe()
 	{
-		Vector3 currentVelocity = playerController.Velocity;
+		Vector3 currentVelocity = PlayerController.Velocity;
 
 		float wishSpeed = wishVelocity.Length;
 		Vector3 wishDirection = wishVelocity.Normal;
@@ -108,7 +108,7 @@ public sealed class PlayerMovement : Component
 		currentVelocity.x += accelSpeed * wishDirection.x;
 		currentVelocity.y += accelSpeed * wishDirection.y;
 
-		playerController.Velocity = currentVelocity;
+		PlayerController.Velocity = currentVelocity;
 	}
 
 	private Vector3 BuildDirection()
@@ -152,25 +152,25 @@ public sealed class PlayerMovement : Component
 			wishVelocity = wishVelocity.WithZ( 0 );
 		}
 
-		if ( playerController.IsOnGround && !IsSpectator )
+		if ( PlayerController.IsOnGround && !IsSpectator )
 		{
 			if ( currentState != State.Grounded )
 			{
-				// LastAttacker = Guid.Empty;
+				Player.LastAttacker = Guid.Empty;
 
 				currentState = State.Grounded;
 			}
 				
 
-			playerController.ApplyFriction( playerGroundFriction );
-			playerController.Velocity = playerController.Velocity.WithZ( 0 );
+			PlayerController.ApplyFriction( playerGroundFriction );
+			PlayerController.Velocity = PlayerController.Velocity.WithZ( 0 );
 		}
 		else
 		{
 			currentState = State.None;
 
-			playerController.ApplyFriction( playerAirFriction );
-			playerController.Velocity += Vector3.Up * sceneGravity * Time.Delta;
+			PlayerController.ApplyFriction( playerAirFriction );
+			PlayerController.Velocity += Vector3.Up * sceneGravity * Time.Delta;
 
 			wishVelocity *= playerAirFriction;
 		}

@@ -50,6 +50,7 @@ public sealed class PlayerCameraMovement : Component
 	protected override void OnStart()
 	{
 		playerController = Components.Get<CharacterController>();
+		shakeSeed = Game.Random.Next();
 	}
 
 	protected override void OnUpdate()

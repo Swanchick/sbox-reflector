@@ -13,7 +13,7 @@ public class DeathTeleport : BaseTrigger
 		GameObject randomGameObject = GetRandomSpawnpoint();
 		player.Transform.ClearInterpolation();
 		player.Transform.World = randomGameObject.Transform.World;
-		player.playerController.Velocity = Vector3.Zero;
+		player.Movement.PlayerController.Velocity = Vector3.Zero;
 		player.Transform.ClearInterpolation();
 
 		Scene.RunEvent<IReflector>( x => x.OnPlayerDeath( player ) );
