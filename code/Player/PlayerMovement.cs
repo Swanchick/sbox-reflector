@@ -2,6 +2,10 @@ using System;
 
 public class PlayerMovement : Component 
 {
+	[Property]
+	public Player player;
+
+
 	public enum State 
 	{
 		None,
@@ -45,7 +49,7 @@ public class PlayerMovement : Component
 
 	private Vector3 wishVelocity = Vector3.Zero;
 
-	private float sceneGravity = 20f;
+	private float sceneGravity;
 
 	public void Jump(Vector3 dir, float jumpForce)
 	{
@@ -56,11 +60,28 @@ public class PlayerMovement : Component
 	protected override void OnStart()
 	{
 		playerController = Components.Get<CharacterController>();
+		
+		
+		sceneGravity = Scene.PhysicsWorld.Gravity.z;
 	}
 
 	protected override void OnFixedUpdate()
 	{
-		
+		switch (currentState) 
+		{
+			case State.Spectator:
+				NoclipMovement();
+				break;
+			default:
+				Movement();
+				Strafe();
+
+
+				playerController.Accelerate( wishVelocity );
+				playerController.Move();
+
+				break;
+		}
 	}
 
 	private void Strafe()

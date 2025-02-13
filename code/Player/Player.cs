@@ -6,6 +6,9 @@ using System.Runtime.InteropServices.Swift;
 
 public class Player : Component
 {
+	[Property]
+	public PlayerMovement PlayerMovement { get; set; }
+	
 	public PlayerMovementState playerMovementState { get; private set; } = PlayerMovementState.None;
 	public bool Alive { get; set; } = true;
 	public CharacterController playerController { get; private set; }
@@ -184,133 +187,6 @@ public class Player : Component
 		playerShake.LocalRotation = Rotation.Lerp( playerShake.LocalRotation, shakeRotationalVelocity.ToRotation(), Time.Delta * playerCameraSpeed );
 
 		shakeTrauma = Math.Clamp( shakeTrauma - shakeRecoverySpeed * Time.Delta, 0, 1 );
-	}
-
-	protected override void OnFixedUpdate()
-	{
-		if ( IsSpectator )
-		{
-			NoclipMovement();
-		}
-		else
-		{
-			Movement();
-			Strafe();
-
-			playerController.Accelerate( wishVelocity );
-			playerController.Move();
-		}
-	}
-
-	private void Strafe()
-	{
-		Vector3 currentVelocity = playerController.Velocity;
-
-		float wishSpeed = wishVelocity.Length;
-		Vector3 wishDirection = wishVelocity.Normal;
-
-		if ( wishSpeed > 32 )
-		{
-			wishSpeed = 32;
-		}
-
-		float currentSpeed = Vector3.Dot( currentVelocity, wishDirection );
-		float addSpeed = wishSpeed - currentSpeed;
-		if ( addSpeed <= 0 )
-			return;
-
-		float accelSpeed = playerSpeed * 10 * Time.Delta;
-
-		if ( accelSpeed > addSpeed )
-			accelSpeed = addSpeed;
-
-		currentVelocity.x += accelSpeed * wishDirection.x;
-		currentVelocity.y += accelSpeed * wishDirection.y;
-
-		playerController.Velocity = currentVelocity;
-	}
-
-	private Vector3 BuildDirection()
-	{
-		float horizontal = (Input.Down( "Right" ) ? 1 : 0) - (Input.Down( "Left" ) ? 1 : 0);
-		float vertical = (Input.Down( "Forward" ) ? 1 : 0) - (Input.Down( "Backward" ) ? 1 : 0);
-		float upDown = (Input.Down( "Jump" ) ? 1 : 0) - (Input.Down( "Duck" ) ? 1 : 0);
-
-		Rotation playerRotation = playerHead.WorldRotation;
-		Angles playerCameraAngles = playerCamera.LocalRotation.Angles();
-
-		Vector3 dir = Vector3.Zero;
-
-		dir += playerRotation.Forward * vertical;
-		dir += playerRotation.Right * horizontal;
-
-		if ( IsSpectator )
-		{
-			dir += Vector3.Up * upDown;
-			dir -= Vector3.Up * vertical * (playerCameraAngles.pitch / 90f);
-			dir -= playerRotation.Forward * vertical * Math.Abs( playerCameraAngles.pitch / 90f );
-		}
-
-		return dir.Normal;
-	}
-
-	private void Movement()
-	{
-		if ( IsProxy )
-			return;
-
-		wishVelocity = BuildDirection();
-
-		if ( IsSpectator )
-		{
-			wishVelocity *= playerNoclipSpeed;
-		}
-		else
-		{
-			wishVelocity *= playerSpeed;
-			wishVelocity = wishVelocity.WithZ( 0 );
-		}
-
-		if ( playerController.IsOnGround && !IsSpectator )
-		{
-			if ( !grounded )
-			{
-				LastAttacker = Guid.Empty;
-
-				grounded = true;
-			}
-				
-
-			playerController.ApplyFriction( playerGroundFriction );
-			playerController.Velocity = playerController.Velocity.WithZ( 0 );
-		}
-		else
-		{
-			grounded = false;
-
-			if ( !IsSpectator )
-			{
-				playerController.ApplyFriction( playerAirFriction );
-				playerController.Velocity += Vector3.Up * sceneGravity * Time.Delta;
-			}
-			else
-			{
-				playerController.ApplyFriction( playerGroundFriction );
-			}
-
-			wishVelocity *= playerAirFriction;
-		}
-	}
-
-	private void NoclipMovement()
-	{
-		if ( IsProxy )
-			return;
-
-		Vector3 velocity = BuildDirection();
-		velocity *= playerNoclipSpeed;
-
-		WorldPosition += velocity * Time.Delta;
 	}
 
 	private void CameraRotation()
