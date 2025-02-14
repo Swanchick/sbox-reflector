@@ -3,13 +3,10 @@
 
 public sealed class Player : Component
 {
-	[Property]
 	public PlayerMovement Movement { get; set; }
 
-	[Property]
 	public PlayerCameraMovement CameraMovement { get; set; }
 
-	[Property]
 	public DiskWeapon DiskWeapon { get; set; }
 
 	[Sync]
@@ -26,13 +23,16 @@ public sealed class Player : Component
 		}
 	}
 
-	public bool CanUseTrigger { get; set; } = true;
-
 	[Property]
 	private GameObject ClientHUD;
 
 	protected override void OnStart()
 	{
+		Movement = Components.Get<PlayerMovement>();
+		CameraMovement = Components.Get<PlayerCameraMovement>();
+		DiskWeapon = Components.Get<DiskWeapon>();
+
+
 		if ( IsProxy )
 		{
 			ClientHUD.Destroy();

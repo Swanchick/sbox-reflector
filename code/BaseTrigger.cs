@@ -19,7 +19,7 @@
 		if ( player.Movement.IsSpectator && !activateInNoclip )
 			return;
 
-		if ( !player.CanUseTrigger )
+		if ( !player.Movement.CanUseTrigger )
 			return;
 
 		OnPlayerEnter( player );
@@ -37,7 +37,7 @@
 		if ( player.Movement.IsSpectator && !activateInNoclip )
 			return;
 
-		if ( !player.CanUseTrigger )
+		if ( !player.Movement.CanUseTrigger )
 			return;
 
 		OnPlayerLeave( player );

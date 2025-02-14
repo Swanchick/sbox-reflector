@@ -30,6 +30,8 @@ public sealed class PlayerMovement : Component
 		}
 	}
 
+	public bool CanUseTrigger { get; set; } = true;
+
 	[Property]
 	private float playerSpeed = 100f;
 	[Property]
