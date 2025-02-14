@@ -13,8 +13,6 @@ public class JumpPad : BaseTrigger
 		if ( !player.Alive )
 			return;
 
-		Log.Info($"{GameObject.Name}/{GameObject.Parent.Name}/{GameObject.Parent.Parent.Name} - hitted");
-
 		player.Movement.Jump( jumpDirection, jumpForce );
 		player.CameraMovement.Shake( 10f, 100, new Vector3( 3, 3, 3 ), new Vector3( 4, 4, 4 ) );
 	}
