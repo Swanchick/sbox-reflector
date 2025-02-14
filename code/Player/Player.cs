@@ -13,13 +13,45 @@ public sealed class Player : Component
 	public Guid LastAttacker { get; set; }
 
 	public bool Alive { get; set; } = true;
-	public BoxCollider collider { get; private set; }
 
 	public string Name
 	{
 		get
 		{
 			return Network.Owner.DisplayName;
+		}
+	}
+
+	public enum State 
+	{
+		Alive,
+		Dead,
+		Spectator,
+	}
+
+	public State CurrentState { get; set; } = State.Alive;
+
+	public bool IsAlive 
+	{
+		get
+		{
+			return CurrentState == State.Alive;
+		}
+	}
+
+	public bool IsDead
+	{
+		get
+		{
+			return CurrentState == State.Dead;
+		}
+	}
+
+	public bool IsSpectator
+	{
+		get
+		{
+			return CurrentState == State.Spectator;
 		}
 	}
 
