@@ -10,7 +10,7 @@ public class JumpPad : BaseTrigger
 
 	protected override void OnPlayerEnter( Player player )
 	{
-		if ( !player.Alive )
+		if ( player.IsDead )
 			return;
 
 		player.Movement.Jump( jumpDirection, jumpForce );

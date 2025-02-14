@@ -7,7 +7,7 @@ public class DeathTeleport : BaseTrigger
 
 	protected override void OnPlayerEnter( Player player )
 	{
-		if ( !player.Alive )
+		if ( player.IsDead )
 			return;
 
 		GameObject randomGameObject = GetRandomSpawnpoint();

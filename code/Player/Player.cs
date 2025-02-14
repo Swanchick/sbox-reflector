@@ -12,8 +12,6 @@ public sealed class Player : Component
 	[Sync]
 	public Guid LastAttacker { get; set; }
 
-	public bool Alive { get; set; } = true;
-
 	public string Name
 	{
 		get

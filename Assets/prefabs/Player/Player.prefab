@@ -49,27 +49,9 @@
       {
         "__type": "Player",
         "__guid": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
-        "CameraMovement": {
-          "_type": "component",
-          "component_id": "f146c278-bdc5-4b28-af46-9c7f1bdc4cf5",
-          "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
-          "component_type": "PlayerCameraMovement"
-        },
         "ClientHUD": {
           "_type": "gameobject",
           "go": "b03d0a79-e3a5-4c1a-bda8-b0983deffb06"
-        },
-        "DiskWeapon": {
-          "_type": "component",
-          "component_id": "821bf0bd-ab12-4f89-a2d8-dda9bee1a4d1",
-          "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
-          "component_type": "DiskWeapon"
-        },
-        "Movement": {
-          "_type": "component",
-          "component_id": "4a621f1b-35b7-42cf-8679-1fbbc78375d6",
-          "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
-          "component_type": "PlayerMovement"
         },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
