@@ -4,10 +4,8 @@ public sealed class PlayerManager : Component
 {
 	public static PlayerManager instance;
 
-	// ToDo: Make local player :)
 	public Player LocalPlayer;
 
-	// Todo: Save player and sync it between all clients
 	[Sync]
 	public NetList<Guid> PlayerIds { get; set; } = new();
 
