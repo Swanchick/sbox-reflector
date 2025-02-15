@@ -37,7 +37,7 @@
 	{
 		await Task.Delay( LifeTime );
 
-        kills.RemoveAt( kills.Count - 1 );
+        kills.RemoveAt( 0 );
 
         StateHasChanged();
 	}

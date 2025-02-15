@@ -43,7 +43,7 @@ public sealed class PlayerManager : Component
 	[ConCmd("add_test_kill")]
 	public static void AddTestKill()
 	{
-
+		instance.LocalPlayer.ClientHUD.KillFeed.AddKill("Test 1", "Test 2");
 	}
 
 	[ConCmd("show_local_player")]
@@ -61,19 +61,19 @@ public sealed class PlayerManager : Component
 		}
 	}
 
-	[Rpc.Broadcast]
 	public void AddKill(Player victim) 
 	{
-		if (IsProxy)
+		if (victim == null || LocalPlayer == null)
 			return;
 
-		// ToDo: Add suicide
+		LocalPlayer.ClientHUD.KillFeed.AddKill("", victim.Name);
 	}
 
 	public void AddKill(Player attacker, Player victim)
 	{
-		// ToDo: well understandable
+		if (attacker == null || victim == null || LocalPlayer == null)
+			return;
+
+		LocalPlayer.ClientHUD.KillFeed.AddKill(attacker.Name, victim.Name);
 	}
-
-
 }

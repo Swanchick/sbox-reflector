@@ -23,13 +23,13 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		_ = SetupPlayer( playerObject );
 	}
 
+	[Rpc.Broadcast]
 	public void OnPlayerHit( Player attacker, Player victim )
 	{
 		if ( attacker.GameObject.Id == victim.GameObject.Id )
 			return;
 
 		Log.Info( $"Attacker: {attacker.GameObject.Id} =========== Victim: {victim.GameObject.Id}" );
-
 		Log.Info( "Message for everyone" );
 
 		victim.LastAttacker = attacker.GameObject.Id;
@@ -56,15 +56,15 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		if ( attacker == null )
 			return;
 		
-		
-
-		// ToDo: Add killfeed player attacker and victim
+		pm.AddKill(attacker, victim);
 	}
 
 	[Rpc.Broadcast]
 	public void OnPlayerDeath( Player player )
 	{
 		Guid attackerId = player.LastAttacker;
+
+		Log.Info(attackerId);
 
 		SendKillFeed( attackerId, player );
 	}
