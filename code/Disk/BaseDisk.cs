@@ -109,7 +109,9 @@ public abstract class BaseDisk : Component
 		diskModel.Enabled = false;
 		
 		OnPreDestroy();
-		diskController.Enabled = false;
+		if (diskController != null)
+			diskController.Enabled = false;
+		
 		isDestroying = true;
 	}
 
