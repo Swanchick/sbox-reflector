@@ -5,21 +5,35 @@ public sealed class PlayerManager : Component
 	public static PlayerManager instance;
 
 	// ToDo: Make local player :)
-	public static Player LocalPlayer;
+	public Player LocalPlayer;
 
 	// Todo: Save player and sync it between all clients
 	[Sync]
 	public NetList<Guid> PlayerIds { get; set; } = new();
 
+	public List<Player> Players 
+	{
+		get
+		{
+			return PlayerIds
+				.Select(id => Scene.Directory.FindByGuid(id).Components.Get<Player>())
+				.ToList();
+		}
+	}
 
 	protected override void OnStart()
 	{
 		instance = this;
 	}
 
+	[Rpc.Broadcast]
 	public void AddPlayer(Player player) 
 	{
+		if (!player.IsProxy) 
+			LocalPlayer = player;
 
+		Guid playerId = player.GameObject.Id;
+		PlayerIds.Add(playerId);
 	}
 
 	[ConCmd("test_command")]
@@ -32,6 +46,21 @@ public sealed class PlayerManager : Component
 	public static void AddTestKill()
 	{
 
+	}
+
+	[ConCmd("show_local_player")]
+	public static void ShowLocalPlayer()
+	{
+		Log.Info($"Local player name: {instance.LocalPlayer.Name}");
+	}
+
+	[ConCmd("player_list")]
+	public static void ShowPlayerList()
+	{		
+		foreach (Player player in instance.Players)
+		{
+			Log.Info($"Player: {player.Name}");
+		}
 	}
 
 	[Rpc.Broadcast]

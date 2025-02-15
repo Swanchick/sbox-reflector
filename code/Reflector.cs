@@ -8,31 +8,6 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 
 	[Property]
 	private List<GameObject> spawnPoints = new();
-	private NetList<Guid> playerIds = new();
-
-	public List<GameObject> PlayerObjects
-	{
-		get
-		{
-			List<GameObject> playerObjects = new();
-
-			foreach ( Guid playerId in playerIds )
-			{
-				GameObject playerObject = Scene.Directory.FindByGuid( playerId );
-				if ( playerObject == null )
-					continue;
-
-				playerObjects.Add( playerObject );
-			}
-
-			return playerObjects;
-		}
-	}
-
-	public GameObject GetPlayer( Guid guid )
-	{
-		return Scene.Directory.FindByGuid( guid );
-	}
 
 	public void OnActive( Connection channel )
 	{
@@ -113,7 +88,7 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		await Task.Delay( 1 );
 		Player player = playerObject.GetComponent<Player>();
 
-		
+		PlayerManager.instance.AddPlayer(player);
 	}
 
 	private Transform GetRandomSpawnpoint()
