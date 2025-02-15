@@ -24,6 +24,9 @@ KillFeed {
         font-family: 'Open Sans', sans-serif;
         font-weight: 600;
         font-size: 36px;
+
+        transition: all 0.25s ease-in-out;
+        transform: translateX(0);
         
         .killicon {
             width: 64px;
@@ -38,5 +41,13 @@ KillFeed {
         .victim {
             color: #ff776f;
         }
+    }
+
+    .killfeed-entry:intro {
+        transform: translateX(10000px);
+    }
+
+    .killfeed-entry:outro {
+        transform: translateX(10000px);
     }
 }
