@@ -113,7 +113,7 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		await Task.Delay( 1 );
 		Player player = playerObject.GetComponent<Player>();
 
-		PlayerManager.instance.OnPlayerConnect(player);
+		
 	}
 
 	private Transform GetRandomSpawnpoint()

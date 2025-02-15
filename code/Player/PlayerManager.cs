@@ -3,16 +3,23 @@ using System;
 public sealed class PlayerManager : Component 
 {
 	public static PlayerManager instance;
-	public static Player LocalPlayer;
 
+	// ToDo: Make local player :)
+	public static Player LocalPlayer;
 
 	// Todo: Save player and sync it between all clients
 	[Sync]
-	public NetList<Guid> Players { get; set; } = new();
+	public NetList<Guid> PlayerIds { get; set; } = new();
+
 
 	protected override void OnStart()
 	{
 		instance = this;
+	}
+
+	public void AddPlayer(Player player) 
+	{
+
 	}
 
 	[ConCmd("test_command")]
@@ -24,8 +31,7 @@ public sealed class PlayerManager : Component
 	[ConCmd("add_test_kill")]
 	public static void AddTestKill()
 	{
-		// Player ply = instance.Scene.;
-		// ply.ClientHUD.KillFeed.AddKill(ply.Name, "Test");
+
 	}
 
 	[Rpc.Broadcast]
@@ -42,8 +48,5 @@ public sealed class PlayerManager : Component
 		// ToDo: well understandable
 	}
 
-	public void OnPlayerConnect(Player player)
-	{
-		// ToDo: add player on connect callback
-	}
+
 }
