@@ -91,7 +91,6 @@ public abstract class BaseDisk : Component
 
 	private void DestroyDisk()
 	{
-
 		if (isDestroying) 
 			return;
 
@@ -151,10 +150,7 @@ public abstract class BaseDisk : Component
 		baseDiskThrower.ReturnDisk();
 	}
 
-	protected virtual void OnPreDestroy()
-	{
-		
-	}
+	protected virtual void OnPreDestroy() { }
 
 	protected virtual void DoProceduralAnimation()
 	{

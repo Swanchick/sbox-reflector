@@ -2,7 +2,9 @@ public sealed class PlayerManager : Component
 {
 	public static PlayerManager instance;
 
-	protected override void OnAwake()
+	public List<Player> Players { get; set; } = new();
+
+	protected override void OnStart()
 	{
 		instance = this;
 	}
@@ -13,10 +15,16 @@ public sealed class PlayerManager : Component
 		Log.Info("Hello World");
 	}
 
+	[ConCmd("add_test_kill")]
+	public static void AddTestKill()
+	{
+		Player ply = instance.Players.First();
+		ply.ClientHUD.KillFeed.AddKill(ply.Name, "Test");
+	}
 
 	public void AddKill(Player victim) 
 	{
-
+		
 	}
 
 	public void AddKill(Player attacker, Player victim)

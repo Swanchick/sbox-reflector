@@ -3462,6 +3462,16 @@
               "go": "be13485f-73b7-48ff-ad87-72f89d9027cf"
             }
           ]
+        },
+        {
+          "__type": "PlayerManager",
+          "__guid": "77d25e9c-3fa5-49bb-bbe9-09016c8d442a",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ]
     },

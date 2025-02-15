@@ -49,10 +49,6 @@
       {
         "__type": "Player",
         "__guid": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
-        "ClientHUD": {
-          "_type": "gameobject",
-          "go": "b03d0a79-e3a5-4c1a-bda8-b0983deffb06"
-        },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -270,6 +266,7 @@
           {
             "__type": "PlayerHUD",
             "__guid": "1917f900-cce1-418f-b489-9f98cbc0fea3",
+            "killFeedLifeTime": 5000,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,

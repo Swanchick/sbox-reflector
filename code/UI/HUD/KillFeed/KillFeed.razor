@@ -2,19 +2,59 @@
 @using Sandbox.UI;
 @using System.Threading.Tasks;
 @attribute [StyleSheet]
-@implements IKillFeed;
 
-<root> 
+<root>
 	@foreach ( Kill kill in kills.Reverse<Kill>() )
     {
         <div class="killfeed-entry">
             <span class="attacker">@( kill.Attacker )</span>
-            <img class="killicon" src="@killfeed_icon"/>
+            <img class="killicon" src="@killFeedIcon"/>
             <span class="victim">@( kill.Victim )</span>
         </div>
     }
 </root>
 
+@code 
+{
+	private string killFeedIcon = "/ui/killicon.png";
+	private List<Kill> kills = new();
+	
+	public int LifeTime { get; set; } = 5000;
+
+	public void AddKill( Player attacker, Player victim ) 
+	{
+		Kill kill = new Kill( attacker, victim );
+		kills.Add(kill);
+
+		StateHasChanged();
+
+		_ = DestroyMessage();
+	}
+
+	public void AddKill( string attacker, string victim ) 
+	{
+		Kill kill = new Kill( attacker, victim );
+		kills.Add(kill);
+
+		Log.Info(kills.Count);
+
+		StateHasChanged();
+
+		_ = DestroyMessage();
+	}
+
+
+	private async Task DestroyMessage() 
+	{
+		await Task.Delay( LifeTime );
+
+        kills.RemoveAt( kills.Count - 1 );
+
+        StateHasChanged();
+	}
+}
+
+@* 
 @code
 {
     private string killfeed_icon = "/ui/killicon.png";
@@ -55,4 +95,4 @@
 
         StateHasChanged();
     }
-}
+} *@

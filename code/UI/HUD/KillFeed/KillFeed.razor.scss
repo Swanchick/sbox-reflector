@@ -11,6 +11,10 @@ KillFeed {
     justify-content: flex-start;
     gap: 20px;
     
+    .test-bacground {
+        background-color: red;
+    }
+
     .killfeed-entry {
         display: flex;
         flex-direction: row;

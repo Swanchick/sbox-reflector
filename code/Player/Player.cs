@@ -9,6 +9,8 @@ public sealed class Player : Component
 
 	public DiskWeapon DiskWeapon { get; set; }
 
+	public PlayerHUD ClientHUD { get; set; }
+
 	[Sync]
 	public Guid LastAttacker { get; set; }
 
@@ -53,15 +55,12 @@ public sealed class Player : Component
 		}
 	}
 
-	[Property]
-	private GameObject ClientHUD;
-
 	protected override void OnStart()
 	{
 		Movement = Components.Get<PlayerMovement>();
 		CameraMovement = Components.Get<PlayerCameraMovement>();
 		DiskWeapon = Components.Get<DiskWeapon>();
-
+		ClientHUD = Components.GetInChildren<PlayerHUD>();
 
 		if ( IsProxy )
 		{

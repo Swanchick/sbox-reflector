@@ -50,7 +50,6 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 
 	public void OnPlayerHit( Player attacker, Player victim )
 	{
-
 		if ( attacker.GameObject.Id == victim.GameObject.Id )
 			return;
 
@@ -106,7 +105,8 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 	{
 		await Task.Delay( 1 );
 		Player player = playerObject.GetComponent<Player>();
-		//player.Spectate( true );
+
+		PlayerManager.instance.Players.Add(player);
 	}
 
 	private Transform GetRandomSpawnpoint()
