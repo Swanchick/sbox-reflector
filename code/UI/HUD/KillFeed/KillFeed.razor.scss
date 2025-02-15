@@ -1,3 +1,12 @@
+@keyframes dissapear {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10000px);
+    }
+}
+
 KillFeed {
     position: absolute;
     width: 500px;
@@ -27,6 +36,12 @@ KillFeed {
 
         transition: all 0.25s ease-in-out;
         transform: translateX(0);
+
+        &:intro {
+            transform: translateX(10000px);
+        }
+
+        animation: 0.5s ease-in-out 4.5s dissapear; 
         
         .killicon {
             width: 64px;
@@ -41,13 +56,5 @@ KillFeed {
         .victim {
             color: #ff776f;
         }
-    }
-
-    .killfeed-entry:intro {
-        transform: translateX(10000px);
-    }
-
-    .killfeed-entry:outro {
-        transform: translateX(10000px);
     }
 }
