@@ -70,8 +70,9 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		Player attacker = attackerObject.Components.Get<Player>();
 		if ( attacker == null )
 			return;
+		
 
-		Scene.RunEvent<IKillFeed>( x => x.AddKill( attacker, victim ) );
+		// ToDo: Add killfeed player attacker and victim
 	}
 
 	[Rpc.Broadcast]
