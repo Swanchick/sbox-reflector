@@ -21,16 +21,6 @@
 	
 	public int LifeTime { get; set; } = 5000;
 
-	public void AddKill( Player attacker, Player victim ) 
-	{
-		Kill kill = new Kill( attacker, victim );
-		kills.Add(kill);
-
-		StateHasChanged();
-
-		_ = DestroyMessage();
-	}
-
 	public void AddKill( string attacker, string victim ) 
 	{
 		Kill kill = new Kill( attacker, victim );
@@ -39,7 +29,6 @@
 		Log.Info(kills.Count);
 
 		StateHasChanged();
-
 		_ = DestroyMessage();
 	}
 
@@ -53,46 +42,3 @@
         StateHasChanged();
 	}
 }
-
-@* 
-@code
-{
-    private string killfeed_icon = "/ui/killicon.png";
-    private List<Kill> kills = new();
-
-    [Property]
-    private int messageLifeTime = 5000;
-
-    public void AddKill( Player attacker, Player victim )
-    {
-        Log.Info( "Kill added" );
-
-        Kill kill = new Kill(attacker, victim);
-        kills.Add(kill);
-
-        StateHasChanged();
-
-        _ = DestroyMessage();
-    }
-
-    public void Test(string attacker, string victim)
-    {
-        Log.Info("Test kill added");
-
-        Kill kill = new Kill(attacker, victim);
-        kills.Add(kill);
-
-        StateHasChanged();
-
-        // _ = DestroyMessage();
-    }
-
-    private async Task DestroyMessage() 
-    {
-        await Task.Delay( 5000 );
-
-        kills.RemoveAt( kills.Count - 1 );
-
-        StateHasChanged();
-    }
-} *@

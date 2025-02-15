@@ -62,6 +62,17 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 
 	private void SendKillFeed( Guid attackerId, Player victim )
 	{
+		PlayerManager pm = PlayerManager.instance;
+		if (pm == null)
+			return;
+
+		if (attackerId == Guid.Empty)
+		{
+			pm.AddKill(victim);
+			
+			return;
+		}
+
 		GameObject attackerObject = Scene.Directory.FindByGuid( attackerId );
 		if ( attackerObject == null )
 			return;
@@ -69,6 +80,7 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		Player attacker = attackerObject.Components.Get<Player>();
 		if ( attacker == null )
 			return;
+		
 		
 
 		// ToDo: Add killfeed player attacker and victim
@@ -79,12 +91,7 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 	{
 		Guid attackerId = player.LastAttacker;
 
-		if ( attackerId != Guid.Empty )
-		{
-			SendKillFeed( attackerId, player );
-
-			return;
-		}
+		SendKillFeed( attackerId, player );
 	}
 
 
@@ -106,7 +113,7 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 		await Task.Delay( 1 );
 		Player player = playerObject.GetComponent<Player>();
 
-		PlayerManager.instance.Players.Add(player);
+		PlayerManager.instance.OnPlayerConnect(player);
 	}
 
 	private Transform GetRandomSpawnpoint()
