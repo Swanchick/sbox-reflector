@@ -194,8 +194,8 @@ public abstract class BaseDisk : Component
 			return;
 
 		SceneTraceResult trace = Scene.Trace
-			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance / 3 )
-			.Size( BBox.FromPositionAndSize(Vector3.Zero, collisionDistance / 3) )
+			.Ray( WorldPosition, WorldPosition + Direction * collisionDistance / 2 )
+			.Size( BBox.FromPositionAndSize(Vector3.Zero, collisionDistance / 2) )
 			.WithoutTags( "disk" )
 			.Run();
 

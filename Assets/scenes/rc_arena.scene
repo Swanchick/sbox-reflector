@@ -4919,7 +4919,7 @@
     {
       "__guid": "9ee9869c-29ab-4c01-a7b5-8ef0c4e535cc",
       "Flags": 0,
-      "Name": "Object",
+      "Name": "PowerUpSpawner",
       "Position": "0,0,40.29601",
       "Enabled": true,
       "NetworkMode": 1,
