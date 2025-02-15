@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 
+// ToDo:
+// Add player disconnect
+// Move function related to player to PlayerManager
+
+
 public class Reflector : Component, Component.INetworkListener, IReflector
 {
 	[Property]
