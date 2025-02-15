@@ -1,4 +1,4 @@
-﻿partial class Message
+﻿public sealed class Message
 {
 	public Player Owner { get; set; }
 	public string AuthorName { get; private set; }

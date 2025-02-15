@@ -215,7 +215,7 @@ public abstract class BaseDisk : Component
 		if ( playerOwner == null ) 
 			return;
 
-		Scene.RunEvent<IReflector>( x => x.OnPlayerHit( playerOwner, victim ) );
+		PlayerManager.instance.OnPlayerHit(playerOwner, victim);
 		
 		OnPlayerHit( trace, gameObject, victim );
 	}

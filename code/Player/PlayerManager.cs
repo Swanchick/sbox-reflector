@@ -76,4 +76,48 @@ public sealed class PlayerManager : Component
 
 		LocalPlayer.ClientHUD.KillFeed.AddKill(attacker.Name, victim.Name);
 	}
+
+	[Rpc.Broadcast]
+	public void OnPlayerHit( Player attacker, Player victim )
+	{
+		if ( attacker.GameObject.Id == victim.GameObject.Id )
+			return;
+
+		Log.Info( $"Attacker: {attacker.GameObject.Id} =========== Victim: {victim.GameObject.Id}" );
+		Log.Info( "Message for everyone" );
+
+		victim.LastAttacker = attacker.GameObject.Id;
+	}
+
+	[Rpc.Broadcast]
+	public void OnPlayerDeath( Player player )
+	{
+		Guid attackerId = player.LastAttacker;
+
+		SendToKillFeed( attackerId, player );
+	}
+
+	private void SendToKillFeed( Guid attackerId, Player victim )
+	{
+		PlayerManager pm = instance;
+		if (pm == null)
+			return;
+
+		if (attackerId == Guid.Empty)
+		{
+			pm.AddKill(victim);
+			
+			return;
+		}
+
+		GameObject attackerObject = Scene.Directory.FindByGuid( attackerId );
+		if ( attackerObject == null )
+			return;
+
+		Player attacker = attackerObject.Components.Get<Player>();
+		if ( attacker == null )
+			return;
+		
+		pm.AddKill(attacker, victim);
+	}
 }

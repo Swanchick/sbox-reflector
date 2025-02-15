@@ -1,12 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-
-// ToDo:
-// Add player disconnect
-// Move function related to player to PlayerManager
+﻿using System.Threading.Tasks;
 
 
-public class Reflector : Component, Component.INetworkListener, IReflector
+public class Reflector : Component, Component.INetworkListener
 {
 	[Property]
 	private GameObject playerPrefab;
@@ -27,53 +22,6 @@ public class Reflector : Component, Component.INetworkListener, IReflector
 
 		_ = SetupPlayer( playerObject );
 	}
-
-	[Rpc.Broadcast]
-	public void OnPlayerHit( Player attacker, Player victim )
-	{
-		if ( attacker.GameObject.Id == victim.GameObject.Id )
-			return;
-
-		Log.Info( $"Attacker: {attacker.GameObject.Id} =========== Victim: {victim.GameObject.Id}" );
-		Log.Info( "Message for everyone" );
-
-		victim.LastAttacker = attacker.GameObject.Id;
-	}
-
-	private void SendKillFeed( Guid attackerId, Player victim )
-	{
-		PlayerManager pm = PlayerManager.instance;
-		if (pm == null)
-			return;
-
-		if (attackerId == Guid.Empty)
-		{
-			pm.AddKill(victim);
-			
-			return;
-		}
-
-		GameObject attackerObject = Scene.Directory.FindByGuid( attackerId );
-		if ( attackerObject == null )
-			return;
-
-		Player attacker = attackerObject.Components.Get<Player>();
-		if ( attacker == null )
-			return;
-		
-		pm.AddKill(attacker, victim);
-	}
-
-	[Rpc.Broadcast]
-	public void OnPlayerDeath( Player player )
-	{
-		Guid attackerId = player.LastAttacker;
-
-		Log.Info(attackerId);
-
-		SendKillFeed( attackerId, player );
-	}
-
 
 	protected override async Task OnLoad()
 	{

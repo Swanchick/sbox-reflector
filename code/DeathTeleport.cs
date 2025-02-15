@@ -16,7 +16,8 @@ public class DeathTeleport : BaseTrigger
 		player.Movement.PlayerController.Velocity = Vector3.Zero;
 		player.Transform.ClearInterpolation();
 
-		Scene.RunEvent<IReflector>( x => x.OnPlayerDeath( player ) );
+
+		PlayerManager.instance.OnPlayerDeath(player);
 		
 		player.LastAttacker = Guid.Empty;
 	}
