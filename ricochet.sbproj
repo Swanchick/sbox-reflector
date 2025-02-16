@@ -24,7 +24,9 @@
     "CsProjName": "",
     "StartupScene": "scenes/rc_arena.scene",
     "ControlModes": {
-      "Keyboard": true
+      "Keyboard": true,
+      "VR": false,
+      "Gamepad": false
     },
     "LaunchMode": "Normal"
   }

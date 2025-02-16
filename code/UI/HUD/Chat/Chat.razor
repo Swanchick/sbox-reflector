@@ -1,14 +1,41 @@
 @using Sandbox
 @using Sandbox.UI
-@inherits PanelComponent
+@inherits Panel
 @attribute [StyleSheet]
 
 <root>
-    
+	<div class="entry @(active ? "show" : "hidden")">
+		<TextEntry @ref="MessageEntry" class="@(active ? "show" : "hidden")" />
+		<div class="send-button" onclick=@(()=>OnSubmit())>SEND</div>
+	</div>
+
+	<div class="messages">
+		<p>Test Messages</p>
+	</div>
 </root>
 
 @code 
 {
+	public TextEntry MessageEntry;
+
+	private bool active = false;
+
+	public override void Tick() 
+	{
+		if (Input.Pressed("chat"))
+		{
+			MessageEntry.Focus();
+			active = true;
+			
+			StateHasChanged();
+		}
+	}
+
+	private void OnSubmit() 
+	{
+
+	}
+
     public void AddMessage()
     {
         
