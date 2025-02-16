@@ -66,10 +66,16 @@
     private void OnSubmit() 
     {
         PlayerManager pm = PlayerManager.instance;
-        if (pm == null) 
-            return;
+        if (pm == null) return;
 
-        Message message = new Message(pm.LocalPlayer.Name, MessageEntry.Text);
+        string messageString = MessageEntry.Text;
+        if (string.IsNullOrWhiteSpace(messageString)) 
+        {
+            DisableChat();
+            return;
+        }
+
+        Message message = new Message(pm.LocalPlayer.Name, messageString);
         AddMessage(message);
 		
 		DisableChat();
