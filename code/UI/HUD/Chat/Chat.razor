@@ -15,8 +15,8 @@
             @foreach (Message message in Messages) 
             {
                 <div class="message-container">
-                    <label class="author" style="color: @(message.AuthorColor.Hex)">@(message.AuthorName): </label>
-                    <label class="message-content">@(message.Content)</label>
+                    <span class="author" style="color: @(message.AuthorColor.Hex)">@(message.AuthorName): </span>
+                    <span class="message-content">@(message.Content)</span>
                 </div>
             }
         </div>
