@@ -1,14 +1,13 @@
 ﻿public sealed class Message
 {
-	public Player Owner { get; set; }
 	public string AuthorName { get; private set; }
 	public string Content { get; private set; }
 
+	public Color AuthorColor { get; set; } = new Color( 255, 136, 0 );
 
-	public Message(Player owner, string content)
+	public Message(string authorName, string content)
 	{
-		Owner = owner;
-		AuthorName = Owner.Name;
+		AuthorName = authorName;
 		Content = content;
 	}
 }
