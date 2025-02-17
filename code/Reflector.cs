@@ -21,6 +21,12 @@ public class Reflector : Component, Component.INetworkListener
 		playerObject.NetworkSpawn( channel );
 
 		_ = SetupPlayer( playerObject );
+
+		PlayerManager pm = PlayerManager.instance;
+		if ( pm == null )
+			return;
+
+		pm.SayMessage( $"{channel.DisplayName} has joined the game!" );
 	}
 
 	protected override async Task OnLoad()

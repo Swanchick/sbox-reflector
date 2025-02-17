@@ -1,4 +1,6 @@
 using System;
+using System.Runtime.CompilerServices;
+using System.Threading.Channels;
 
 public sealed class PlayerManager : Component 
 {
@@ -61,6 +63,27 @@ public sealed class PlayerManager : Component
 		}
 	}
 
+
+	[ConCmd("say")]
+	public static void SayCommand(string content)
+	{
+		if ( string.IsNullOrEmpty( content ) )
+			return;
+
+		PlayerManager pm = instance;
+		if ( pm == null )
+			return;
+
+		if (pm.LocalPlayer == null )
+		{
+			pm.SayMessage( content );
+		} 
+		else
+		{
+			pm.SayMessage( pm.LocalPlayer.Name, content );
+		}
+	}
+
 	public void AddKill(Player victim) 
 	{
 		if (victim == null || LocalPlayer == null)
@@ -119,5 +142,30 @@ public sealed class PlayerManager : Component
 			return;
 		
 		pm.AddKill(attacker, victim);
+	}
+
+	[Rpc.Broadcast]
+	public void SayMessage(string authorName, string content)
+	{
+		Message message = new Message( authorName, content );
+
+		if ( LocalPlayer == null )
+			return;
+
+		Log.Info( $"{message.AuthorName}: {message.Content}" );
+		LocalPlayer.ClientHUD.Chat.AddMessage( message );
+	}
+
+	[Rpc.Broadcast]
+	public void SayMessage( string content )
+	{
+		Message message = new Message( "Server", content );
+		message.AuthorColor = new Color( 52, 168, 235 );
+
+		if ( LocalPlayer == null )
+			return;
+
+		Log.Info( $"{message.AuthorName}: {message.Content}" );
+		LocalPlayer.ClientHUD.Chat.AddMessage( message );
 	}
 }

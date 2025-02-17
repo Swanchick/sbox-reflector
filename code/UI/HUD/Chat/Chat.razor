@@ -74,9 +74,8 @@
             DisableChat();
             return;
         }
-
-        Message message = new Message(pm.LocalPlayer.Name, messageString);
-        AddMessage(message);
+        
+        pm.SayMessage(pm.LocalPlayer.Name, messageString);
 		
 		DisableChat();
 	}

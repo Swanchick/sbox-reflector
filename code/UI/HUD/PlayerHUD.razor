@@ -7,7 +7,7 @@
 <root>
     <Crosshair />
 	<KillFeed @ref="KillFeed" />
-	<Chat />
+	<Chat @ref="Chat" />
 
     <div class="main">
         @for (int i = 0; i < disks; i++)
@@ -27,6 +27,7 @@
     private int disks = 3;
 
     public KillFeed KillFeed { get; set; } = new();
+    public Chat Chat { get; set; } = new();
 
     protected override void OnStart()
     {
