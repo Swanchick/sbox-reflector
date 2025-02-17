@@ -5,7 +5,7 @@
   "Ident": "reflector",
   "Schema": 1,
   "IncludeSourceFiles": false,
-  "Resources": "/ui/disk.png\n/ui/crosshair.png\n/ui/killicon.png\n/ui/reflector.png",
+  "Resources": "/ui/disk.png\n/ui/crosshair.png\n/ui/reflector.png\n/ui/killicon_default.png\n/ui/killicon_triple.png\n/ui/killicon_instagib.png\n/ui/killicon_slowness.png\n/ui/killicon_void.png\n\n",
   "PackageReferences": [],
   "EditorReferences": null,
   "IsWhitelistDisabled": false,
