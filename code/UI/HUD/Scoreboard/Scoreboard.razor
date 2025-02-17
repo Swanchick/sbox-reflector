@@ -1,0 +1,38 @@
+@using Sandbox
+@using Sandbox.UI
+@using System.Threading.Tasks
+@inherits Panel
+@attribute [StyleSheet]
+
+
+<root>
+    <div class="scoreboard-container">
+        <div class="info-container">
+            <div class="gamemode">
+                <img src="/ui/reflector.png" />
+                <p>Arena 1v1</p>
+            </div>
+            <div class="kdp">
+                <p>K</p>
+                <p>D</p>
+                <p>P</p>
+            </div>
+        </div>
+
+        <div class="players-container">
+            <div class="player-row">
+
+                <div class="player-info">
+                    <div class="avatar"></div>
+                    <p>Swanchick</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</root>
+
+
+@code 
+{
+    
+}
