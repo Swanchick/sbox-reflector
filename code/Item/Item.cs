@@ -8,6 +8,7 @@ public class Item : BaseTrigger
 	[Sync]
 	public Guid ItemStandId { get; set; }
 
+	[Rpc.Broadcast(NetFlags.HostOnly)]
 	protected override void OnPlayerEnter( Player player )
 	{
 		DiskWeapon diskWeapon = player.DiskWeapon;
@@ -29,12 +30,6 @@ public class Item : BaseTrigger
 
 		diskWeapon.AddThrower( diskThrower );
 
-		TryToDestroy();
-	}
-
-	[Rpc.Broadcast(NetFlags.HostOnly)]
-	private void TryToDestroy()
-	{
 		GameObject.Destroy();
 	}
 }

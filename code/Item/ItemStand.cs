@@ -11,7 +11,7 @@ public class ItemStand : Component
 	[Property]
 	private GameObject itemSpace;
 
-	[Rpc.Broadcast]
+	[Rpc.Broadcast(NetFlags.HostOnly)]
 	public void OnItemPickup()
 	{
 		_ = WaitAndSpawn();

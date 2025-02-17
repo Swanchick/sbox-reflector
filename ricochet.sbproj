@@ -28,6 +28,7 @@
       "VR": false,
       "Gamepad": false
     },
-    "LaunchMode": "Normal"
+    "LaunchMode": "Normal",
+    "DedicatedServerStartupScene": "scenes/rc_arena.scene"
   }
 }

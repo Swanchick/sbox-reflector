@@ -40,7 +40,6 @@ public class Reflector : Component, Component.INetworkListener
 			if ( player.Connection == connection )
 			{
 				pm.SayMessage( $"{player.Name} has left the game!" );
-
 				pm.PlayerIds.Remove( player.GameObject.Id );
 
 				break;
