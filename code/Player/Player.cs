@@ -11,16 +11,13 @@ public sealed class Player : Component
 
 	public PlayerHUD ClientHUD { get; set; }
 
+	public PlayerStats Stats { get; set; }
+
 	[Sync]
 	public Guid LastAttacker { get; set; }
 
-	public string Name
-	{
-		get
-		{
-			return Network.Owner.DisplayName;
-		}
-	}
+	public string Name => Network.Owner.DisplayName;
+	public string SteamId => Network.Owner.SteamId.ToString();
 
 	public enum State 
 	{
@@ -31,29 +28,9 @@ public sealed class Player : Component
 
 	public State CurrentState { get; set; } = State.Alive;
 
-	public bool IsAlive 
-	{
-		get
-		{
-			return CurrentState == State.Alive;
-		}
-	}
-
-	public bool IsDead
-	{
-		get
-		{
-			return CurrentState == State.Dead;
-		}
-	}
-
-	public bool IsSpectator
-	{
-		get
-		{
-			return CurrentState == State.Spectator;
-		}
-	}
+	public bool IsAlive => CurrentState == State.Alive;
+	public bool IsDead => CurrentState == State.Dead;
+	public bool IsSpectator => CurrentState == State.Spectator;
 
 	protected override void OnStart()
 	{
@@ -61,6 +38,7 @@ public sealed class Player : Component
 		CameraMovement = Components.Get<PlayerCameraMovement>();
 		DiskWeapon = Components.Get<DiskWeapon>();
 		ClientHUD = Components.GetInChildren<PlayerHUD>();
+		Stats = Components.Get<PlayerStats>();
 
 		if ( IsProxy )
 		{
