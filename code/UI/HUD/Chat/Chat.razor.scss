@@ -85,13 +85,11 @@ Chat {
 
         &.show {
             background-color: rgba(0, 0, 0, 0.6);
-            //overflow-y: scroll;
             pointer-events: all;
         }
 
         &.hidden {
             background-color: rgba(0, 0, 0, 0);
-            //overflow-y: hidden;
             pointer-events: none;
         }
     }
