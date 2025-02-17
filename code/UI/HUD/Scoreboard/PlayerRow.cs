@@ -1,4 +1,4 @@
-﻿public sealed class PlayerRow 
+﻿public sealed class PlayerRow
 {
 
 }
