@@ -18,6 +18,7 @@ public sealed class Player : Component
 
 	public string Name => Network.Owner.DisplayName;
 	public string SteamId => Network.Owner.SteamId.ToString();
+	public Connection Connection => Network.Owner;
 
 	public enum State 
 	{

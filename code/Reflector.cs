@@ -29,6 +29,25 @@ public class Reflector : Component, Component.INetworkListener
 		pm.SayMessage( $"{channel.DisplayName} has joined the game!" );
 	}
 
+	public void OnDisconnected( Connection connection )
+	{
+		PlayerManager pm = PlayerManager.instance;
+		if ( pm == null )
+			return;
+
+		foreach ( Player player in pm.Players )
+		{
+			if ( player.Connection == connection )
+			{
+				pm.SayMessage( $"{player.Name} has left the game!" );
+
+				pm.PlayerIds.Remove( player.GameObject.Id );
+
+				break;
+			}
+		}
+	}
+
 	protected override async Task OnLoad()
 	{
 		if ( Scene.IsEditor )
