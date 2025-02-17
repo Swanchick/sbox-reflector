@@ -14,7 +14,7 @@
 		<div class="lines">
             @foreach (Message message in Messages) 
             {
-                <div class="message-container">
+                <div class="message-container @((message.IsVisible || chatActive) ? "visible" : "hidden")">
                     <span class="author" style="color: @(message.AuthorColor.Hex)">@(message.AuthorName): </span>
                     <span class="message-content">@(message.Content)</span>
                 </div>
@@ -60,7 +60,7 @@
 
     private string GetVisibility()
     {
-        return chatActive ? "show" : "hidden";
+        return chatActive ? "visible" : "hidden";
     }
 
     private void OnSubmit() 
@@ -74,15 +74,17 @@
             DisableChat();
             return;
         }
-        
+
         pm.SayMessage(pm.LocalPlayer.Name, messageString);
-		
-		DisableChat();
-	}
+
+        DisableChat();
+    }
 
     public void AddMessage(Message message)
     {
         Messages.Add(message);
+
+        _ = message.HideMessageAfterSomeTime(this);
 
         StateHasChanged();
     }

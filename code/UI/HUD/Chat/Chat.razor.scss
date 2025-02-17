@@ -11,12 +11,14 @@ Chat {
     font-style: normal;
     color: white;
     gap: 10px;
+    transition: background-color 0.1s;
 
     .entry {
         width: 100%;
         height: 50px;
         font-size: 20px;
         gap: 10px;
+        transition: opacity 0.1s;
 
 
         TextEntry {
@@ -42,7 +44,7 @@ Chat {
             cursor: pointer;
         }
 
-        &.show {
+        &.visible {
             opacity: 1;
             pointer-events: all;
         }
@@ -72,6 +74,7 @@ Chat {
                 display: flex;
                 flex-wrap: wrap;
                 flex-shrink: 0;
+                transition: opacity 0.5s;
 
                 .author {
                     margin-right: 10px;
@@ -80,10 +83,18 @@ Chat {
                 .message-content {
                     color: white;
                 }
+
+                &.visible {
+                    opacity: 1;
+                }
+
+                &.hidden {
+                    opacity: 0;
+                }
             }
         }
 
-        &.show {
+        &.visible {
             background-color: rgba(0, 0, 0, 0.6);
             pointer-events: all;
         }
