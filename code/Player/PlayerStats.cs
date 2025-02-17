@@ -3,8 +3,10 @@
 	[Property]
 	public Player Player { get; set; }
 
+	[Sync]
 	public int Kills { get; set; } = 0;
 
+	[Sync]
 	public int Deaths { get; set; } = 0;
 
 	public float Ping => Player.Network.Owner.Ping;

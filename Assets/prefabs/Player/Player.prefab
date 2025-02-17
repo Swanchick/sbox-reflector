@@ -149,6 +149,22 @@
           "_type": "gameobject",
           "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
         }
+      },
+      {
+        "__type": "PlayerStats",
+        "__guid": "8e66bc24-ebf7-4318-81a0-67bfbc4d09d5",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Player": {
+          "_type": "component",
+          "component_id": "de5b67d0-d4aa-45cf-84c4-b0946347c802",
+          "go": "1e8ba1c3-1a5b-4bb2-912d-e7873103e235",
+          "component_type": "Player"
+        }
       }
     ],
     "Children": [

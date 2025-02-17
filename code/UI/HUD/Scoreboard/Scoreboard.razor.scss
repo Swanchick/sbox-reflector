@@ -85,4 +85,14 @@ Scoreboard {
             }
         }
     }
+
+    &.visible {
+        display: block;
+        pointer-events: all;
+    }
+
+    &.hidden {
+        display: none;
+        pointer-events: none;
+    }
 }

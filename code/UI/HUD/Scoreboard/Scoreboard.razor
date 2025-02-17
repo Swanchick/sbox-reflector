@@ -5,7 +5,7 @@
 @attribute [StyleSheet]
 
 
-<root>
+<root class="@(isVisible)">
     <div class="scoreboard-container">
         <div class="info-container">
             <div class="gamemode">
@@ -20,13 +20,15 @@
         </div>
 
         <div class="players-container">
-            <div class="player-row">
-
-                <div class="player-info">
-                    <div class="avatar"></div>
-                    <p>Swanchick</p>
+            @foreach (PlayerRow row in playerRows)
+            {
+                <div class="player-row">
+                    <div class="player-info">
+                        <div class="avatar" style="background-image: url( avatar:@row.SteamId );"></div>
+                        <p>@row.Name</p>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
 </root>
@@ -34,5 +36,44 @@
 
 @code 
 {
-    
+    private bool visibilityStatus = false;
+    private string isVisible => visibilityStatus ? "visible" : "hidden";
+
+    private List<PlayerRow> playerRows = new();
+
+    public override void Tick()
+    {
+        if (Input.Pressed("Scoreboard"))
+        {
+            visibilityStatus = true;
+            LoadPlayers();
+            StateHasChanged();
+        }
+
+        if (Input.Released("Scoreboard"))
+        {
+            visibilityStatus = false;
+            StateHasChanged();
+        }
+    }
+
+
+    private void LoadPlayers()
+    {
+        PlayerManager pm = PlayerManager.instance;
+        if (pm == null) 
+            return;
+
+        List<Player> players = pm.Players;
+
+        playerRows.Clear();
+
+        players.Sort((a, b) => b.Stats.Kills.CompareTo(a.Stats.Kills));
+
+        foreach (Player ply in players) 
+        {
+            PlayerRow row = new PlayerRow(ply);
+            playerRows.Add(row);
+        }
+    }
 }
