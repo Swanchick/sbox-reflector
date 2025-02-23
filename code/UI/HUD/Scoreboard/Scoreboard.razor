@@ -27,6 +27,12 @@
                         <div class="avatar" style="background-image: url( avatar:@row.SteamId );"></div>
                         <p>@row.Name</p>
                     </div>
+
+                    <div class="player-kdp">
+                        <p>@row.Kills</p>
+                        <p>@row.Deaths</p>
+                        <p>@row.Ping</p>
+                    </div>
                 </div>
             }
         </div>
@@ -40,6 +46,12 @@
     private string isVisible => visibilityStatus ? "visible" : "hidden";
 
     private List<PlayerRow> playerRows = new();
+    
+    public Scoreboard()
+    {
+        
+    }
+
 
     public override void Tick()
     {
