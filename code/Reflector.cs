@@ -27,6 +27,11 @@ public class Reflector : Component, Component.INetworkListener
 			return;
 
 		pm.SayMessage( $"{channel.DisplayName} has joined the game!" );
+
+		if ( pm.LocalPlayer == null )
+			return;
+
+		pm.LocalPlayer.ClientHUD.Scoreboard.StateHasChanged();
 	}
 
 	public void OnDisconnected( Connection connection )
@@ -41,6 +46,8 @@ public class Reflector : Component, Component.INetworkListener
 			{
 				pm.SayMessage( $"{player.Name} has left the game!" );
 				pm.PlayerIds.Remove( player.GameObject.Id );
+
+				pm.LocalPlayer.ClientHUD.Scoreboard.StateHasChanged();
 
 				break;
 			}

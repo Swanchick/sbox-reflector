@@ -1,6 +1,8 @@
 using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Channels;
+
 
 public sealed class PlayerManager : Component 
 {
@@ -26,6 +28,21 @@ public sealed class PlayerManager : Component
 		instance = this;
 	}
 
+	public Player FindPlayer(Guid playerId)
+	{
+		GameObject playerObject = Scene.Directory.FindByGuid( playerId );
+		if ( playerObject == null )
+			return null;
+		
+		Player player = playerObject.Components.Get<Player>();
+		if ( player == null )
+			return null;
+
+
+		return player;
+	}
+
+
 	[Rpc.Broadcast]
 	public void AddPlayer(Player player) 
 	{
@@ -34,12 +51,6 @@ public sealed class PlayerManager : Component
 
 		Guid playerId = player.GameObject.Id;
 		PlayerIds.Add(playerId);
-	}
-
-	[ConCmd("test_command")]
-	public static void TestCommand() 
-	{
-		Log.Info("Hello World");
 	}
 
 	[ConCmd("add_test_kill")]
@@ -84,6 +95,21 @@ public sealed class PlayerManager : Component
 		}
 	}
 
+	[ConCmd("show_stats")]
+	public static void ShowStats()
+	{
+		PlayerManager pm = instance;
+		if ( pm == null )
+			return;
+
+		if ( pm.LocalPlayer == null )
+			return;
+
+		Log.Info( $"Kills: {pm.LocalPlayer.Stats.Kills}" );
+		Log.Info( $"Deaths: {pm.LocalPlayer.Stats.Deaths}" );
+		Log.Info( $"Ping: {pm.LocalPlayer.Stats.Ping}" );
+	}
+
 	public void AddKill(Player victim) 
 	{
 		if (victim == null || LocalPlayer == null)
@@ -106,9 +132,6 @@ public sealed class PlayerManager : Component
 		if ( attacker.GameObject.Id == victim.GameObject.Id )
 			return;
 
-		Log.Info( $"Attacker: {attacker.GameObject.Id} =========== Victim: {victim.GameObject.Id}" );
-		Log.Info( "Message for everyone" );
-
 		victim.LastAttacker = attacker.GameObject.Id;
 	}
 
@@ -126,22 +149,21 @@ public sealed class PlayerManager : Component
 		if (pm == null)
 			return;
 
-		if (attackerId == Guid.Empty)
+		victim.Stats.AddDeath();
+
+		Player attacker = FindPlayer( attackerId );
+		if ( attacker == null )
 		{
-			pm.AddKill(victim);
-			
-			return;
+			pm.AddKill( victim );
+			victim.Stats.RemoveKill();
+		} 
+		else
+		{
+			pm.AddKill( attacker, victim );
+			attacker.Stats.AddKill();
 		}
 
-		GameObject attackerObject = Scene.Directory.FindByGuid( attackerId );
-		if ( attackerObject == null )
-			return;
-
-		Player attacker = attackerObject.Components.Get<Player>();
-		if ( attacker == null )
-			return;
-		
-		pm.AddKill(attacker, victim);
+		LocalPlayer.ClientHUD.Scoreboard.StateHasChanged();
 	}
 
 	[Rpc.Broadcast]
