@@ -6,7 +6,7 @@
 
 <root>
     <Crosshair />
-
+    <MatchTimer @ref="MatchTimer"/>
 	<Scoreboard @ref="Scoreboard"/>
     <KillFeed @ref="KillFeed" />
 	<Chat @ref="Chat" />
@@ -17,13 +17,17 @@
 {
     [Property]
 	private int killFeedLifeTime = 5000;
+    [Property]
+    private int matchTime = 300;
     public KillFeed KillFeed { get; set; } = new();
     public Chat Chat { get; set; } = new();
     public Scoreboard Scoreboard { get; set; } = new();
     public Disks Disks { get; set; } = new();
+    public MatchTimer MatchTimer { get; set; } = new();
 
     protected override void OnStart()
     {
 		KillFeed.LifeTime = killFeedLifeTime;
+        MatchTimer.MatchTime = matchTime;
     }
 }
