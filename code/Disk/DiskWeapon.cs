@@ -42,7 +42,7 @@
 	{
 		diskCount--;
 
-		playerHUD?.ChangeDisks( maxDisks - diskCount );
+		playerHUD.Disks.ChangeDisks( maxDisks - diskCount );
 
 		if ( diskThrower.Id == defaultDiskThrower.GameObject.Id )
 			return;
@@ -112,6 +112,6 @@
 
 		diskCount++;
 
-		playerHUD?.ChangeDisks( maxDisks - diskCount );
+		playerHUD.Disks.ChangeDisks( maxDisks - diskCount );
 	}
 }

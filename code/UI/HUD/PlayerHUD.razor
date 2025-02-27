@@ -10,38 +10,20 @@
 	<Scoreboard @ref="Scoreboard"/>
     <KillFeed @ref="KillFeed" />
 	<Chat @ref="Chat" />
-
-
-    <div class="main">
-        @for (int i = 0; i < disks; i++)
-        {
-            <img class="disk" src="@diskTexture" />
-        }
-    </div>
+    <Disks @ref="Disks" />
 </root>
 
 @code
 {
     [Property]
 	private int killFeedLifeTime = 5000;
-	
-	private string diskTexture = "/ui/disk.png";
-
-    private int disks = 3;
-
     public KillFeed KillFeed { get; set; } = new();
     public Chat Chat { get; set; } = new();
     public Scoreboard Scoreboard { get; set; } = new();
+    public Disks Disks { get; set; } = new();
 
     protected override void OnStart()
     {
 		KillFeed.LifeTime = killFeedLifeTime;
-    }
-
-    public void ChangeDisks( int disks )
-    {
-        this.disks = disks;
-
-        StateHasChanged();
     }
 }
