@@ -42,6 +42,9 @@ public sealed class PlayerMovement : Component
 	private float playerAirFriction = 0.3f;
 
 	[Property]
+	private float playerJumpForce = 250f;
+
+	[Property]
 	private GameObject playerHead;
 	[Property]
 	private GameObject playerCamera;
@@ -194,7 +197,7 @@ public sealed class PlayerMovement : Component
 		if ( !IsGrounded )
 			return;
 
-		Jump( 250f );
+		Jump( playerJumpForce );
 	}
 
 	private void NoclipMovement()
