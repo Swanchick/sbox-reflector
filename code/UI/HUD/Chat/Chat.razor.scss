@@ -1,3 +1,5 @@
+@import "../colors.scss";
+
 Chat {
     position: absolute;
     bottom: 50px;
@@ -9,7 +11,7 @@ Chat {
     font-family: "Roboto", serif;
     font-weight: 600;
     font-style: normal;
-    color: white;
+    color: $WhiteColor;
     gap: 10px;
     transition: background-color 0.1s;
 
@@ -23,24 +25,24 @@ Chat {
 
         TextEntry {
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-bottom: 2px solid #FF8800;
+            background-color: $BlackOpaqueColor;
+            border-bottom: 2px solid $AccentColor;
         }
 
         .send-button {
             display: flex;
             justify-content: center;
             align-items: center;
-            color: black;
+            color: $BlackColor;
             font-size: 24px;
             font-weight: 700;
-            background-color: #FF8800;
+            background-color: $AccentColor;
             width: 150px;
             height: 100%;
         }
 
         .send-button:hover {
-            background-color: #ffbe73;
+            background-color: $AccentHighlightColor;
             cursor: pointer;
         }
 
@@ -81,7 +83,7 @@ Chat {
                 }
 
                 .message-content {
-                    color: white;
+                    color: $WhiteColor;
                 }
 
                 &.visible {
@@ -95,7 +97,7 @@ Chat {
         }
 
         &.visible {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: $BlackOpaqueColor;
             pointer-events: all;
         }
 

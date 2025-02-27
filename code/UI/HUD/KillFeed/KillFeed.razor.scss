@@ -1,3 +1,5 @@
+@import "../colors.scss";
+
 @keyframes dissapear {
     0% {
         transform: translateX(0);
@@ -11,7 +13,7 @@ KillFeed {
     position: absolute;
     width: 500px;
     height: 100%;
-    color: white;
+    color: $WhiteColor;
     right: 0;
     display: flex;
     padding: 30px;

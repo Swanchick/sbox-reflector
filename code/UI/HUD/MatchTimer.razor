@@ -19,7 +19,6 @@
             MatchTime = Math.Max(0, MatchTime - 1);
             SetTimer();
             timeSinceUpdate = 0;
-            StateHasChanged();
         }
     }
 
@@ -28,5 +27,6 @@
         int seconds = MatchTime % 60;
         this.minutes = minutes.ToString().PadLeft(2, '0');
         this.seconds = seconds.ToString().PadLeft(2, '0');
+        StateHasChanged();
     }
 }

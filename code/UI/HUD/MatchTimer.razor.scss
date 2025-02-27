@@ -1,3 +1,5 @@
+@import "colors.scss";
+
 MatchTimer {
     position: absolute;
     padding: 16px;
@@ -12,13 +14,13 @@ MatchTimer {
     font-family: "Roboto", sans-serif;
 
     .panel-label {
-        color: lightgray;
+        color: $AccentColor;
         font-size: 24px;
         font-weight: 500;
     }
 
     .timer {
-        color: white;
+        color: $WhiteColor;
         font-size: 36px;
         font-weight: 900;
     }
