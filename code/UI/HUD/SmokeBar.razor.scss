@@ -1,0 +1,27 @@
+@import "./colors.scss";
+
+SmokeBar {
+    position: absolute;
+    padding: 16px;
+    bottom: 0;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .smokebar {
+        background-color: $BlackOpaqueColor;
+        border-radius: 10000px;
+        padding: 2px;
+
+        width: 500px;
+        height: 10px;
+
+        .fill {
+            border-radius: 10000px;
+            background-color: $AccentHighlightColor;
+        }
+    }
+}

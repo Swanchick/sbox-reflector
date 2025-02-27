@@ -1,0 +1,37 @@
+@using System;
+@using Sandbox;
+@using Sandbox.UI;
+
+<root>
+    <div class="smokebar">
+        <div class="fill" style="width: @(smokeValue * 100f)%;transition: width @(DepletionRate)s linear;"></div>
+    </div>
+</root>
+
+@code {
+    // Smoke depletion rate, in seconds.
+    public float DepletionRate { get; set; } = 0.5f;
+
+    private float smokeValue = 1.0f;
+    private TimeSince timeSinceDeplUpdate;
+
+    public override void Tick() {
+        if (timeSinceDeplUpdate >= DepletionRate) {
+            smokeValue = Math.Max(0f, smokeValue - 0.01f);
+            timeSinceDeplUpdate = 0;
+            StateHasChanged();
+        }
+    }
+
+    public void ResetValue() {
+        smokeValue = 1.0f;
+        timeSinceDeplUpdate = 0;
+        StateHasChanged();
+    }
+
+    public void ResetValue(float desiredValue) {
+        smokeValue = desiredValue;
+        timeSinceDeplUpdate = 0;
+        StateHasChanged();
+    }
+}
