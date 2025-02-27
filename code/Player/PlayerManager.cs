@@ -13,15 +13,12 @@ public sealed class PlayerManager : Component
 	[Sync]
 	public NetList<Guid> PlayerIds { get; set; } = new();
 
-	public List<Player> Players 
-	{
-		get
-		{
-			return PlayerIds
-				.Select(id => Scene.Directory.FindByGuid(id).Components.Get<Player>())
+	public List<Player> Players => PlayerIds
+				.Select(id => Scene.Directory.FindByGuid(id))
+				.Where(gameObject => gameObject != null)
+				.Select( gameObject => gameObject.Components.Get<Player>() )
+				.Where(player => player != null)
 				.ToList();
-		}
-	}
 
 	protected override void OnStart()
 	{

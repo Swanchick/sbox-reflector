@@ -57,7 +57,12 @@ public sealed class PlayerMovement : Component
 		PlayerController.Velocity = Vector3.Zero;
 		PlayerController.Punch( dir * jumpForce );
 	}
-	
+
+	public void Jump( float jumpForce )
+	{
+		PlayerController.Punch( Vector3.Up * jumpForce );
+	}
+
 	protected override void OnStart()
 	{
 		PlayerController = Components.Get<CharacterController>();
@@ -76,6 +81,7 @@ public sealed class PlayerMovement : Component
 			default:
 				Movement();
 				Strafe();
+				GetJump();
 
 				PlayerController.Accelerate( wishVelocity );
 				PlayerController.Move();
@@ -175,6 +181,20 @@ public sealed class PlayerMovement : Component
 
 			wishVelocity *= playerAirFriction;
 		}
+	}
+
+	private void GetJump()
+	{
+		if ( IsProxy )
+			return;
+
+		if ( !Input.Pressed( "Jump" ) )
+			return;
+
+		if ( !IsGrounded )
+			return;
+
+		Jump( 250f );
 	}
 
 	private void NoclipMovement()

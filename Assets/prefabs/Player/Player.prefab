@@ -147,7 +147,7 @@
         },
         "throwerSpace": {
           "_type": "gameobject",
-          "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
+          "go": "60b1ec9d-15d6-46da-80ef-00e35a903a88"
         }
       },
       {
@@ -235,6 +235,7 @@
                     "BackgroundColor": "0.33333,0.46275,0.52157,1",
                     "ClearFlags": "All",
                     "FieldOfView": 100,
+                    "FovAxis": "Horizontal",
                     "IsMainCamera": true,
                     "OnComponentDestroy": null,
                     "OnComponentDisabled": null,
