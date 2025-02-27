@@ -6,7 +6,7 @@
 <root>
 	@foreach ( Kill kill in kills.Reverse<Kill>() )
     {
-        <div class="killfeed-entry">
+        <div class="killfeed-entry" style="animation: @(OutroAnimTime)ms ease-in-out @(LifeTime - OutroAnimTime)ms dissapear">
             <span class="attacker">@( kill.Attacker )</span>
             <img class="killicon" src="@killFeedIcon"/>
             <span class="victim">@( kill.Victim )</span>
@@ -20,6 +20,7 @@
 	private List<Kill> kills = new();
 	
 	public int LifeTime { get; set; } = 5000;
+	public int OutroAnimTime { get; set; } = 100;
 
 	public void AddKill( string attacker, string victim ) 
 	{
