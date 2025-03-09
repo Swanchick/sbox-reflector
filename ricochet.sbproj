@@ -8,7 +8,7 @@
   "Resources": "/ui/disk.png\n/ui/crosshair.png\n/ui/reflector.png\n/ui/killicon_default.png\n/ui/killicon_triple.png\n/ui/killicon_instagib.png\n/ui/killicon_slowness.png\n/ui/killicon_void.png\n\n",
   "PackageReferences": [],
   "EditorReferences": null,
-  "IsWhitelistDisabled": false,
+  "IsStandaloneOnly": false,
   "Metadata": {
     "MaxPlayers": 10,
     "MinPlayers": 1,

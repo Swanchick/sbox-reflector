@@ -179,13 +179,15 @@ public abstract class BaseDisk : Component
 		if (isDestroying) 
 			return;
 
-		diskController.Accelerate( Direction * diskSpeed );
+		diskController.Velocity = Direction * diskSpeed * Time.Delta * 300;
 		diskController.Move();
 	}
 
 	private Vector3 GetReflection( Vector3 direction, Vector3 normal )
 	{
-		return direction - (2 * Vector3.Dot( direction, normal ) * normal);
+		Vector3 reflection = direction - (0.25f * Vector3.Dot( direction, normal ) * normal);
+
+		return normal.WithZ(reflection.z * 0.2f).Normal;
 	}
 
 	private void GetCollisionWithPlayers()
