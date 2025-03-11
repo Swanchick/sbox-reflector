@@ -81,6 +81,7 @@
           "_type": "gameobject",
           "go": "21bebb2b-a9a1-4c5b-b021-98a9d84a2f83"
         },
+        "playerJumpForce": 250,
         "playerNoclipSpeed": 500,
         "playerSpeed": 300
       },

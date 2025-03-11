@@ -139,7 +139,7 @@ public abstract class BaseDisk : Component
 			100f,
 			new Vector3( shakeMagnitude, shakeMagnitude, shakeMagnitude ),
 			new Vector3( shakeMagnitude * 2, shakeMagnitude * 2, shakeMagnitude * 2 )
-			);
+		);
 
 		DestroyDisk();
 	}
