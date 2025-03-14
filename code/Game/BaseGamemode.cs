@@ -13,6 +13,15 @@ public abstract class BaseGamemode : Component, IGamemode
 	public string Name => name;
 	public string Description => description;
 
+	public enum Status
+	{
+		Waiting,
+		Started,
+		Ended
+	}
+
+	public Status CurrentStatus { get; protected set; } = Status.Waiting;
+
 	public virtual void OnGameStart() { }
 	
 	public virtual void OnRoundStart() { }
