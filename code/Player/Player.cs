@@ -46,4 +46,34 @@ public sealed class Player : Component
 			ClientHUD.Destroy();
 		}
 	}
+
+	public void Spawn()
+	{
+		CurrentState = State.Alive;
+		
+	}
+	
+	public void Kill()
+	{
+		if ( !IsAlive )
+			return;
+		
+		CurrentState = State.Dead;
+		Stats.AddDeath();
+	}
+
+	public void Spectate()
+	{
+		// Todo:
+		// 1. Fix problem with spectating and pressing V key to remove noclip mode.
+		// 2. Add separate UI for spectator.
+		// 3. Teleport player on zero position.
+
+		if ( IsSpectator )
+			return;
+
+		CurrentState = State.Spectator;
+
+		Movement.Noclip();
+	}
 }

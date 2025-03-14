@@ -52,6 +52,7 @@ public sealed class PlayerMovement : Component
 	public CharacterController PlayerController;
 
 	private Vector3 wishVelocity = Vector3.Zero;
+	private Vector3 noclipVelocity = Vector3.Zero;
 
 	private float sceneGravity;
 
@@ -66,12 +67,33 @@ public sealed class PlayerMovement : Component
 		PlayerController.Punch( Vector3.Up * jumpForce );
 	}
 
+	public void Noclip()
+	{
+		if ( IsSpectator )
+		{
+			currentState = State.None;
+		}
+		else
+		{
+			PlayerController.Velocity = Vector3.Zero;
+			currentState = State.Noclip;
+		}
+	}
+
 	protected override void OnStart()
 	{
 		PlayerController = Components.Get<CharacterController>();
 		
 		
 		sceneGravity = Scene.PhysicsWorld.Gravity.z;
+	}
+
+	protected override void OnUpdate()
+	{
+		if ( Input.Pressed( "Noclip" ) )
+		{
+			Noclip();
+		}
 	}
 
 	protected override void OnFixedUpdate()
@@ -205,9 +227,9 @@ public sealed class PlayerMovement : Component
 		if ( IsProxy )
 			return;
 
-		Vector3 velocity = BuildDirection();
-		velocity *= playerNoclipSpeed;
+		noclipVelocity = BuildDirection();
+		noclipVelocity *= playerNoclipSpeed;
 
-		WorldPosition += velocity * Time.Delta;
+		WorldPosition += noclipVelocity * Time.Delta;
 	}
 }

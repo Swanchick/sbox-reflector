@@ -12,9 +12,9 @@ public sealed class PlayerManager : Component
 
 	public List<Player> Players => PlayerIds
 				.Select(id => Scene.Directory.FindByGuid(id))
-				.Where(gameObject => gameObject != null)
+				.Where(gameObject => gameObject.IsValid())
 				.Select( gameObject => gameObject.Components.Get<Player>() )
-				.Where(player => player != null)
+				.Where(player => player.IsValid())
 				.ToList();
 
 	protected override void OnStart()

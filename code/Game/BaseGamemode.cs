@@ -52,6 +52,8 @@ public abstract class BaseGamemode : Component, IGamemode
 
 		player.LastAttacker = Guid.Empty;
 
+		player.Spectate();
+
 		//player.Transform.ClearInterpolation();
 		//player.Transform.World = reflector.GetRandomSpawnpoint();
 		//player.Movement.PlayerController.Velocity = Vector3.Zero;
