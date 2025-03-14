@@ -4,10 +4,22 @@
 public class Reflector : Component, Component.INetworkListener
 {
 	[Property]
+	public BaseGamemode Gamemode { get; set; }
+
+	[Property]
 	private GameObject playerPrefab;
 
 	[Property]
 	private List<GameObject> spawnPoints = new();
+
+	public static Reflector instance;
+
+	protected override void OnStart()
+	{
+		instance = this;
+
+		Gamemode.OnGameStart();
+	}
 
 	public void OnActive( Connection channel )
 	{
@@ -21,17 +33,8 @@ public class Reflector : Component, Component.INetworkListener
 		playerObject.NetworkSpawn( channel );
 
 		_ = SetupPlayer( playerObject );
-
-		PlayerManager pm = PlayerManager.instance;
-		if ( pm == null )
-			return;
-
-		pm.SayMessage( $"{channel.DisplayName} has joined the game!" );
-
-		if ( pm.LocalPlayer == null )
-			return;
-
-		pm.LocalPlayer.ClientHUD.Scoreboard.StateHasChanged();
+		
+		Gamemode.OnPlayerJoin(playerObject.Components.Get<Player>());
 	}
 
 	public void OnDisconnected( Connection connection )
@@ -44,11 +47,7 @@ public class Reflector : Component, Component.INetworkListener
 		{
 			if ( player.Connection == connection )
 			{
-				pm.SayMessage( $"{player.Name} has left the game!" );
-				pm.PlayerIds.Remove( player.GameObject.Id );
-
-				pm.LocalPlayer.ClientHUD.Scoreboard.StateHasChanged();
-
+				Gamemode.OnPlayerLeave( player );
 				break;
 			}
 		}
@@ -75,7 +74,7 @@ public class Reflector : Component, Component.INetworkListener
 		PlayerManager.instance.AddPlayer(player);
 	}
 
-	private Transform GetRandomSpawnpoint()
+	public Transform GetRandomSpawnpoint()
 	{
 		GameObject spawn = spawnPoints[Game.Random.Next( 0, spawnPoints.Count - 1 )];
 

@@ -16,6 +16,10 @@ public interface IGamemode
 	void OnPlayerSpawn( Player player );
 	void OnPlayerDeath( Player player );
 
+	void OnPlayeKill( Player victim );
 	void OnPlayerKill( Player attacker, Player victim );
 	void OnPlayerHit( Player attacker, Player victim  );
+
+	bool AllowSpawn( Player player );
+	bool AllowPlayerDeath( Player player );
 }
