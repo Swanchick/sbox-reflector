@@ -1,15 +1,18 @@
 @using System;
 @using Sandbox;
 @using Sandbox.UI;
+@inherits Panel;
 
 <root>
-    <div class="panel-label">Match Time</div>
+    <div class="panel-label">@RoundState</div>
     <div class="timer">@minutes : @seconds</div>
 </root>
 
 @code {
     private TimeSince timeSinceUpdate;
-    public int MatchTime { get; set; } = 300;
+
+    public string RoundState { get; set; } = "Waiting for players";
+    public int MatchTime { get; set; } = 0;
 
     private string minutes = "00";
     private string seconds = "00";
