@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 
 public abstract class BaseGamemode : Component, IGamemode
@@ -54,10 +55,28 @@ public abstract class BaseGamemode : Component, IGamemode
 
 		player.Spectate();
 
-		//player.Transform.ClearInterpolation();
-		//player.Transform.World = reflector.GetRandomSpawnpoint();
-		//player.Movement.PlayerController.Velocity = Vector3.Zero;
-		//player.Transform.ClearInterpolation();
+		_ = SpectatorWait( player );
+	}
+
+	protected void PlayerSpawn( Player player )
+	{
+		Reflector reflector = Reflector.instance;
+		if ( !reflector.IsValid() )
+			return;
+
+		player.Transform.ClearInterpolation();
+		player.Transform.World = reflector.GetRandomSpawnpoint();
+		player.Movement.PlayerController.Velocity = Vector3.Zero;
+		player.Transform.ClearInterpolation();
+
+		player.Spawn();
+	}
+
+	private async Task SpectatorWait( Player player )
+	{
+		await Task.DelaySeconds( 5 );
+
+		PlayerSpawn( player );
 	}
 
 	public virtual void OnPlayeKill( Player victim )

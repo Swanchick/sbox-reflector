@@ -54,7 +54,11 @@
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
-        "OnComponentUpdate": null
+        "OnComponentUpdate": null,
+        "playerModel": {
+          "_type": "gameobject",
+          "go": "df476ff0-0ed7-43b6-8b4d-0c439468d04c"
+        }
       },
       {
         "__type": "PlayerMovement",
@@ -249,6 +253,7 @@
                     "Priority": 1,
                     "RenderExcludeTags": "",
                     "RenderTags": "",
+                    "RenderUI": true,
                     "TargetEye": "None",
                     "Viewport": "0,0,1,1",
                     "ZFar": 10000,

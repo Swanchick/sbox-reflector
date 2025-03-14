@@ -67,16 +67,16 @@ public sealed class PlayerMovement : Component
 		PlayerController.Punch( Vector3.Up * jumpForce );
 	}
 
-	public void Noclip()
+	public void SetNoclip( bool noclip )
 	{
-		if ( IsSpectator )
+		if (noclip)
 		{
-			currentState = State.None;
-		}
+			currentState = State.Noclip;
+		} 
 		else
 		{
 			PlayerController.Velocity = Vector3.Zero;
-			currentState = State.Noclip;
+			currentState = State.None;
 		}
 	}
 
@@ -86,14 +86,6 @@ public sealed class PlayerMovement : Component
 		
 		
 		sceneGravity = Scene.PhysicsWorld.Gravity.z;
-	}
-
-	protected override void OnUpdate()
-	{
-		if ( Input.Pressed( "Noclip" ) )
-		{
-			Noclip();
-		}
 	}
 
 	protected override void OnFixedUpdate()

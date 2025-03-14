@@ -33,6 +33,9 @@ public sealed class Player : Component
 	public bool IsDead => CurrentState == State.Dead;
 	public bool IsSpectator => CurrentState == State.Spectator;
 
+	[Property]
+	private GameObject playerModel;
+
 	protected override void OnStart()
 	{
 		Movement = Components.Get<PlayerMovement>();
@@ -50,7 +53,9 @@ public sealed class Player : Component
 	public void Spawn()
 	{
 		CurrentState = State.Alive;
-		
+
+		Movement.SetNoclip( false );
+		playerModel.Enabled = true;
 	}
 	
 	public void Kill()
@@ -60,20 +65,19 @@ public sealed class Player : Component
 		
 		CurrentState = State.Dead;
 		Stats.AddDeath();
+
+		playerModel.Enabled = false;
 	}
 
 	public void Spectate()
 	{
-		// Todo:
-		// 1. Fix problem with spectating and pressing V key to remove noclip mode.
-		// 2. Add separate UI for spectator.
-		// 3. Teleport player on zero position.
-
 		if ( IsSpectator )
 			return;
 
 		CurrentState = State.Spectator;
 
-		Movement.Noclip();
+		Movement.SetNoclip( true );
+
+		playerModel.Enabled = false;
 	}
 }
