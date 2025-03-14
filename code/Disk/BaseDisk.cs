@@ -187,7 +187,7 @@ public abstract class BaseDisk : Component
 	{
 		Vector3 reflection = direction - (0.25f * Vector3.Dot( direction, normal ) * normal);
 
-		return normal.WithZ(reflection.z * 0.2f).Normal;
+		return normal;
 	}
 
 	private void GetCollisionWithPlayers()
