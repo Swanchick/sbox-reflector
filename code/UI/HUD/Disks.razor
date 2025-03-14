@@ -6,9 +6,9 @@
 
 <root>
     <div class="main">
-        @for (int i = 0; i < disks; i++)
+        @for (int i = 0; i < _disks; i++)
         {
-            <img class="disk" src="@diskTexture" />
+            <img class="disk" src="@_diskTexture" />
         }
     </div>
 </root>
@@ -16,13 +16,13 @@
 
 @code 
 {
-    private string diskTexture = "/ui/disk.png";
+    private string _diskTexture = "/ui/disk.png";
 
-    private int disks = 3;
+    private int _disks = 3;
 
     public void ChangeDisks(int disks)
     {
-        this.disks = disks;
+        _disks = disks;
 
         StateHasChanged();
     }
