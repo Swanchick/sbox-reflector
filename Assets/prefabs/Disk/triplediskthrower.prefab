@@ -1,0 +1,31 @@
+{
+  "RootObject": {
+    "__guid": "ced69f80-b9ca-4de8-bcc2-0e1ac4ae08e2",
+    "Flags": 0,
+    "Name": "triplediskthrower",
+    "Scale": "5,5,1",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "TripleDiskThrower",
+        "__guid": "592145e6-7b58-48c3-aca0-fd2e5d285187",
+        "diskPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/disk/tripledisk.prefab"
+        },
+        "diskRotation": 10
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "IsValid": true,
+  "__version": 1
+}

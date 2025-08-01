@@ -1,0 +1,32 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent;
+@attribute [StyleSheet]
+
+
+<root>
+    <Crosshair />
+    <MatchTimer @ref="MatchTimer" />
+    <Disks @ref="Disks" />
+    <SmokeBar @ref="SmokeBar" />
+    <KillFeed @ref="KillFeed" />
+	<Chat @ref="Chat" />
+	<Scoreboard @ref="Scoreboard" />
+</root>
+
+@code
+{
+    [Property]
+	private int killFeedLifeTime = 5000;
+    public KillFeed KillFeed { get; set; } = new();
+    public Chat Chat { get; set; } = new();
+    public Scoreboard Scoreboard { get; set; } = new();
+    public Disks Disks { get; set; } = new();
+    public MatchTimer MatchTimer { get; set; } = new();
+    public SmokeBar SmokeBar { get; set; } = new();
+
+    protected override void OnStart()
+    {
+		KillFeed.LifeTime = killFeedLifeTime;
+    }
+}

@@ -1,0 +1,46 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Threading.Tasks;
+@inherits Panel;
+@attribute [StyleSheet]
+
+<root>
+	@foreach ( Kill kill in kills.Reverse<Kill>() )
+    {
+        <div class="killfeed-entry" style="animation: @(OutroAnimTime)ms ease-in-out @(LifeTime - OutroAnimTime)ms dissapear">
+            <span class="attacker">@( kill.Attacker )</span>
+            <img class="killicon" src="@killFeedIcon"/>
+            <span class="victim">@( kill.Victim )</span>
+        </div>
+    }
+</root>
+
+@code 
+{
+	private string killFeedIcon = "/ui/killicon_default.png";
+	private List<Kill> kills = new();
+	
+	public int LifeTime { get; set; } = 5000;
+	public int OutroAnimTime { get; set; } = 100;
+
+	public void AddKill( string attacker, string victim ) 
+	{
+		Kill kill = new Kill( attacker, victim );
+		kills.Add(kill);
+
+		Log.Info(kills.Count);
+
+		StateHasChanged();
+		_ = DestroyMessage();
+	}
+
+
+	private async Task DestroyMessage() 
+	{
+		await Task.Delay( LifeTime );
+
+        kills.RemoveAt( 0 );
+
+        StateHasChanged();
+	}
+}

@@ -1,0 +1,47 @@
+{
+  "RootObject": {
+    "__guid": "2cbc4418-1dce-4c40-a9c5-0649456fbcf5",
+    "Flags": 0,
+    "Name": "JumpPad",
+    "Position": "0,-99.07777,-23.0142",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "3726992a-43ad-43ba-bd3d-048df0bddd97",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/dev/box.vmdl",
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "c0047f75-995c-438a-90c9-38b6e16a16b4",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "50,50,50",
+        "Static": false
+      },
+      {
+        "__type": "JumpPad",
+        "__guid": "d6e92b57-330a-498b-9898-0bfcb748ba20",
+        "jumpDirection": "0,-1,1.5",
+        "jumpForce": 325
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "IsValid": true,
+  "__version": 1
+}

@@ -1,0 +1,128 @@
+{
+  "RootObject": {
+    "__guid": "520db727-1a48-462a-8770-9a8ca4ab44f7",
+    "Flags": 0,
+    "Name": "triplediskitem",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "OwnerTransfer": 0,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "7f251bbe-4f17-4fa9-b290-1ec4d9156fea",
+        "__enabled": false,
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/dev/box.vmdl",
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Item",
+        "__guid": "e6b969d3-f13c-4399-9673-566e41ecd8b7",
+        "activateInNoclip": false,
+        "diskThrower": {
+          "_type": "gameobject",
+          "prefab": "prefabs/disk/triplediskthrower.prefab"
+        }
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "a6fa3bc5-7d03-4707-ac3a-ad6feca6766d",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "50,50,50",
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "9afd1bef-8453-4b36-b323-3e292c59f8a5",
+        "Flags": 0,
+        "Name": "diskModel",
+        "Position": "0,0,7.503787",
+        "Rotation": "0,0,0.8660254,0.5",
+        "Scale": "0.8,0.8,0.8",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "86b1aa09-e3b4-4110-81fa-634213d986da",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/disk.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "1114f5a9-e29b-4ba6-bf32-1d036f685eec",
+        "Flags": 0,
+        "Name": "diskModel",
+        "Position": "0,0,1.368074",
+        "Rotation": "0,0,0.5,0.8660254",
+        "Scale": "0.8,0.8,0.8",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "cdaab456-4f6b-442d-9034-6f95ec37712c",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/disk.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "65fe5b5e-3ca5-4a6d-80d0-6facf32b756c",
+        "Flags": 0,
+        "Name": "diskModel",
+        "Position": "0,0,-3.503612",
+        "Scale": "0.8,0.8,0.8",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "f22a03d2-6648-4b9f-be03-2ac987227ec5",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/disk.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

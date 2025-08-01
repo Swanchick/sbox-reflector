@@ -1,0 +1,13 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits Panel;
+
+<root>
+    <img class="crosshair-texture" src="@_crosshairTexture"/>
+</root>
+
+@code 
+{
+	private string _crosshairTexture = "/ui/crosshair.png";
+}

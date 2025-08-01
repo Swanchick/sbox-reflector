@@ -1,0 +1,59 @@
+@import "../colors.scss";
+
+@keyframes dissapear {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10000px);
+    }
+}
+
+KillFeed {
+    position: absolute;
+    width: 500px;
+    height: 100%;
+    color: $WhiteColor;
+    right: 0;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 20px;
+    
+    .test-bacground {
+        background-color: red;
+    }
+
+    .killfeed-entry {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+        
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        font-size: 36px;
+
+        transition: all 0.25s ease-in-out;
+        transform: translateX(0);
+
+        &:intro {
+            transform: translateX(10000px);
+        }
+        
+        .killicon {
+            width: 64px;
+            height: 64px;
+        }
+
+        .attacker {
+            color: #a7e5ff;
+        }
+
+        .victim {
+            color: #ff776f;
+        }
+    }
+}

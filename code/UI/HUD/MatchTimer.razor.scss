@@ -1,0 +1,27 @@
+@import "colors.scss";
+
+MatchTimer {
+    position: absolute;
+    padding: 16px;
+
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: "Roboto", sans-serif;
+
+    .panel-label {
+        color: $AccentColor;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .timer {
+        color: $WhiteColor;
+        font-size: 36px;
+        font-weight: 900;
+    }
+}

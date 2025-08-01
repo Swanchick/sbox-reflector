@@ -1,0 +1,35 @@
+@using System;
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel;
+
+<root>
+    <div class="panel-label">@RoundState</div>
+    <div class="timer">@minutes : @seconds</div>
+</root>
+
+@code {
+    private TimeSince timeSinceUpdate;
+
+    public string RoundState { get; set; } = "Waiting for players";
+    public int MatchTime { get; set; } = 0;
+
+    private string minutes = "00";
+    private string seconds = "00";
+
+    public override void Tick() {
+        if (timeSinceUpdate >= 1.0f) {
+            MatchTime = Math.Max(0, MatchTime - 1);
+            SetTimer();
+            timeSinceUpdate = 0;
+        }
+    }
+
+    private void SetTimer() {
+        int minutes = MatchTime / 60;
+        int seconds = MatchTime % 60;
+        this.minutes = minutes.ToString().PadLeft(2, '0');
+        this.seconds = seconds.ToString().PadLeft(2, '0');
+        StateHasChanged();
+    }
+}

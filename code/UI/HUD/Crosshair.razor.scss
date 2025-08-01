@@ -1,0 +1,15 @@
+Crosshair {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .crosshair-texture {
+        width: 32px;
+        height: 32px;
+        transform: translateY(50%);
+    }
+}

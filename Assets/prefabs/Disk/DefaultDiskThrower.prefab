@@ -1,0 +1,29 @@
+{
+  "RootObject": {
+    "__guid": "28afdd4c-41be-440c-bcc8-528a88b150b8",
+    "Flags": 0,
+    "Name": "defaultdiskthrower",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "DefaultDiskThrower",
+        "__guid": "0610be9a-68ca-40fc-adf1-237fad585b57",
+        "diskPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/disk/disk.prefab"
+        }
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "IsValid": true,
+  "__version": 1
+}

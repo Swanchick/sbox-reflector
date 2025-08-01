@@ -1,0 +1,91 @@
+@using Sandbox
+@using Sandbox.UI
+@using System.Threading.Tasks
+@inherits Panel
+@attribute [StyleSheet]
+
+<root>
+	<div class="entry @(GetVisibility())">
+		<TextEntry @ref="MessageEntry" onsubmit=@(() => OnSubmit()) />
+		<div class="send-button" onclick=@(()=>OnSubmit())>SEND</div>
+	</div>
+
+	<div class="messages @(GetVisibility())">
+		<div class="lines">
+            @foreach (Message message in Messages) 
+            {
+                <div class="message-container @((message.IsVisible || chatActive) ? "visible" : "hidden")">
+                    <span class="author" style="color: @(message.AuthorColor.Hex)">@(message.AuthorName): </span>
+                    <span class="message-content">@(message.Content)</span>
+                </div>
+            }
+        </div>
+    </div>
+</root>
+
+@code 
+{
+    public List<Message> Messages = new();
+
+
+    public TextEntry MessageEntry;
+    private bool chatActive = false;
+
+    public override void Tick() 
+    {
+        if (Input.Pressed("chat"))
+        {
+            _ = ActivateChat();
+        }
+    }
+
+    private async Task ActivateChat() 
+    {
+        chatActive = true;
+        StateHasChanged();
+
+        await Task.Delay(50);
+
+        MessageEntry.Focus();
+    }
+
+    private void DisableChat()
+    {
+        MessageEntry.Blur();
+        MessageEntry.Text = "";
+
+        chatActive = false;
+        StateHasChanged();
+    }
+
+    private string GetVisibility()
+    {
+        return chatActive ? "visible" : "hidden";
+    }
+
+    private void OnSubmit() 
+    {
+        PlayerManager pm = PlayerManager.instance;
+        if (pm == null) return;
+
+        string messageString = MessageEntry.Text;
+        if (string.IsNullOrWhiteSpace(messageString)) 
+        {
+            DisableChat();
+            return;
+        }
+
+        pm.SayMessage(pm.LocalPlayer.Name, messageString);
+
+        DisableChat();
+    }
+
+    public void AddMessage(Message message)
+    {
+        Messages.Add(message);
+
+        _ = message.HideMessageAfterSomeTime(this);
+
+        StateHasChanged();
+    }
+}
